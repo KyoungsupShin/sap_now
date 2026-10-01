@@ -14,37 +14,25 @@ const slides = [
     "file": "agenda.html",
     "title": "Presentation Agenda",
     "status": "new",
-    "purpose": "Orient the audience to the five sections.",
+    "purpose": "Orient the audience to four sections: enterprise and governance, execution, architecture, demo and value.",
     "keyMessage": "Vision, agent execution, control, platform and demonstration form one story.",
-    "changes": "Added a five-section agenda.",
+    "changes": "Updated to the four-section presentation agenda.",
     "visualAudit": "UPDATED",
     "kind": "agenda",
     "order": 2
   },
   {
     "file": "divider-01-vision.html",
-    "title": "Autonomous Enterprise",
+    "title": "Autonomous Enterprise & Governance",
     "status": "new",
-    "purpose": "Introduce section 01: Vision과 Business Context.",
-    "keyMessage": "From business ambition to a connected AI foundation",
+    "purpose": "Introduce section 01: Autonomous Enterprise & Governance.",
+    "keyMessage": "Autonomous Operations의 전체 모델과 통제 원칙",
     "changes": "Section divider with the current agenda section highlighted.",
     "visualAudit": "UPDATED",
     "kind": "divider",
-    "section": "Autonomous Enterprise",
+    "section": "Autonomous Enterprise & Governance",
     "sectionNumber": "01",
     "order": 3
-  },
-  {
-    "order": 4,
-    "file": "2page.html",
-    "title": "우리가 지향하는 Autonomous Enterprise",
-    "status": "existing",
-    "purpose": "Frame the shift from fragmented manual work to autonomous operations.",
-    "keyMessage": "Enterprise work can move from manual coordination to controlled autonomy.",
-    "changes": "Retained as the opening vision slide.",
-    "visualAudit": "TOO TEXT-HEAVY",
-    "section": "Autonomous Enterprise",
-    "sectionNumber": "01"
   },
   {
     "file": "ai-native.html",
@@ -54,25 +42,12 @@ const slides = [
     "keyMessage": "Move from a tool, an app boundary and records to execution, landscape and business context.",
     "changes": "Refined the PDF comparison into a single visual-led page.",
     "visualAudit": "UPDATED",
-    "section": "Autonomous Enterprise",
+    "section": "Autonomous Enterprise & Governance",
     "sectionNumber": "01",
-    "order": 5
+    "order": 4
   },
   {
-    "order": 6,
-    "file": "5page.html",
-    "title": "Team 경계를 넘어 연결되는 Autonomous Operations",
-    "status": "revised",
-    "beforeFile": "../lges_customer/4page.html",
-    "purpose": "Show cross-functional autonomy rather than isolated AI applications.",
-    "keyMessage": "Teams share context, orchestration, governance, and reusable capabilities.",
-    "changes": "Restored a small rendering of the slide 4 foundation in all six team cards.",
-    "visualAudit": "UPDATED",
-    "section": "Autonomous Enterprise",
-    "sectionNumber": "01"
-  },
-  {
-    "order": 7,
+    "order": 5,
     "file": "3page.html",
     "title": "Business Context을 이해해야 Agent가 올바르게 실행",
     "status": "new",
@@ -80,24 +55,11 @@ const slides = [
     "keyMessage": "Autonomous AI requires data, process, knowledge, identity, and policy context.",
     "changes": "New bridge between the autonomous-enterprise vision and the solution foundation.",
     "visualAudit": "SIMPLIFY",
-    "section": "Autonomous Enterprise",
+    "section": "Autonomous Enterprise & Governance",
     "sectionNumber": "01"
   },
   {
-    "file": "divider-02-agents.html",
-    "title": "Agentic Execution",
-    "status": "new",
-    "purpose": "Introduce section 02: Agent 경험과 실행.",
-    "keyMessage": "From business intent to accountable action",
-    "changes": "Section divider with the current agenda section highlighted.",
-    "visualAudit": "UPDATED",
-    "kind": "divider",
-    "section": "Agentic Execution",
-    "sectionNumber": "02",
-    "order": 8
-  },
-  {
-    "order": 9,
+    "order": 6,
     "file": "8page.html",
     "title": "Autonomous Operations를 구성하는 네 가지 핵심 역량",
     "status": "new",
@@ -106,11 +68,11 @@ const slides = [
     "changes": "New orientation slide before detailed capability pages.",
     "visualAudit": "SIMPLIFY",
     "agents": "Joule · Harness · Deep Agent · Specialist Agent",
-    "section": "Agentic Execution",
-    "sectionNumber": "02"
+    "section": "Autonomous Enterprise & Governance",
+    "sectionNumber": "01"
   },
   {
-    "order": 10,
+    "order": 7,
     "file": "6page.html",
     "title": "하나의 업무 요청에서 검증된 실행까지",
     "status": "new",
@@ -119,8 +81,47 @@ const slides = [
     "changes": "New end-to-end story slide.",
     "visualAudit": "REDESIGN",
     "agents": "Joule → Harness / Deep Agent → Specialist Agent",
+    "section": "Autonomous Enterprise & Governance",
+    "sectionNumber": "01"
+  },
+  {
+    "order": 8,
+    "file": "14page.html",
+    "title": "자율성은 높이고, 사람의 통제는 유지",
+    "status": "new",
+    "purpose": "Show that autonomy scales with human control and risk.",
+    "keyMessage": "People govern intent and exceptions while agents execute within guardrails.",
+    "changes": "New controlled-autonomy maturity model.",
+    "visualAudit": "SIMPLIFY",
+    "agents": "전체 Agent · 승인·허용 범위·예외 처리",
+    "section": "Autonomous Enterprise & Governance",
+    "sectionNumber": "01"
+  },
+  {
+    "order": 9,
+    "file": "15page.html",
+    "title": "Agent의 모든 실행에 Governance를 내재화",
+    "status": "new",
+    "purpose": "Show the controls required to operate agents responsibly.",
+    "keyMessage": "Governance is built into how agents are built, run, and observed.",
+    "changes": "New build-run-observe governance model.",
+    "visualAudit": "SIMPLIFY",
+    "agents": "전체 Agent · 인증·정책·실행 추적",
+    "section": "Autonomous Enterprise & Governance",
+    "sectionNumber": "01"
+  },
+  {
+    "file": "divider-02-agents.html",
+    "title": "Agentic Execution",
+    "status": "new",
+    "purpose": "Introduce section 02: Agentic Execution.",
+    "keyMessage": "Agent의 판단·실행·협업 메커니즘",
+    "changes": "Section divider with the current agenda section highlighted.",
+    "visualAudit": "UPDATED",
+    "kind": "divider",
     "section": "Agentic Execution",
-    "sectionNumber": "02"
+    "sectionNumber": "02",
+    "order": 10
   },
   {
     "order": 11,
@@ -206,59 +207,20 @@ const slides = [
     "sectionNumber": "02"
   },
   {
-    "file": "divider-03-control.html",
-    "title": "Human Oversight & Governance",
+    "file": "divider-04-platform.html",
+    "title": "SAP BTP Architecture",
     "status": "new",
-    "purpose": "Introduce section 03: 사람의 통제와 Governance.",
-    "keyMessage": "Human intent and enterprise governance at every level",
+    "purpose": "Introduce section 03: SAP BTP Architecture.",
+    "keyMessage": "SAP BTP 기반의 구현 구조와 운영",
     "changes": "Section divider with the current agenda section highlighted.",
     "visualAudit": "UPDATED",
     "kind": "divider",
-    "section": "Human Oversight & Governance",
+    "section": "SAP BTP Architecture",
     "sectionNumber": "03",
     "order": 17
   },
   {
     "order": 18,
-    "file": "14page.html",
-    "title": "자율성은 높이고, 사람의 통제는 유지",
-    "status": "new",
-    "purpose": "Show that autonomy scales with human control and risk.",
-    "keyMessage": "People govern intent and exceptions while agents execute within guardrails.",
-    "changes": "New controlled-autonomy maturity model.",
-    "visualAudit": "SIMPLIFY",
-    "agents": "전체 Agent · 승인·허용 범위·예외 처리",
-    "section": "Human Oversight & Governance",
-    "sectionNumber": "03"
-  },
-  {
-    "order": 19,
-    "file": "15page.html",
-    "title": "Agent의 모든 실행에 Governance를 내재화",
-    "status": "new",
-    "purpose": "Show the controls required to operate agents responsibly.",
-    "keyMessage": "Governance is built into how agents are built, run, and observed.",
-    "changes": "New build-run-observe governance model.",
-    "visualAudit": "SIMPLIFY",
-    "agents": "전체 Agent · 인증·정책·실행 추적",
-    "section": "Human Oversight & Governance",
-    "sectionNumber": "03"
-  },
-  {
-    "file": "divider-04-platform.html",
-    "title": "SAP BTP Architecture",
-    "status": "new",
-    "purpose": "Introduce section 04: Platform과 Architecture.",
-    "keyMessage": "The platform and architecture behind enterprise agents",
-    "changes": "Section divider with the current agenda section highlighted.",
-    "visualAudit": "UPDATED",
-    "kind": "divider",
-    "section": "SAP BTP Architecture",
-    "sectionNumber": "04",
-    "order": 20
-  },
-  {
-    "order": 21,
     "file": "4page.html",
     "title": "업무를 연결하는 공통 AI 기반",
     "status": "revised",
@@ -268,10 +230,10 @@ const slides = [
     "changes": "Moved after business context and reframed as the solution vision.",
     "visualAudit": "REDESIGN · TOO UI-LIKE",
     "section": "SAP BTP Architecture",
-    "sectionNumber": "04"
+    "sectionNumber": "03"
   },
   {
-    "order": 22,
+    "order": 19,
     "file": "16page.html",
     "title": "왜 SAP BTP인가?",
     "status": "revised",
@@ -281,10 +243,10 @@ const slides = [
     "changes": "Moved after the operating model and governance rationale.",
     "visualAudit": "TOO TEXT-HEAVY",
     "section": "SAP BTP Architecture",
-    "sectionNumber": "04"
+    "sectionNumber": "03"
   },
   {
-    "order": 23,
+    "order": 20,
     "file": "19page.html",
     "title": "SAP Business AI Platform Architecture",
     "status": "revised",
@@ -294,10 +256,10 @@ const slides = [
     "changes": "Reordered into the architecture section.",
     "visualAudit": "SIMPLIFY",
     "section": "SAP BTP Architecture",
-    "sectionNumber": "04"
+    "sectionNumber": "03"
   },
   {
-    "order": 24,
+    "order": 21,
     "file": "20page.html",
     "title": "SAP BTP Kyma 기반 App-in-App Portal Architecture",
     "status": "revised",
@@ -307,10 +269,10 @@ const slides = [
     "changes": "Reordered into the architecture section.",
     "visualAudit": "SIMPLIFY",
     "section": "SAP BTP Architecture",
-    "sectionNumber": "04"
+    "sectionNumber": "03"
   },
   {
-    "order": 25,
+    "order": 22,
     "file": "17page.html",
     "title": "왜 운영에도 SAP BTP인가?",
     "status": "revised",
@@ -320,23 +282,48 @@ const slides = [
     "changes": "Moved after the BTP value proposition.",
     "visualAudit": "TOO TEXT-HEAVY",
     "section": "SAP BTP Architecture",
-    "sectionNumber": "04"
+    "sectionNumber": "03"
   },
   {
     "file": "21page.html",
-    "title": "Autonomous App-in-App Demo",
+    "title": "Demo & Business Value",
     "status": "revised",
-    "purpose": "Introduce section 05: Demo와 Business 가치.",
-    "keyMessage": "Show the operating model, then the business value",
+    "purpose": "Introduce section 04: Demo & Business Value.",
+    "keyMessage": "조직의 문제에서 SCM 실행과 Business Value까지",
     "changes": "Section divider with the current agenda section highlighted.",
     "visualAudit": "UPDATED",
     "kind": "divider",
-    "section": "Autonomous App-in-App Demo",
-    "sectionNumber": "05",
-    "order": 26
+    "section": "Demo & Business Value",
+    "sectionNumber": "04",
+    "order": 23
   },
   {
-    "order": 27,
+    "order": 24,
+    "file": "2page.html",
+    "title": "Demo Context & Business Challenges",
+    "status": "existing",
+    "purpose": "Define the business challenges and goals for the demo organization.",
+    "keyMessage": "Enterprise work can move from manual coordination to controlled autonomy.",
+    "changes": "Moved to Demo as the organizational business context.",
+    "visualAudit": "TOO TEXT-HEAVY",
+    "section": "Demo & Business Value",
+    "sectionNumber": "04"
+  },
+  {
+    "order": 25,
+    "file": "5page.html",
+    "title": "Target Operating Model — Cross-Team Collaboration",
+    "status": "revised",
+    "beforeFile": "../lges_customer/4page.html",
+    "purpose": "Define the cross-team target operating model and scope for the demo.",
+    "keyMessage": "Teams share context, orchestration, governance, and reusable capabilities.",
+    "changes": "Moved to Demo after its business challenges.",
+    "visualAudit": "UPDATED",
+    "section": "Demo & Business Value",
+    "sectionNumber": "04"
+  },
+  {
+    "order": 26,
     "file": "22page.html",
     "title": "Autonomous Operations SCM Demo",
     "status": "revised",
@@ -346,11 +333,11 @@ const slides = [
     "changes": "Moved into the proof section.",
     "visualAudit": "TOO TEXT-HEAVY",
     "agents": "영업 · 생산 · 구매 Agent",
-    "section": "Autonomous App-in-App Demo",
-    "sectionNumber": "05"
+    "section": "Demo & Business Value",
+    "sectionNumber": "04"
   },
   {
-    "order": 28,
+    "order": 27,
     "file": "23page.html",
     "title": "반복 조율은 줄이고, 중요한 판단에 집중",
     "status": "new",
@@ -358,7 +345,7 @@ const slides = [
     "keyMessage": "Agents reduce coordination work so people can focus on decisions and exceptions.",
     "changes": "New conclusion slide.",
     "visualAudit": "SIMPLIFY",
-    "section": "Autonomous App-in-App Demo",
-    "sectionNumber": "05"
+    "section": "Demo & Business Value",
+    "sectionNumber": "04"
   }
 ];
