@@ -1,0 +1,65 @@
+/* Agenda, section transitions, native comparison, and agent role markers. */
+body { margin:0; }
+.flow-slide, .flow-slide * { box-sizing:border-box; }
+.flow-slide { position:relative; height:900px; overflow:hidden; margin:auto; }
+.flow-slide .top-line { position:absolute; inset:0 0 auto; }
+.flow-slide .brand { position:absolute; right:110px; }
+.flow-slide h1 { margin:0; white-space:normal !important; font-size:54px !important; line-height:1.08 !important; }
+.flow-intro { margin:18px 0 0; color:#556b82; font-size:23px; }
+.flow-source { position:absolute; left:110px; bottom:50px; color:#6a6d70; font-size:11px; }
+.chapter-slide { background-image:none !important; }
+.chapter-slide .chapter-art { position:absolute; right:0; top:0; width:46%; height:100%; object-fit:cover; }
+.chapter-slide .brand { color:white !important; z-index:1; }
+.chapter-slide h1 { position:relative; width:620px; margin-top:58px; font-size:58px !important; }
+.chapter-subtitle { position:relative; max-width:580px; margin:22px 0 0; font-size:22px; line-height:1.4; color:#556b82; }
+.chapter-focus { position:relative; max-width:590px; margin:20px 0 0; color:#0070f2; font-size:16px; line-height:1.5; }
+.chapter-agenda { list-style:none; padding:0; margin:0; }
+.chapter-agenda li { display:flex; align-items:center; gap:23px; border-bottom:1px solid #dce4ef; padding:19px 20px; color:#556b82; }
+.chapter-agenda li>span { color:#0070f2; font-size:17px; }
+.chapter-agenda b { display:block; color:#223548; font-weight:500; font-size:27px; }
+.chapter-agenda small { display:block; margin-top:7px; font-size:15px; }
+.chapter-agenda .current { background:#eef5ff; border-left:4px solid #0070f2; padding-left:16px; }
+.chapter-agenda .current b { color:#0070f2; font-weight:600; }
+.chapter-slide .chapter-agenda { position:absolute; left:110px; top:450px; width:590px; }
+.chapter-slide .chapter-agenda li { gap:18px; padding:11px 16px; }
+.chapter-slide .chapter-agenda li.current { padding-left:12px; }
+.chapter-slide .chapter-agenda b { font-size:20px; }
+.chapter-slide .chapter-agenda small { display:none; }
+.chapter-slide .slide-page-number { color:white; z-index:1; }
+.agenda-layout { display:grid; grid-template-columns:1.2fr 1fr; gap:70px; align-items:center; margin-top:40px; }
+.agenda-layout figure { margin:0; }
+.agenda-layout img { width:100%; height:445px; object-fit:contain; }
+.agenda-layout figcaption { color:#556b82; font-size:18px; line-height:1.45; text-align:center; }
+.native-layout { display:grid; grid-template-columns:1.2fr 1fr; gap:60px; align-items:center; margin-top:35px; }
+.native-layout figure { margin:0; }
+.native-layout img { display:block; width:100%; height:435px; object-fit:contain; }
+.native-shifts>div { border-top:1px solid #dce4ef; padding:23px 0; }
+.native-shifts small { color:#7045ff; font-size:12px; font-weight:700; letter-spacing:.08em; }
+.native-shifts h2 { font-size:29px; font-weight:500; margin:12px 0; }
+.native-shifts p { margin:0; color:#556b82; font-size:21px; line-height:1.4; }
+.native-message { border-top:1px solid #dce4ef; padding-top:23px; margin-top:33px; font-size:24px; color:#223548; }
+.native-message b { color:#0070f2; font-weight:500; }
+.agent-marker { position:absolute; left:110px; top:30px; display:flex; align-items:center; gap:15px; max-width:1100px; font-size:12px; line-height:1.3; }
+.agent-marker b { color:#0070f2; font-size:11px; letter-spacing:.06em; }
+.agent-marker span { color:#556b82; padding-left:15px; border-left:1px solid #b9c6d4; }
+.teams { margin-top:35px !important; }
+.team { padding:20px 26px !important; }
+.team-foundation-image { display:block; width:100%; height:130px; object-fit:contain; margin-top:18px; }
+@media(max-width:800px) {
+ .flow-slide { height:auto; min-height:900px; }
+ .flow-slide h1 { font-size:38px !important; }
+ .flow-slide .brand { right:30px; }
+ .chapter-slide .chapter-art { width:25%; opacity:.18; }
+ .chapter-slide .brand { color:#223548 !important; }
+ .chapter-slide h1, .chapter-subtitle, .chapter-focus { max-width:100%; width:auto; }
+ .chapter-slide .chapter-agenda { position:relative; left:auto; top:auto; width:100%; margin-top:45px; }
+ .chapter-slide .slide-page-number { color:#556b82; }
+ .agenda-layout, .native-layout { grid-template-columns:1fr; gap:25px; }
+ .agenda-layout img, .native-layout img { height:300px; }
+ .flow-source { position:static; display:block; margin:35px 0; }
+ .agent-marker { position:relative; left:auto; top:auto; max-width:100%; margin:0 0 20px; font-size:10px; gap:10px; }
+ .agent-marker b { font-size:9px; }
+ .agent-marker span { padding-left:10px; }
+ .team-foundation-image { height:150px; }
+ .teams + .foundation { position:relative; left:auto; right:auto; bottom:auto; margin:30px 0 50px; }
+}

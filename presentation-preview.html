@@ -58,7 +58,7 @@
   <body>
     <div class="review-shell">
       <aside class="rail" aria-label="Slide navigation">
-        <h1>SAP NOW</h1><p>Review-only deck viewer<br />23 presentation slides</p>
+        <h1>SAP NOW</h1><p>Review-only deck viewer<br /><span id="slide-count"></span> presentation slides</p>
         <div class="mode-switch"><button class="active" id="overview-mode">OVERVIEW</button><button id="presentation-mode">PRESENT</button></div>
         <nav class="thumbs" id="thumbnails"></nav>
       </aside>
@@ -74,6 +74,7 @@
         const deck = document.querySelector('#deck'); const thumbs = document.querySelector('#thumbnails');
         const presentation = document.querySelector('#presentation'); const frame = document.querySelector('#presentation-frame');
         const title = document.querySelector('#presentation-title'); let current = 0;
+        document.querySelector('#slide-count').textContent = slides.length;
         const statusLabel = status => status === 'new' ? 'NEW' : status === 'revised' ? 'REVISED' : '';
         const scaleFrames = () => document.querySelectorAll('.frame-wrap').forEach(wrap => {
           const iframe = wrap.querySelector('iframe'); if (!iframe) return;
@@ -85,7 +86,7 @@
           thumb.className = 'thumb'; thumb.dataset.index = index; thumb.innerHTML = `<span class="number">${String(slide.order).padStart(2,'0')}</span><span class="name">${slide.title}</span>${badge ? `<span class="badge ${slide.status}">${badge}</span>` : ''}`;
           thumb.addEventListener('click', () => document.querySelector(`#slide-${slide.order}`).scrollIntoView({behavior:'smooth',block:'start'})); thumbs.appendChild(thumb);
           const item = document.createElement('article'); item.className = 'slide-review'; item.id = `slide-${slide.order}`;
-          item.innerHTML = `<header class="slide-meta"><h3>${String(slide.order).padStart(2,'0')} — ${slide.title}</h3><span class="source">${slide.file}</span></header>${createFrame(slide.file, slide.title)}<dl class="review-notes"><dt>STATUS</dt><dd>${slide.status.toUpperCase()}</dd><dt>VISUAL AUDIT</dt><dd>${slide.visualAudit}</dd><dt>PURPOSE</dt><dd>${slide.purpose}</dd><dt>KEY MESSAGE</dt><dd>${slide.keyMessage}</dd><dt>CHANGES</dt><dd>${slide.changes}</dd></dl>${slide.beforeFile ? `<button class="compare-button" aria-expanded="false">BEFORE / AFTER</button><div class="comparison"><div><p class="comparison-label">ORIGINAL</p>${createFrame(slide.beforeFile, `Original — ${slide.title}`)}</div><div><p class="comparison-label">REVISED</p>${createFrame(slide.file, `Revised — ${slide.title}`)}</div></div>` : ''}`;
+          item.innerHTML = `<header class="slide-meta"><h3>${String(slide.order).padStart(2,'0')} — ${slide.title}</h3><span class="source">${slide.file}</span></header>${createFrame(slide.file, slide.title)}<dl class="review-notes"><dt>STATUS</dt><dd>${slide.status.toUpperCase()}</dd><dt>SECTION</dt><dd>${slide.section ? `${slide.sectionNumber} · ${slide.section}` : 'Opening / Agenda'}</dd>${slide.agents ? `<dt>AGENTS / ROLE</dt><dd>${slide.agents}</dd>` : ''}<dt>VISUAL AUDIT</dt><dd>${slide.visualAudit || '—'}</dd><dt>PURPOSE</dt><dd>${slide.purpose}</dd><dt>KEY MESSAGE</dt><dd>${slide.keyMessage}</dd><dt>CHANGES</dt><dd>${slide.changes}</dd></dl>${slide.beforeFile ? `<button class="compare-button" aria-expanded="false">BEFORE / AFTER</button><div class="comparison"><div><p class="comparison-label">ORIGINAL</p>${createFrame(slide.beforeFile, `Original — ${slide.title}`)}</div><div><p class="comparison-label">REVISED</p>${createFrame(slide.file, `Revised — ${slide.title}`)}</div></div>` : ''}`;
           item.querySelector('.compare-button')?.addEventListener('click', event => { const panel = item.querySelector('.comparison'); panel.classList.toggle('open'); event.currentTarget.setAttribute('aria-expanded', panel.classList.contains('open')); scaleFrames(); }); deck.appendChild(item);
         });
         const observer = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) { current = slides.findIndex(s => `slide-${s.order}` === entry.target.id); document.querySelectorAll('.thumb').forEach(t => t.classList.toggle('active', Number(t.dataset.index) === current)); }}), {rootMargin:'-35% 0px -60% 0px'});
