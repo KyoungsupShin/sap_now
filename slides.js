@@ -65,7 +65,7 @@ const slides = [
     "file": "8page.html",
     "title": "Four Core Capabilities — 통합 모델이 제공하는 역량",
     "status": "new",
-    "purpose": "Summarize Experience, Context, Build and Execution as capabilities of the integrated model.",
+    "purpose": "Summarize Workflow, Context, Build and Execution as capabilities of the integrated model.",
     "keyMessage": "Capabilities span the composition rather than mapping one-to-one to products.",
     "changes": "Reframed around the integrated Joule + Harness + App Builder operating model.",
     "visualAudit": "SIMPLIFY",
