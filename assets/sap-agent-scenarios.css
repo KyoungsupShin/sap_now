@@ -1,0 +1,55 @@
+/* Detailed original scenarios, aligned with the shared SAP BTP template. */
+.slide.original-scenario .agent-marker { position:absolute; top:25px; left:66px; display:flex; gap:15px; align-items:center; font-size:12px; line-height:1.3; }
+.original-scenario .agent-marker b { color:#0070f2; font-size:11px; }
+.original-scenario .agent-marker span { color:#475e75; border-left:1px solid #d1efff; padding-left:15px; }
+.original-scenario .scenario { margin-top:52px; grid-template-columns:188px 52px minmax(0,1fr); }
+.original-scenario .request,
+.original-scenario .agent-stage,
+.original-scenario .team,
+.original-scenario .skill-card { border:1px solid #d1efff; border-top:4px solid #1b90ff; border-radius:0; background:#fff; box-shadow:none; }
+.original-scenario .request { min-height:590px; padding:24px 18px; }
+.original-scenario .agent-stage,
+.original-scenario .team { min-height:590px; padding:22px 18px; }
+.original-scenario .agent-stage.response-stage { min-height:385px; }
+.original-scenario .skill-card { min-height:190px; padding:18px; }
+.original-scenario .ticket { border:0; border-left:3px solid #1b90ff; border-radius:0; background:#f5faff; padding:14px 12px; }
+.original-scenario h2,
+.original-scenario .ticket b,
+.original-scenario .step b,
+.original-scenario .skill-card b { color:#000; font-weight:500; letter-spacing:0; }
+.original-scenario .request h2 { font-size:23px; line-height:1.25; }
+.original-scenario .agent-stage h2,
+.original-scenario .team h2 { font-size:25px; }
+.original-scenario .ticket b { font-size:16px; line-height:1.35; }
+.original-scenario .ticket p,
+.original-scenario .request p { font-size:14px; line-height:1.4; font-weight:400; }
+.original-scenario .step { font-size:12px; color:#0070f2; font-weight:500; letter-spacing:0; line-height:1.3; padding-bottom:16px; }
+.original-scenario .step b { font-size:16px; line-height:1.35; }
+.original-scenario .step span { font-size:14px; line-height:1.35; font-weight:400; }
+.original-scenario .request small,
+.original-scenario .ticket small,
+.original-scenario .parallel-query small,
+.original-scenario .skill-card small { color:#0070f2; font-weight:500; letter-spacing:.04em; }
+.original-scenario .parallel-query { border-left-color:#d1efff; }
+.original-scenario .parallel-query b { color:#000; font-size:14px; font-weight:500; }
+.original-scenario .parallel-query span { color:#475e75; font-size:12px; font-weight:400; line-height:1.35; }
+.original-scenario .investigation,
+.original-scenario .synthesis-flow,
+.original-scenario .skill-timeline { border-left-color:#d1efff; }
+.original-scenario .step:before,
+.original-scenario .step.deep:before,
+.original-scenario .skill-timeline-step:before { border-color:#1b90ff; background:#fff; }
+.original-scenario .synthesis-flow:before,
+.original-scenario .skill-timeline-step:first-child:before { background:#1b90ff; }
+.original-scenario .skill-timeline-step b { font-size:14px; line-height:1.4; }
+.original-scenario .team:not(:last-child):after { border:0; border-radius:0; background:#fff; color:#0070f2; }
+@media(max-width:800px) {
+ .original-scenario .scenario { grid-template-columns:1fr; gap:20px; }
+ .original-scenario .agent-flow,.original-scenario .team-flow { grid-template-columns:1fr; }
+ .original-scenario .agent-marker { position:static !important; margin-bottom:20px; }
+ .original-scenario .request { min-height:180px; }
+ .original-scenario .agent-stage,.original-scenario .team { min-height:0; }
+}
+.original-scenario .parallel-query:before,
+.original-scenario .parallel-query.kg:before,
+.original-scenario .parallel-query.joule:before { border-color:#1b90ff; background:#fff; }
