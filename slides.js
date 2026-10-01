@@ -72,19 +72,6 @@ const slides = [
   },
   {
     "order": 7,
-    "file": "4page.html",
-    "title": "업무를 연결하는 공통 AI 기반",
-    "status": "revised",
-    "beforeFile": "../lges_customer/3page.html",
-    "purpose": "Show how shared enterprise intelligence supports applications and agents.",
-    "keyMessage": "Connected applications build on one shared AI and knowledge foundation.",
-    "changes": "Moved after business context and reframed as the solution vision.",
-    "visualAudit": "REDESIGN · TOO UI-LIKE",
-    "section": "Autonomous Enterprise",
-    "sectionNumber": "01"
-  },
-  {
-    "order": 8,
     "file": "5page.html",
     "title": "팀 경계를 넘어 연결되는 자율형 업무",
     "status": "revised",
@@ -107,10 +94,10 @@ const slides = [
     "kind": "divider",
     "section": "Agentic Execution",
     "sectionNumber": "02",
-    "order": 9
+    "order": 8
   },
   {
-    "order": 10,
+    "order": 9,
     "file": "8page.html",
     "title": "자율형 업무를 구성하는 네 가지 핵심 역량",
     "status": "new",
@@ -119,6 +106,20 @@ const slides = [
     "changes": "New orientation slide before detailed capability pages.",
     "visualAudit": "SIMPLIFY",
     "agents": "Joule · Harness · Deep Agent · 전문 Agent",
+    "section": "Agentic Execution",
+    "sectionNumber": "02"
+  },
+  {
+    "order": 10,
+    "file": "9page.html",
+    "title": "전사 지식을 연결해 업무 관계를 이해",
+    "status": "revised",
+    "beforeFile": "../lges_customer/7page.html",
+    "purpose": "Explain how enterprise meaning and relationships become agent context.",
+    "keyMessage": "A knowledge graph connects distributed information to business meaning.",
+    "changes": "Repositioned in the knowledge layer; title made message-led.",
+    "visualAudit": "TOO TEXT-HEAVY",
+    "agents": "HANA Knowledge Graph · Agent의 판단 근거",
     "section": "Agentic Execution",
     "sectionNumber": "02"
   },
@@ -138,20 +139,6 @@ const slides = [
   },
   {
     "order": 12,
-    "file": "9page.html",
-    "title": "전사 지식을 연결해 업무 관계를 이해",
-    "status": "revised",
-    "beforeFile": "../lges_customer/7page.html",
-    "purpose": "Explain how enterprise meaning and relationships become agent context.",
-    "keyMessage": "A knowledge graph connects distributed information to business meaning.",
-    "changes": "Repositioned in the knowledge layer; title made message-led.",
-    "visualAudit": "TOO TEXT-HEAVY",
-    "agents": "HANA Knowledge Graph · Agent의 판단 근거",
-    "section": "Agentic Execution",
-    "sectionNumber": "02"
-  },
-  {
-    "order": 13,
     "file": "6page.html",
     "title": "하나의 업무 요청에서 검증된 실행까지",
     "status": "new",
@@ -164,7 +151,7 @@ const slides = [
     "sectionNumber": "02"
   },
   {
-    "order": 14,
+    "order": 13,
     "file": "7page.html",
     "title": "판단 · 실행 · 검증을 통제된 순환으로",
     "status": "new",
@@ -177,7 +164,7 @@ const slides = [
     "sectionNumber": "02"
   },
   {
-    "order": 15,
+    "order": 14,
     "file": "11page.html",
     "title": "업무 요청을 분석과 실행으로 연결",
     "status": "revised",
@@ -191,7 +178,7 @@ const slides = [
     "sectionNumber": "02"
   },
   {
-    "order": 16,
+    "order": 15,
     "file": "12page.html",
     "title": "단순한 답변을 넘어 복합 업무를 계획하는 Agent",
     "status": "revised",
@@ -205,7 +192,7 @@ const slides = [
     "sectionNumber": "02"
   },
   {
-    "order": 17,
+    "order": 16,
     "file": "13page.html",
     "title": "전문 Agent가 협업해 하나의 업무를 완수",
     "status": "revised",
@@ -229,10 +216,10 @@ const slides = [
     "kind": "divider",
     "section": "Human Oversight & Governance",
     "sectionNumber": "03",
-    "order": 18
+    "order": 17
   },
   {
-    "order": 19,
+    "order": 18,
     "file": "14page.html",
     "title": "자율성은 높이고, 사람의 통제는 유지",
     "status": "new",
@@ -245,7 +232,7 @@ const slides = [
     "sectionNumber": "03"
   },
   {
-    "order": 20,
+    "order": 19,
     "file": "15page.html",
     "title": "Agent의 모든 실행에 Governance를 내재화",
     "status": "new",
@@ -268,10 +255,10 @@ const slides = [
     "kind": "divider",
     "section": "SAP BTP Architecture",
     "sectionNumber": "04",
-    "order": 21
+    "order": 20
   },
   {
-    "order": 22,
+    "order": 21,
     "file": "16page.html",
     "title": "왜 SAP BTP인가?",
     "status": "revised",
@@ -284,20 +271,20 @@ const slides = [
     "sectionNumber": "04"
   },
   {
-    "order": 23,
-    "file": "17page.html",
-    "title": "왜 운영에도 SAP BTP인가?",
+    "order": 22,
+    "file": "4page.html",
+    "title": "업무를 연결하는 공통 AI 기반",
     "status": "revised",
-    "beforeFile": "../lges_customer/16page.html",
-    "purpose": "Extend the BTP case to operating and lifecycle needs.",
-    "keyMessage": "Enterprise operations require lifecycle, observability, and integration discipline.",
-    "changes": "Moved after the BTP value proposition.",
-    "visualAudit": "TOO TEXT-HEAVY",
+    "beforeFile": "../lges_customer/3page.html",
+    "purpose": "Show how shared enterprise intelligence supports applications and agents.",
+    "keyMessage": "Connected applications build on one shared AI and knowledge foundation.",
+    "changes": "Moved after business context and reframed as the solution vision.",
+    "visualAudit": "REDESIGN · TOO UI-LIKE",
     "section": "SAP BTP Architecture",
     "sectionNumber": "04"
   },
   {
-    "order": 24,
+    "order": 23,
     "file": "19page.html",
     "title": "SAP BTP Standard Architecture",
     "status": "revised",
@@ -310,7 +297,7 @@ const slides = [
     "sectionNumber": "04"
   },
   {
-    "order": 25,
+    "order": 24,
     "file": "20page.html",
     "title": "SAP BTP Kyma 기반 App-in-App Portal Architecture",
     "status": "revised",
@@ -319,6 +306,19 @@ const slides = [
     "keyMessage": "The portal architecture operationalizes the connected experience on BTP.",
     "changes": "Reordered into the architecture section.",
     "visualAudit": "SIMPLIFY",
+    "section": "SAP BTP Architecture",
+    "sectionNumber": "04"
+  },
+  {
+    "order": 25,
+    "file": "17page.html",
+    "title": "왜 운영에도 SAP BTP인가?",
+    "status": "revised",
+    "beforeFile": "../lges_customer/16page.html",
+    "purpose": "Extend the BTP case to operating and lifecycle needs.",
+    "keyMessage": "Enterprise operations require lifecycle, observability, and integration discipline.",
+    "changes": "Moved after the BTP value proposition.",
+    "visualAudit": "TOO TEXT-HEAVY",
     "section": "SAP BTP Architecture",
     "sectionNumber": "04"
   },
