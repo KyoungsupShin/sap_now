@@ -7,3 +7,5 @@ Joule is shown as SAP access and execution connection, Harness as context synthe
 Operating-model and Human Oversight visuals are HTML diagrams using the existing official template. They are not SAP official illustrations or newly generated brand images. Original PDF assets remain intact; the official SAP platform illustration remains on Governance. Deep Agent/A2A detailed scenarios are retained.
 
 The capability map now uses Workflow / Context / Build / Execution. Agent Workflow describes request decomposition and routing between agents/tools; Execution describes actual permitted actions, result validation and exception handling. No new Agent Graph product or graph implementation is asserted.
+
+Capability map update: Agent Workflow & Governance combines orchestration and control. Governance is also shown as a cross-cutting responsibility over Context access, App changes and execution; it is not confined to one card. Original A2A artwork is preserved, with governance explained separately in HTML.
