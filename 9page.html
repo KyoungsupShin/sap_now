@@ -326,7 +326,7 @@
     </style>
   <link rel="stylesheet" href="assets/deck-flow.css"><link rel="stylesheet" href="assets/korean-editorial.css"><link rel="stylesheet" href="assets/sap-official-template.css"><link rel="stylesheet" href="assets/agent-comparison-template.css"></head>
   <body>
-    <main class="slide comparison-template">
+    <main class="slide comparison-template three-scenarios">
       <div class="top"></div>
       <h1>HANA Knowledge Graph — Business Context 연결</h1>
       <section class="content" aria-label="HANA Knowledge Graph comparison">
@@ -336,53 +336,30 @@
         </article>
         <div class="question-rail" aria-label="전사 질문 예시">
           <div>
-            <small>Business Question</small><strong>“신규 제품 출시를 위해 확인할<br>관세·인증·Compliance 담당 조직은?”</strong>
+            <small>Business Question</small><strong>“신규 협력업체 등록에 필요한<br>기준과 담당 조직은?”</strong>
           </div>
         </div>
         <div class="compare">
-          <article class="lane">
-            <div class="lane-head"><b>Without Knowledge Graph</b></div>
-            <div class="flow">
-              <div class="item">
-                <small>01</small>
-                <h2>분산된 전사 자료</h2><p>IT · 품질 · Compliance별 관리</p>
-              </div>
-              <div class="item">
-                <small>02</small>
-                <h2>부서별 문의</h2><p>등록 기준과 담당자를 각각 확인</p>
-              </div>
-              <div class="item">
-                <small>03</small>
-                <h2>관계 수작업 해석</h2><p>협력업체 · 기준 · System을 연결</p>
-              </div>
-              <div class="item">
-                <small>04</small>
-                <h2>확인 반복</h2><p>등록 요청마다 같은 질문 반복</p>
-              </div>
-            </div>
-          </article>
-          <article class="lane ai">
-            <div class="lane-head"><b>With Knowledge Graph</b></div>
-            <div class="flow">
-              <div class="item">
-                <small>01</small>
-                <h2>Enterprise Ontology</h2><p>조직 · 정책 · 등록 기준을 구조화</p>
-              </div>
-              <div class="item">
-                <small>02</small>
-                <h2>관계 연결</h2><p>협력업체와 전사 기준을 함께 연결</p>
-              </div>
-              <div class="item">
-                <small>03</small>
-                <h2>필요 기준 탐색</h2><p>담당자 · 기준 · System을 즉시 확인</p>
-              </div>
-              <div class="item">
-                <small>04</small>
-                <h2>등록 근거 재활용</h2><p>다음 등록 요청에도 관계 정보 활용</p>
-              </div>
-            </div>
-          </article>
-        </div>
+<article class="lane "><div class="lane-head"><b>Without Agent</b></div><div class="flow">
+<div class="item"><small>01</small><h2>자료 개별 조회</h2><p>IT · 품질 · Compliance 자료 확인</p></div>
+<div class="item"><small>02</small><h2>담당 조직 문의</h2><p>부서별 등록 기준 확인</p></div>
+<div class="item"><small>03</small><h2>관계 수작업 정리</h2><p>업체 · 기준 · System 연결</p></div>
+<div class="item"><small>04</small><h2>등록 근거 작성</h2><p>담당자 확인 후 요청 제출</p></div>
+</div></article>
+<article class="lane partial"><div class="lane-head"><b>Agent without Knowledge Graph</b></div><div class="flow">
+<div class="item"><small>01</small><h2>문서 검색</h2><p>개별 문서의 관련 정보 검색</p></div>
+<div class="item"><small>02</small><h2>문서별 답변 요약</h2><p>담당자 · 기준 후보 정리</p></div>
+<div class="item"><small>03</small><h2>관계 추가 확인</h2><p>업체 · 정책 · 조직 관계 검증</p></div>
+<div class="item"><small>04</small><h2>사람의 근거 종합</h2><p>조건별 적용 기준 최종 확인</p></div>
+</div></article>
+<article class="lane ai"><div class="lane-head"><b>Agent with Knowledge Graph</b></div><div class="flow">
+<div class="item"><small>01</small><h2>Enterprise Ontology</h2><p>조직 · 정책 · 등록 기준 구조화</p></div>
+<div class="item"><small>02</small><h2>관계 기반 탐색</h2><p>업체와 적용 기준·담당 조직 연결</p></div>
+<div class="item"><small>03</small><h2>조건별 근거 확인</h2><p>관계 경로와 연결된 근거 확인</p></div>
+<div class="item"><small>04</small><h2>등록 근거 재사용</h2><p>검증된 관계 정보 재활용</p></div>
+</div></article>
+</div>
+
       </section>
       <section class="agent-capability" aria-label="HANA Knowledge Graph 제공 기능">
         <div class="agent-capability-label">HANA KG<br>Key Capabilities</div>

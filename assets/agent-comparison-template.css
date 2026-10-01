@@ -21,9 +21,20 @@
 .comparison-template .item p { font-size:13px; font-weight:400; line-height:1.35; }
 .comparison-template .request::after,.comparison-template .question-rail::after,.comparison-template .item:not(:last-child)::after { width:auto; height:auto; display:block; right:-20px; border:0; border-radius:0; background:transparent; color:#0070f2; font-size:22px; font-weight:400; }
 .comparison-template .item:not(:last-child)::after,.comparison-template .ai .item:not(:last-child)::after { right:-16px; color:#0070f2; font-size:18px; }
+.three-scenarios .content { height:565px; }
+.three-scenarios .compare { grid-template-rows:repeat(3,minmax(0,1fr)); }
+.three-scenarios .item { min-height:0; padding:10px; }
+.three-scenarios .lane { padding:13px 16px; }
+.three-scenarios .lane-head { margin-bottom:10px; }
+.three-scenarios .flow { height:calc(100% - 34px); }
+.three-scenarios .partial .item { background:#f5faff; border-top-color:#1b90ff !important; }
+.three-scenarios .partial .lane-head b { color:#0070f2; background:#eaf5ff; }
+.three-scenarios .partial .item small { color:#0070f2; }
 @media(max-width:800px) {
  .comparison-template .content { grid-template-columns:1fr; height:auto; gap:24px; margin-top:32px; }
  .comparison-template .compare { grid-template-rows:none; margin-top:0; }
  .comparison-template .flow { grid-template-columns:1fr; height:auto; }
  .comparison-template .request::after,.comparison-template .question-rail::after,.comparison-template .item:not(:last-child)::after { content:none; }
+ .three-scenarios .content { height:auto; }
+ .three-scenarios .compare { grid-template-rows:none; }
 }

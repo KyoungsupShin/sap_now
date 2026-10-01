@@ -326,7 +326,7 @@
     </style>
   <link rel="stylesheet" href="assets/deck-flow.css"><link rel="stylesheet" href="assets/korean-editorial.css"><link rel="stylesheet" href="assets/sap-official-template.css"><link rel="stylesheet" href="assets/agent-comparison-template.css"></head>
   <body>
-    <main class="slide comparison-template">
+    <main class="slide comparison-template three-scenarios">
       <div class="top"></div>
       <h1>Harness — 업무 판단과 실행 조율</h1>
       <section class="content" aria-label="Harness comparison">
@@ -341,57 +341,26 @@
           </div>
         </div>
         <div class="compare">
-          <article class="lane">
-            <div class="lane-head"><b>Without Harness</b></div>
-            <div class="flow">
-              <div class="item">
-                <small>01</small>
-                <h2>자료 수작업 수집</h2>
-                <p>요청마다 근거를 다시 확인</p>
-              </div>
-              <div class="item">
-                <small>02</small>
-                <h2>담당자 개별 판단</h2>
-                <p>경험 중심으로 대응 검토</p>
-              </div>
-              <div class="item">
-                <small>03</small>
-                <h2>반복 협의</h2>
-                <p>현업 · IT 간 방식 조율</p>
-              </div>
-              <div class="item">
-                <small>04</small>
-                <h2>업무 요청 재전달</h2>
-                <p>결정 내용을 다시 정리</p>
-              </div>
-            </div>
-          </article>
-          <article class="lane ai">
-            <div class="lane-head"><b>With Harness</b></div>
-            <div class="flow">
-              <div class="item">
-                <small>01</small>
-                <h2>오늘 업무 수집</h2>
-                <p>업무 목록과 현재 상태를 연결</p>
-              </div>
-              <div class="item">
-                <small>02</small>
-                <h2>우선순위 분석</h2>
-                <p>마감 · 영향도 · 예외 기준으로 판단</p>
-              </div>
-              <div class="item">
-                <small>03</small>
-                <h2>실행 방식 결정</h2>
-                <p>자동화·담당자 처리 경로를 선택</p>
-              </div>
-              <div class="item">
-                <small>04</small>
-                <h2>업무 지시</h2>
-                <p>자동화와 담당자에게 실행 요청 전달</p>
-              </div>
-            </div>
-          </article>
-        </div>
+<article class="lane "><div class="lane-head"><b>Without Agent</b></div><div class="flow">
+<div class="item"><small>01</small><h2>업무 수작업 수집</h2><p>Wiki · SAP 상태 개별 확인</p></div>
+<div class="item"><small>02</small><h2>담당자 우선순위 판단</h2><p>마감 · 영향도 · 예외 검토</p></div>
+<div class="item"><small>03</small><h2>실행 방식 협의</h2><p>자동화·담당자 처리 경로 조율</p></div>
+<div class="item"><small>04</small><h2>지시·결과 확인</h2><p>업무 전달 후 처리 상태 확인</p></div>
+</div></article>
+<article class="lane partial"><div class="lane-head"><b>Agent without Harness</b></div><div class="flow">
+<div class="item"><small>01</small><h2>개별 요청 입력</h2><p>사용자가 조회·분석 작업 지정</p></div>
+<div class="item"><small>02</small><h2>작업별 답변·Tool 실행</h2><p>요청 단위의 결과 반환</p></div>
+<div class="item"><small>03</small><h2>사람의 실행 경로 조율</h2><p>다음 작업·Tool·담당자 선택</p></div>
+<div class="item"><small>04</small><h2>사람의 후속 확인</h2><p>결과 취합·실패 대응·재요청</p></div>
+</div></article>
+<article class="lane ai"><div class="lane-head"><b>Agent with Harness</b></div><div class="flow">
+<div class="item"><small>01</small><h2>업무·Context 수집</h2><p>Wiki · KG · SAP 상태 연결</p></div>
+<div class="item"><small>02</small><h2>계획·우선순위 결정</h2><p>마감 · 영향도 · 정책 반영</p></div>
+<div class="item"><small>03</small><h2>실행 경로 조율</h2><p>승인 기준에 따라 Tool·Agent 연결</p></div>
+<div class="item"><small>04</small><h2>검증·예외 처리</h2><p>결과 기록 · 필요 시 담당자 판단</p></div>
+</div></article>
+</div>
+
       </section>
       <section class="agent-capability" aria-label="Harness 제공 기능">
         <div class="agent-capability-label">Harness<br>Key Capabilities</div>
