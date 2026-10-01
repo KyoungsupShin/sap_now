@@ -37,7 +37,7 @@ const slides = [
   },
   {
     "file": "ai-native.html",
-    "title": "AI-First에서 AI-Native로",
+    "title": "AI-First → AI-Native",
     "status": "new",
     "purpose": "Explain the software, scope and data shifts behind autonomous enterprise.",
     "keyMessage": "Move from a tool, an app boundary and records to execution, landscape and business context.",
@@ -50,7 +50,7 @@ const slides = [
   {
     "order": 5,
     "file": "8page.html",
-    "title": "Four Core Capabilities — 통합 모델이 제공하는 역량",
+    "title": "Four Core Capabilities",
     "status": "new",
     "purpose": "Summarize Workflow, Context, Build and Execution as capabilities of the integrated model.",
     "keyMessage": "Capabilities span the composition rather than mapping one-to-one to products.",
@@ -63,7 +63,7 @@ const slides = [
   {
     "order": 6,
     "file": "3page.html",
-    "title": "SAP Business AI is embedded across the portfolio",
+    "title": "Agent Workflow & Governance",
     "status": "new",
     "purpose": "Explain SAP portfolio-wide Agent Workflow & Governance using the original SAP PDF page 29 visual.",
     "keyMessage": "Joule orchestrates agents across SAP business domains; AI Foundation supports Custom AI, with built-in Security & Compliance across the portfolio.",
@@ -75,7 +75,7 @@ const slides = [
   {
     "order": 7,
     "file": "7page.html",
-    "title": "판단 · 실행 · 검증을 통제된 순환으로",
+    "title": "Business Context",
     "status": "new",
     "purpose": "Make the internal loop of an autonomous agent easy to understand.",
     "keyMessage": "Agents understand, retrieve, reason, plan, execute, validate, and escalate.",
@@ -87,7 +87,7 @@ const slides = [
   },
   {
     "file": "app-ai-development-draft.html",
-    "title": "App & AI Development — 필요한 실행 역량을 확장",
+    "title": "App & AI Development",
     "status": "draft",
     "purpose": "Draft the missing App & AI Development capability explanation in agenda 01.",
     "keyMessage": "Define a capability gap, build App/Skill/Workflow, validate and approve, then deploy and reuse.",
@@ -101,7 +101,7 @@ const slides = [
   {
     "order": 9,
     "file": "6page.html",
-    "title": "Integrated Operating Model",
+    "title": "Agentic Execution — Integrated Operating Model",
     "status": "new",
     "purpose": "Explain how Joule, Harness and App Builder combine in the intended operating model.",
     "keyMessage": "Harness orchestrates SAP execution through Joule and tools; App Builder extends capabilities through a conditional reviewed build path.",
@@ -127,7 +127,7 @@ const slides = [
   {
     "order": 11,
     "file": "10page.html",
-    "title": "SAP 업무에 연결되는 Joule 경험",
+    "title": "Joule — SAP Data 접근과 업무 실행",
     "status": "revised",
     "beforeFile": "../lges_customer/8page.html",
     "purpose": "Show the SAP-facing entry point for AI-assisted work.",
@@ -141,7 +141,7 @@ const slides = [
   {
     "order": 12,
     "file": "9page.html",
-    "title": "전사 지식을 연결해 업무 관계를 이해",
+    "title": "HANA Knowledge Graph — Business Context 연결",
     "status": "revised",
     "beforeFile": "../lges_customer/7page.html",
     "purpose": "Explain how enterprise meaning and relationships become agent context.",
@@ -155,7 +155,7 @@ const slides = [
   {
     "order": 13,
     "file": "11page.html",
-    "title": "업무 요청을 분석과 실행으로 연결",
+    "title": "Harness — 업무 판단과 실행 조율",
     "status": "revised",
     "beforeFile": "../lges_customer/9page.html",
     "purpose": "Introduce coordinated execution as a capability, not an isolated product.",
@@ -168,7 +168,7 @@ const slides = [
   },
   {
     "file": "app-builder-explanation.html",
-    "title": "App Builder Explanation",
+    "title": "App Builder — App 변경과 배포",
     "status": "restored",
     "purpose": "Explain the original App Builder scenario using editable HTML from the user-supplied 5page.html.",
     "keyMessage": "App Builder adapts document processing code, deploys changes and enables reprocessing rather than relying on repeated IT development requests.",
@@ -182,7 +182,7 @@ const slides = [
   {
     "order": 15,
     "file": "12page.html",
-    "title": "Harness Deep Agent Explanation",
+    "title": "Harness Deep Agent — 복합 분석과 계획",
     "status": "revised",
     "beforeFile": "../lges_customer/10page.html",
     "purpose": "Explain planning beyond a single assistant response.",
@@ -196,7 +196,7 @@ const slides = [
   {
     "order": 16,
     "file": "13page.html",
-    "title": "Harness A2A Explanation",
+    "title": "Harness A2A — Cross-Team 협업",
     "status": "revised",
     "beforeFile": "../lges_customer/11page.html",
     "purpose": "Explain collaboration between specialized agents and applications.",
@@ -223,7 +223,7 @@ const slides = [
   {
     "order": 18,
     "file": "4page.html",
-    "title": "업무를 연결하는 공통 AI 기반",
+    "title": "Shared AI Foundation",
     "status": "revised",
     "beforeFile": "../lges_customer/3page.html",
     "purpose": "Show how shared enterprise intelligence supports applications and agents.",
@@ -236,7 +236,7 @@ const slides = [
   {
     "order": 19,
     "file": "16page.html",
-    "title": "왜 SAP BTP인가?",
+    "title": "SAP BTP — Platform Value & TCO",
     "status": "revised",
     "beforeFile": "../lges_customer/15page.html",
     "purpose": "Connect the autonomous model to SAP BTP's enterprise platform value.",
@@ -249,7 +249,7 @@ const slides = [
   {
     "order": 20,
     "file": "19page.html",
-    "title": "BTP Standard Architecture",
+    "title": "SAP BTP — Standard Architecture",
     "status": "revised",
     "beforeFile": "../lges_customer/13page.html",
     "purpose": "Present the original reference architecture from the user dry-run PDF file page 13.",
@@ -262,7 +262,7 @@ const slides = [
   {
     "order": 21,
     "file": "20page.html",
-    "title": "SAP BTP Kyma 기반 App-in-App Portal Architecture",
+    "title": "SAP BTP — Kyma App-in-App Architecture",
     "status": "revised",
     "beforeFile": "../lges_customer/14page.html",
     "purpose": "Show the implementation architecture for the portal experience.",
@@ -275,7 +275,7 @@ const slides = [
   {
     "order": 22,
     "file": "17page.html",
-    "title": "왜 운영에도 SAP BTP인가?",
+    "title": "SAP BTP — Operations & OPEX",
     "status": "revised",
     "beforeFile": "../lges_customer/16page.html",
     "purpose": "Extend the BTP case to operating and lifecycle needs.",
@@ -301,7 +301,7 @@ const slides = [
   {
     "order": 24,
     "file": "2page.html",
-    "title": "Demo Context & Business Challenges",
+    "title": "Demo — Business Context & Challenges",
     "status": "existing",
     "purpose": "Define the business challenges and goals for the demo organization.",
     "keyMessage": "Enterprise work can move from manual coordination to controlled autonomy.",
@@ -313,7 +313,7 @@ const slides = [
   {
     "order": 25,
     "file": "5page.html",
-    "title": "Target Operating Model — Cross-Team Collaboration",
+    "title": "Demo — Cross-Team Operating Model",
     "status": "revised",
     "beforeFile": "../lges_customer/4page.html",
     "purpose": "Define the cross-team target operating model and scope for the demo.",
@@ -326,7 +326,7 @@ const slides = [
   {
     "order": 26,
     "file": "22page.html",
-    "title": "Autonomous Operations SCM Demo",
+    "title": "Demo — Autonomous SCM Scenarios",
     "status": "revised",
     "beforeFile": "../lges_customer/18page.html",
     "purpose": "Demonstrate increasing levels of autonomy in SCM scenarios.",
@@ -340,7 +340,7 @@ const slides = [
   {
     "order": 27,
     "file": "23page.html",
-    "title": "반복 조율은 줄이고, 중요한 판단에 집중",
+    "title": "Demo — Business Value",
     "status": "new",
     "purpose": "Close with the operational value of controlled autonomy.",
     "keyMessage": "Agents reduce coordination work so people can focus on decisions and exceptions.",
