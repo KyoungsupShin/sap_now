@@ -8,6 +8,7 @@ from pptx.util import Inches, Pt
 from pptx.enum.shapes import MSO_SHAPE
 from pptx.enum.text import MSO_AUTO_SIZE
 from pptx.oxml.ns import qn
+from pptx.oxml.xmlchemy import OxmlElement
 from pptx.dml.color import RGBColor
 import re
 from PIL import Image
@@ -44,10 +45,26 @@ def color(value):
     return RGBColor(*parts)
 def unit(px):
     return Inches(px / 120)
+def set_picture_background(slide, image_path):
+    # Use DrawingML background fill rather than a selectable picture shape.
+    _, relationship_id = slide.part.get_or_add_image_part(str(image_path))
+    background = slide._element.cSld.get_or_add_bg()
+    background_properties = background.get_or_add_bgPr()
+    for child in list(background_properties):
+        background_properties.remove(child)
+    fill = OxmlElement('a:blipFill')
+    blip = OxmlElement('a:blip')
+    blip.set(qn('r:embed'), relationship_id)
+    fill.append(blip)
+    stretch = OxmlElement('a:stretch')
+    stretch.append(OxmlElement('a:fillRect'))
+    fill.append(stretch)
+    background_properties.append(fill)
+    background_properties.append(OxmlElement('a:effectLst'))
 for item in slides:
     slide = hybrid.slides.add_slide(hybrid.slide_layouts[6])
     base = rendered / f"{item['order']:02}-base.png"
-    slide.shapes.add_picture(str(base), 0, 0, width=hybrid.slide_width, height=hybrid.slide_height)
+    set_picture_background(slide, base)
     for card in item.get('nativeCards', []):
         x,y,w,h = (card[k] for k in ('x','y','width','height'))
         kind = MSO_SHAPE.ROUNDED_RECTANGLE if card['radius'] else MSO_SHAPE.RECTANGLE
