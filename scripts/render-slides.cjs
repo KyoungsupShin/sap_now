@@ -32,7 +32,7 @@ const { chromium } = require('playwright');
           if (parent.closest('script,style,svg')) continue;
           const style = getComputedStyle(parent);
           if (style.visibility === 'hidden' || style.display === 'none' || style.opacity === '0') continue;
-          const owner=parent.closest('h1,h2,h3,h4,p,li,dt,dd,th,td,.conclusion') || parent;
+          const owner=parent.matches('.enterprise-kpis > span') ? parent : (parent.closest('h1,h2,h3,h4,p,li,dt,dd,th,td,.conclusion') || parent);
           if(!owners.has(owner))owners.set(owner,owners.size);
           let line;
           for (let j=0; j<node.textContent.length; j++) {
@@ -48,7 +48,7 @@ const { chromium } = require('playwright');
             line.text+=char; line.width=r.right-line.x; parents.add(parent);
           }
         }
-        const selector='.cap,.development-step,.execution-stage,.process-node,.item,.model-node,.oversight-card,.request,.shared-entry';
+        const selector='.cap,.development-step,.execution-stage,.process-node,.item,.model-node,.oversight-card,.request,.shared-entry,.business-context-detail .operation-table td,.business-context-detail .operation-table th,.business-context-detail .response-table th';
         const cards=document.querySelector('main.original-scenario') ? [] : [...root.querySelectorAll(selector)].filter(e=>!e.querySelector(selector)).map((e,i)=> {
           const b=e.getBoundingClientRect(),c=getComputedStyle(e);
           e.dataset.exportCard=i;
