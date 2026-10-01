@@ -267,7 +267,7 @@ const slides = [
     "beforeFile": "../lges_customer/14page.html",
     "purpose": "Show the implementation architecture for the portal experience.",
     "keyMessage": "The portal architecture operationalizes the connected experience on BTP.",
-    "changes": "Reordered into the architecture section.",
+    "changes": "Recreated the architecture visual using the supplied Bring Your Own Agent reference style; retained current workload, service, protocol and external-system labels.",
     "visualAudit": "SIMPLIFY",
     "section": "SAP BTP Architecture",
     "sectionNumber": "03"
