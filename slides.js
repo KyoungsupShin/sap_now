@@ -75,6 +75,31 @@ const slides = [
   },
   {
     "order": 7,
+    "file": "3page.html",
+    "title": "Business Context을 이해해야 Agent가 올바르게 실행",
+    "status": "new",
+    "purpose": "Explain why enterprise AI needs more than a generic LLM.",
+    "keyMessage": "Autonomous AI requires data, process, knowledge, identity, and policy context.",
+    "changes": "Moved into agenda 01 to explain Business Context and the governed Execution Loop before Human Oversight.",
+    "visualAudit": "SIMPLIFY",
+    "section": "Autonomous Enterprise & Governance",
+    "sectionNumber": "01"
+  },
+  {
+    "order": 8,
+    "file": "7page.html",
+    "title": "판단 · 실행 · 검증을 통제된 순환으로",
+    "status": "new",
+    "purpose": "Make the internal loop of an autonomous agent easy to understand.",
+    "keyMessage": "Agents understand, retrieve, reason, plan, execute, validate, and escalate.",
+    "changes": "Moved into agenda 01 to explain Business Context and the governed Execution Loop before Human Oversight.",
+    "visualAudit": "SIMPLIFY",
+    "agents": "Agent · 요청 이해부터 판단·실행·검증까지",
+    "section": "Autonomous Enterprise & Governance",
+    "sectionNumber": "01"
+  },
+  {
+    "order": 9,
     "file": "14page.html",
     "title": "Human + Agent Operating Model",
     "status": "new",
@@ -97,23 +122,10 @@ const slides = [
     "kind": "divider",
     "section": "Agentic Execution",
     "sectionNumber": "02",
-    "order": 8
+    "order": 10
   },
   {
-    "order": 9,
-    "file": "7page.html",
-    "title": "판단 · 실행 · 검증을 통제된 순환으로",
-    "status": "new",
-    "purpose": "Make the internal loop of an autonomous agent easy to understand.",
-    "keyMessage": "Agents understand, retrieve, reason, plan, execute, validate, and escalate.",
-    "changes": "New operational model slide.",
-    "visualAudit": "SIMPLIFY",
-    "agents": "Agent · 요청 이해부터 판단·실행·검증까지",
-    "section": "Agentic Execution",
-    "sectionNumber": "02"
-  },
-  {
-    "order": 10,
+    "order": 11,
     "file": "10page.html",
     "title": "SAP 업무에 연결되는 Joule 경험",
     "status": "revised",
@@ -123,18 +135,6 @@ const slides = [
     "changes": "Title made message-led and moved into the capability narrative.",
     "visualAudit": "TOO TEXT-HEAVY",
     "agents": "Joule Assistant · SAP 업무 진입점",
-    "section": "Agentic Execution",
-    "sectionNumber": "02"
-  },
-  {
-    "order": 11,
-    "file": "3page.html",
-    "title": "Business Context을 이해해야 Agent가 올바르게 실행",
-    "status": "new",
-    "purpose": "Explain why enterprise AI needs more than a generic LLM.",
-    "keyMessage": "Autonomous AI requires data, process, knowledge, identity, and policy context.",
-    "changes": "Moved to detailed agent execution section as Business Context grounding.",
-    "visualAudit": "SIMPLIFY",
     "section": "Agentic Execution",
     "sectionNumber": "02"
   },
