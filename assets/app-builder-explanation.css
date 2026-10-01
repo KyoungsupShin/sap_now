@@ -18,7 +18,7 @@
 .app-builder-detail .new .process-head b,.app-builder-detail .to-be .process-head b { background:#fff0df; color:#a64b00; }
 .app-builder-detail .process-flow { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; }
 .app-builder-detail .new .process-flow { grid-template-columns:repeat(6,minmax(0,1fr)); }
-.app-builder-detail .to-be .process-flow { grid-template-columns:repeat(4,minmax(0,1fr)); }
+.app-builder-detail .to-be .process-flow { grid-template-columns:repeat(5,minmax(0,1fr)); }
 .app-builder-detail .process-node { position:relative; display:flex; flex-direction:column; justify-content:center; min-height:103px; padding:28px 10px 10px; border-top:3px solid #1b90ff; background:#f5faff; }
 .app-builder-detail .new .process-node,.app-builder-detail .to-be .process-node { border-top-color:#e9730c; background:#fff8f0; }
 .app-builder-detail .process-node strong { display:block; color:#000; font-size:17px; font-weight:500; line-height:1.25; }
