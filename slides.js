@@ -249,12 +249,12 @@ const slides = [
   {
     "order": 20,
     "file": "19page.html",
-    "title": "SAP Business AI Platform Architecture",
+    "title": "BTP Standard Architecture",
     "status": "revised",
     "beforeFile": "../lges_customer/13page.html",
-    "purpose": "Explain the official SAP Business AI Platform AI services architecture from the supplied PDF.",
-    "keyMessage": "Joule, development tooling, model access and data services form the SAP platform foundation.",
-    "changes": "Uses original PDF file page 30; this is distinct from the unavailable original Agentic Engineering for SAP Extensions image.",
+    "purpose": "Present the original reference architecture from the user dry-run PDF file page 13.",
+    "keyMessage": "Agent Harness connects SAP Kyma, SAP Build, AI services and business systems.",
+    "changes": "Restored the original architecture image from supplied dry-run PDF page 13 without modifying its contents.",
     "visualAudit": "SIMPLIFY",
     "section": "SAP BTP Architecture",
     "sectionNumber": "03"

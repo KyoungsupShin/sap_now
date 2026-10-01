@@ -16,6 +16,21 @@
         2241,
         756
       ]
+    },
+    {
+      "file": "agentic-engineering-sap-extensions.png",
+      "pdf_page": 13,
+      "method": "unaltered diagram-region rasterization at 4x PDF points",
+      "crop_pdf_points": [
+        178,
+        119,
+        700,
+        383
+      ],
+      "size": [
+        2088,
+        1056
+      ]
     }
   ]
 }
