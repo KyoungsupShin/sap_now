@@ -222,32 +222,6 @@ const slides = [
   },
   {
     "order": 18,
-    "file": "4page.html",
-    "title": "Shared AI Foundation",
-    "status": "revised",
-    "beforeFile": "../lges_customer/3page.html",
-    "purpose": "Show how shared enterprise intelligence supports applications and agents.",
-    "keyMessage": "Connected applications build on one shared AI and knowledge foundation.",
-    "changes": "Moved after business context and reframed as the solution vision.",
-    "visualAudit": "REDESIGN · TOO UI-LIKE",
-    "section": "SAP BTP Architecture",
-    "sectionNumber": "03"
-  },
-  {
-    "order": 19,
-    "file": "16page.html",
-    "title": "SAP BTP — Platform Value & TCO",
-    "status": "revised",
-    "beforeFile": "../lges_customer/15page.html",
-    "purpose": "Connect the autonomous model to SAP BTP's enterprise platform value.",
-    "keyMessage": "SAP BTP combines business context, integration, and extension capabilities.",
-    "changes": "Moved after the operating model and governance rationale.",
-    "visualAudit": "TOO TEXT-HEAVY",
-    "section": "SAP BTP Architecture",
-    "sectionNumber": "03"
-  },
-  {
-    "order": 20,
     "file": "19page.html",
     "title": "SAP BTP — Standard Architecture",
     "status": "revised",
@@ -260,7 +234,7 @@ const slides = [
     "sectionNumber": "03"
   },
   {
-    "order": 21,
+    "order": 19,
     "file": "20page.html",
     "title": "SAP BTP — Kyma App-in-App Architecture",
     "status": "revised",
@@ -273,7 +247,20 @@ const slides = [
     "sectionNumber": "03"
   },
   {
-    "order": 22,
+    "order": 20,
+    "file": "16page.html",
+    "title": "SAP BTP — Platform Value & TCO",
+    "status": "revised",
+    "beforeFile": "../lges_customer/15page.html",
+    "purpose": "Connect the autonomous model to SAP BTP's enterprise platform value.",
+    "keyMessage": "SAP BTP combines business context, integration, and extension capabilities.",
+    "changes": "Moved after the operating model and governance rationale.",
+    "visualAudit": "TOO TEXT-HEAVY",
+    "section": "SAP BTP Architecture",
+    "sectionNumber": "03"
+  },
+  {
+    "order": 21,
     "file": "17page.html",
     "title": "SAP BTP — Operations & OPEX",
     "status": "revised",
@@ -296,10 +283,10 @@ const slides = [
     "kind": "divider",
     "section": "Demo & Business Value",
     "sectionNumber": "04",
-    "order": 23
+    "order": 22
   },
   {
-    "order": 24,
+    "order": 23,
     "file": "2page.html",
     "title": "Demo — Business Context & Challenges",
     "status": "existing",
@@ -307,6 +294,19 @@ const slides = [
     "keyMessage": "Enterprise work can move from manual coordination to controlled autonomy.",
     "changes": "Moved to Demo as the organizational business context.",
     "visualAudit": "TOO TEXT-HEAVY",
+    "section": "Demo & Business Value",
+    "sectionNumber": "04"
+  },
+  {
+    "order": 24,
+    "file": "4page.html",
+    "title": "Shared AI Foundation",
+    "status": "revised",
+    "beforeFile": "../lges_customer/3page.html",
+    "purpose": "Show how shared enterprise intelligence supports applications and agents.",
+    "keyMessage": "Connected applications build on one shared AI and knowledge foundation.",
+    "changes": "Moved immediately before Cross-Team Operating Model as the shared AI foundation for the demo.",
+    "visualAudit": "REDESIGN · TOO UI-LIKE",
     "section": "Demo & Business Value",
     "sectionNumber": "04"
   },
