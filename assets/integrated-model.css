@@ -29,3 +29,19 @@
  .oversight-card { min-height:0; }
 }
 .integrated-slide strong { word-break:keep-all; }
+
+/* Original SAP PDF page 15 visual supporting the capability map. */
+.pdf-capability-map .capability-visual { display:grid; grid-template-columns:1.6fr 1fr; gap:50px; align-items:center; height:280px; margin:30px 0 0; }
+.pdf-capability-map .capability-visual img { width:100%; height:280px; object-fit:contain; }
+.pdf-capability-map figcaption small { color:#0070f2; font-size:12px; }
+.pdf-capability-map figcaption h2 { font-size:30px; font-weight:500; line-height:1.2; margin:15px 0; }
+.pdf-capability-map figcaption p { color:#475e75; font-size:21px; line-height:1.4; margin:0; }
+.slide.integrated-capabilities.pdf-capability-map>.grid { margin-top:25px !important; }
+.pdf-capability-map .cap { min-height:255px; padding:20px; }
+.pdf-capability-map .cap h2 { margin:16px 0 12px; font-size:23px; }
+.pdf-capability-map .cap p { font-size:17px; }
+.pdf-capability-map .cap strong { margin-top:18px; font-size:15px; }
+@media(max-width:800px) {
+ .pdf-capability-map .capability-visual { height:auto; grid-template-columns:1fr; gap:20px; }
+ .pdf-capability-map .capability-visual img { height:230px; }
+}
