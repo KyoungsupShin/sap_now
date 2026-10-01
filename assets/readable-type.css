@@ -1,0 +1,58 @@
+/* Presentation readability at the deck's 1600 × 900 design size. */
+@media (min-width:801px) {
+ .slide small, .slide .visual-eyebrow { font-size:14px !important; letter-spacing:0; }
+ .slide .chapter-agenda li>span { font-size:18px; }
+ .pdf-capability-map .cap p, .development-step p, .execution-stage p { font-size:18px !important; }
+ .comparison-template .request p { font-size:16px; }
+ .comparison-template .question-rail strong { font-size:18px; }
+ .comparison-template .content { grid-template-columns:170px 250px minmax(0,1fr); gap:18px; }
+ .comparison-template .request { padding:16px; }
+ .comparison-template .lane-head b { font-size:16px; }
+ .comparison-template .item { padding-left:8px; padding-right:8px; }
+ .comparison-template .item h2 { font-size:19px; }
+ .comparison-template .item p { font-size:16px; }
+ .comparison-template .flow { gap:12px; }
+ .comparison-template .lane { padding-left:12px; padding-right:12px; }
+ .slide .parallel-query span { font-size:14px; }
+ .slide .parallel-query b { font-size:18px; }
+ .slide .module p { font-size:18px; }
+ .slide .connector-label { font-size:14px; }
+ .app-builder-detail .process-node strong { font-size:19px; }
+ .app-builder-detail .process-node span { font-size:16px; }
+ .app-builder-detail .cost-badge, .app-builder-detail .process-head b { font-size:14px; }
+ .app-builder-detail .format-icon strong { font-size:16px; }
+ .slide .comparison td.category { font-size:14px; padding:8px 4px; }
+ .slide .comparison b { font-size:17px; }
+ .slide .comparison span { font-size:14px; }
+ .slide .comparison td.work b { font-size:16px; }
+ .slide .comparison td.work span { font-size:14px; }
+ .slide .comparison td.btp b { font-size:19px; }
+ .slide .comparison td.btp span { font-size:16px; }
+ .slide .comparison th.work { font-size:19px; }
+ .slide .comparison td { padding-left:8px; padding-right:8px; }
+ .slide .operation-table td, .slide .operation-table .team td { font-size:16px; }
+ .slide .operation-table .cell-title, .slide .operation-table .team .cell-title { font-size:16px; }
+ .slide .operation-table .enterprise-row td { font-size:17px; }
+ .slide .response-table td { font-size:17px; }
+ .slide .divider { font-size:16px; }
+ .slide .scenario .description { font-size:18px; }
+ .slide .scenario .agent-name { font-size:19px; }
+ .slide .scenario .flow-step { font-size:18px; }
+ .slide .scenario .scenario-number, .slide .scenario .demo-label { font-size:16px; }
+}
+@media (min-width:801px) {
+ .slide .step { font-size:16px; }
+ .slide .step b { font-size:17px; }
+ .slide .agent-capability-label { font-size:14px; }
+ .slide .agent-capability-item span { font-size:16px; }
+ .app-builder-detail .format-icon.issue strong { font-size:16px; }
+ .slide .label { font-size:16px; }
+ .slide .parallel-query span { width:112px; margin-left:-11px; }
+}
+@media (min-width:801px) {
+ .slide .agent-capability { grid-template-columns:220px 1fr 1fr; }
+ .slide .agent-capability-label { white-space:nowrap; }
+ .business-context-detail .operation-table td { padding-top:6px; padding-bottom:6px; }
+ .business-context-detail .response-table td { padding-top:5px; padding-bottom:5px; }
+ .business-context-detail .divider { margin-top:10px; margin-bottom:6px; }
+}
