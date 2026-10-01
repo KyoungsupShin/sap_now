@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Demo Scenarios | SAP BTP AI</title>
+    <link rel="stylesheet" href="sap-template.css" />
+    <style>
+      :root { --sap-blue:#0a6ed1; --ink:#102a43; --muted:#526f89; --line:#c5ddeb; }
+      * { box-sizing:border-box; }
+      html, body { min-width:320px; min-height:100%; margin:0; background:#102a43; font-family:"72 Brand","SAP 72",Arial,sans-serif; }
+      .slide { position:relative; width:min(100vw,1600px); min-height:900px; margin:auto; overflow:hidden; padding:76px 110px 72px; background:#f8fbff; color:var(--ink); }
+      .top-line { position:absolute; inset:0 0 auto; height:9px; background:var(--sap-blue); }
+      .brand { position:absolute; top:44px; right:78px; color:#173b5b; font-size:17px; font-weight:600; letter-spacing:-.02em; }
+      .brand b, h1 span { color:var(--sap-blue); }
+      .kicker { margin:0 0 22px; color:var(--sap-blue); font-size:18px; font-weight:700; letter-spacing:.11em; }
+      h1 { margin:0; font-family:"72 Brand Medium","72 Brand","SAP 72",Arial,sans-serif; font-size:46px; font-weight:600; line-height:1.05; letter-spacing:-.045em; white-space:nowrap; }
+      .lead { margin:13px 0 0; color:var(--muted); font-size:18px; font-weight:600; letter-spacing:-.025em; }
+      .scenario-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:22px; margin-top:36px; }
+      .scenario { position:relative; min-height:455px; padding:27px 29px; overflow:hidden; border:1px solid #b9d9ed; border-top:7px solid var(--sap-blue); }
+      .scenario::after { position:absolute; right:-70px; bottom:-110px; width:260px; height:260px; border-radius:50%; background:rgba(255,255,255,.33); content:""; }
+      .scenario.one { background:linear-gradient(145deg,#f7fcff 0%,#e2f3ff 100%); }
+      .scenario.two { background:linear-gradient(145deg,#eef8ff 0%,#cceaff 100%); }
+      .scenario.three { background:linear-gradient(145deg,#e2f3ff 0%,#a9d9f7 100%); }
+      .scenario-number { position:relative; z-index:1; margin:0 0 17px; color:#39779d; font-family:"72 Brand Medium","72 Brand","SAP 72",Arial,sans-serif; font-size:14px; font-weight:600; letter-spacing:.1em; }
+      .scenario h2 { position:relative; z-index:1; min-height:58px; margin:0; color:#173b5b; font-family:"72 Brand Medium","72 Brand","SAP 72",Arial,sans-serif; font-size:25px; font-weight:600; letter-spacing:-.04em; line-height:1.15; }
+      .scenario .agent-name { position:relative; z-index:1; margin:7px 0 0; color:var(--sap-blue); font-family:"72 Brand Medium","72 Brand","SAP 72",Arial,sans-serif; font-size:17px; font-weight:600; letter-spacing:-.025em; }
+      .scenario .description { position:relative; z-index:1; min-height:68px; margin:22px 0 0; color:#365775; font-size:15px; font-weight:600; line-height:1.4; }
+      .flow { position:relative; z-index:1; display:grid; gap:0; margin:26px 0 0 10px; padding:3px 0 3px 18px; border-left:2px dashed #79bce4; }
+      .flow-step { position:relative; min-height:47px; padding:0 0 13px; color:#173b5b; font-family:"72 Brand Medium","72 Brand","SAP 72",Arial,sans-serif; font-size:15px; font-weight:600; letter-spacing:-.025em; }
+      .flow-step:last-child { padding-bottom:0; }
+      .flow-step::before { position:absolute; top:2px; left:-24px; width:9px; height:9px; border:2px solid var(--sap-blue); border-radius:50%; background:#fff; content:""; }
+      .flow-step:first-child::before { background:var(--sap-blue); }
+      .scenario.one .flow { gap:0; margin-top:20px; }
+      .scenario.one .flow-step { min-height:35px; padding-bottom:7px; font-size:14px; }
+      .scenario.one .flow-step::before { top:1px; }
+      .scenario.two .flow,
+      .scenario.three .flow { gap:0; margin-top:20px; }
+      .scenario.two .flow-step,
+      .scenario.three .flow-step { min-height:35px; padding-bottom:7px; font-size:14px; }
+      .scenario.two .flow-step::before,
+      .scenario.three .flow-step::before { top:1px; }
+      .demo-label { position:absolute; z-index:1; right:29px; bottom:25px; color:#286b92; font-family:"72 Brand Medium","72 Brand","SAP 72",Arial,sans-serif; font-size:12px; font-weight:600; letter-spacing:.09em; }
+      .summary { display:flex; align-items:center; justify-content:center; min-height:70px; margin-top:19px; padding:13px 24px; border-left:6px solid var(--sap-blue); background:#eef8ff; color:#173b5b; font-family:"72 Brand Medium","72 Brand","SAP 72",Arial,sans-serif; font-size:19px; font-weight:600; letter-spacing:-.025em; line-height:1.35; text-align:center; }
+      .summary b { color:var(--sap-blue); }
+      .footer { position:absolute; left:110px; bottom:30px; color:#637994; font-size:14px; font-weight:600; }
+      @media (max-width:800px) { .slide { min-height:100vh; padding:72px 30px 84px; } .brand { top:28px; right:30px; font-size:13px; } h1 { font-size:37px; white-space:normal; } .scenario-grid { grid-template-columns:1fr; } .footer { left:30px; } }
+    </style>
+  </head>
+  <body>
+    <main class="slide">
+      <div class="top-line"></div>
+      <div class="brand">SAP BTP AI</div><p class="kicker">22 · AUTONOMOUS SCM · DEMO SCENARIOS</p>
+      <h1>Autonomous <span>SCM Demo</span></h1>
+
+      <section class="scenario-grid" aria-label="Autonomous App-in-App demo scenarios">
+        <article class="scenario one">
+          <p class="scenario-number">DEMO 01</p>
+          <h2>Inbound Process Change</h2>
+          <p class="agent-name">App Builder Agent · 입고 처리</p>
+          <p class="description">협력사 납품서·ASN 양식 변경에 맞춰 입고 처리 앱을 빠르게 변경·배포합니다.</p>
+          <div class="flow">
+            <div class="flow-step">OCR 실패 · 양식 변경 감지</div>
+            <div class="flow-step">입고 담당자 변경 요청</div>
+            <div class="flow-step">App Builder로 처리 로직 수정</div>
+            <div class="flow-step">검증 · 운영 배포</div>
+            <div class="flow-step">기준 수정 · 입고 반영</div>
+          </div>
+          <span class="demo-label">SCM INBOUND</span>
+        </article>
+
+        <article class="scenario two">
+          <p class="scenario-number">DEMO 02</p>
+          <h2>Daily SCM Exception</h2>
+          <p class="agent-name">Wiki Agent · 공급 예외</p>
+          <p class="description">입고 지연·재고 부족·고객 납기 리스크를 업무 지식과 이력으로 빠르게 처리합니다.</p>
+          <div class="flow">
+            <div class="flow-step">입고 지연 · 재고 부족 문의</div>
+            <div class="flow-step">Wiki에서 SOP · 과거 Ticket 조회</div>
+            <div class="flow-step">S/4 재고 · 발주 · 납기 현황 확인</div>
+            <div class="flow-step">대체 공급 · 출하 우선순위 판단</div>
+            <div class="flow-step">담당자 대응 지시 · 결과 기록</div>
+          </div>
+          <span class="demo-label">SCM EXCEPTION</span>
+        </article>
+
+        <article class="scenario three">
+          <p class="scenario-number">DEMO 03</p>
+          <h2>Demand-to-Supply Orchestration</h2>
+          <p class="agent-name">Harness Agent · 수요·납기 변동</p>
+          <p class="description">고객 수요·납기 변경의 생산·구매·물류 영향을 분석하고 실행까지 연결합니다.</p>
+          <div class="flow">
+            <div class="flow-step">고객 수요 · 납기 변경 접수</div>
+            <div class="flow-step">생산 능력 · 재고 · 공급 리스크 분석</div>
+            <div class="flow-step">영업 · 생산 · 구매 · 물류 영향 종합</div>
+            <div class="flow-step">부서별 작업 지시 · Wiki 기록</div>
+            <div class="flow-step">반복 이슈 App Builder 개선</div>
+          </div>
+          <span class="demo-label">SCM ORCHESTRATION</span>
+        </article>
+      </section>
+
+      <span class="footer">SAP | BTP AI Solution Advisory</span>
+      <span class="slide-page-number">22</span>
+    </main>
+  </body>
+</html>

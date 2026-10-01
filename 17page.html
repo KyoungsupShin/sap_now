@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Why SAP BTP for Operations? | SAP BTP AI</title>
+    <link rel="stylesheet" href="sap-template.css" />
+    <style>
+      :root { --sap-blue:#0a6ed1; --ink:#102a43; --muted:#526f89; }
+      * { box-sizing:border-box; }
+      html, body { min-width:320px; min-height:100%; margin:0; background:#102a43; font-family:"72 Brand","SAP 72",Arial,sans-serif; }
+      .slide { position:relative; width:min(100vw,1600px); min-height:900px; margin:auto; overflow:hidden; padding:76px 110px 72px; background:#f8fbff; color:var(--ink); }
+      .top-line { position:absolute; inset:0 0 auto; height:9px; background:var(--sap-blue); }
+      .brand { position:absolute; top:44px; right:78px; color:#173b5b; font-size:17px; font-weight:600; letter-spacing:-.02em; }
+      .brand b, h1 span { color:var(--sap-blue); }
+      .kicker { margin:0 0 22px; color:var(--sap-blue); font-size:18px; font-weight:700; letter-spacing:.11em; }
+      h1 { margin:0; font-family:"72 Brand Medium","72 Brand","SAP 72",Arial,sans-serif; font-size:46px; font-weight:600; line-height:1.05; letter-spacing:-.045em; white-space:nowrap; }
+      .comparison-wrap { position:relative; margin-top:27px; }
+      .comparison { width:100%; border-collapse:collapse; table-layout:fixed; background:#fff; }
+      .external-group-frame { position:absolute; z-index:2; top:0; bottom:0; left:7%; width:59%; border:3px dashed #8fb4cc; pointer-events:none; }
+      .comparison col:nth-child(1) { width:7%; }
+      .comparison col:nth-child(2), .comparison col:nth-child(3) { width:19%; }
+      .comparison col:nth-child(4) { width:21%; }
+      .comparison col:nth-child(5) { width:34%; }
+      .comparison th { height:78px; padding:13px 14px; border:0; color:#173b5b; font-family:"72 Brand Medium","72 Brand","SAP 72",Arial,sans-serif; font-size:25px; font-weight:600; letter-spacing:-.035em; text-align:center; vertical-align:middle; }
+      .comparison th.work { color:#c65b00; font-size:17px; }
+      .comparison th.btp { color:var(--sap-blue); }
+      .comparison td { height:80px; padding:9px 12px; border:0; text-align:center; vertical-align:middle; }
+      .comparison td.category { color:#39779d; font-size:10px; font-weight:700; line-height:1.15; }
+      .comparison td.work { padding:8px; }
+      .comparison tbody tr:nth-child(odd) td { background:#f3f9fd; }
+      .comparison tbody tr:nth-child(even) td { background:#fff; }
+      .comparison b { display:block; color:#173b5b; font-family:"72 Brand Medium","72 Brand","SAP 72",Arial,sans-serif; font-size:14px; font-weight:600; letter-spacing:-.025em; }
+      .comparison span { display:block; margin-top:3px; color:var(--muted); font-size:10px; font-weight:600; line-height:1.2; }
+      .comparison td.work b { color:#c65b00; font-size:12px; }
+      .comparison td.work span { color:#6a6d70; font-size:9px; }
+      .comparison td.btp b { color:var(--sap-blue); font-size:18px; }
+      .comparison td.btp span { font-size:12px; }
+      .conclusion { display:flex; align-items:center; justify-content:center; min-height:86px; margin-top:18px; padding:16px 21px; border:1px solid #9dcbe7; border-left:7px solid var(--sap-blue); background:#eef8ff; color:#173b5b; font-family:"72 Brand Medium","72 Brand","SAP 72",Arial,sans-serif; font-size:29px; font-weight:600; letter-spacing:-.03em; line-height:1.2; text-align:center; }
+      .conclusion b { color:var(--sap-blue); }
+      .footer { position:absolute; left:110px; bottom:30px; color:#637994; font-size:14px; font-weight:600; }
+      @media (max-width:800px) { .slide { min-height:100vh; padding:72px 30px 84px; } .brand { top:28px; right:30px; font-size:13px; } h1 { font-size:37px; white-space:normal; } .external-group-frame { display:none; } .comparison { display:block; } .comparison thead,.comparison tbody,.comparison tr,.comparison th,.comparison td { display:block; width:100%; height:auto; } .comparison th,.comparison td { padding:14px 18px; } .footer { left:30px; } }
+    </style>
+  </head>
+  <body>
+    <main class="slide">
+      <div class="top-line"></div>
+      <div class="brand">SAP BTP AI</div><p class="kicker">17 · WHY SAP BTP · OPERATIONS</p>
+      <h1>Why <span>SAP BTP for Operations?</span></h1>
+
+      <div class="comparison-wrap">
+        <table class="comparison" aria-label="AWS Azure and SAP BTP operations comparison">
+          <colgroup><col /><col /><col /><col /><col /></colgroup>
+          <thead><tr><th aria-label="항목"></th><th>AWS</th><th>Azure</th><th class="work">운영 시 추가로 필요한 작업</th><th class="btp">SAP BTP</th></tr></thead>
+          <tbody>
+            <tr><td class="category">SERVICE<br />SUPPORT</td><td><b>AWS Support</b><span>서비스별 지원·운영 도구</span></td><td><b>Azure Support</b><span>서비스별 지원·운영 도구</span></td><td class="work"><b>AI·앱·S/4 이슈 통합 대응</b><span>장애 원인·책임 범위·재처리 흐름을 직접 정리</span></td><td class="btp"><b>One Support</b><span>앱·통합·플랫폼 운영 기준</span></td></tr>
+            <tr><td class="category">STANDARD<br />CHANGE</td><td><b>Cloud Service Updates</b><span>서비스별 변경 공지·검증</span></td><td><b>Azure Service Updates</b><span>서비스별 변경 공지·검증</span></td><td class="work"><b>표준·버전 변경 영향 확인</b><span>AI·연동·배포 설정을 업무 앱별로 점검</span></td><td class="btp"><b>Reference Architecture</b><span>표준 변경·버전 관리 기준</span></td></tr>
+            <tr><td class="category">S/4 CHANGE<br />IMPACT</td><td><b>API Monitoring Tools</b><span>연계 오류·로그 개별 확인</span></td><td><b>API Management · Monitor</b><span>연계 오류·로그 개별 확인</span></td><td class="work"><b>S/4 API·데이터 변경 영향 분석</b><span>AI·Knowledge·업무 앱의 영향과 테스트 직접 관리</span></td><td class="btp"><b>Destination · Integration Suite</b><span>SAP 연결·변경 영향 관리</span></td></tr>
+            <tr><td class="category">AI &amp; APP<br />OPERATIONS</td><td><b>CloudWatch · CloudTrail</b><span>인프라·감사 로그 관리</span></td><td><b>Azure Monitor · Purview</b><span>인프라·감사 로그 관리</span></td><td class="work"><b>AI·앱·배포 이력 통합 관리</b><span>모델·프롬프트·권한·배포 변경을 별도 운영</span></td><td class="btp"><b>AI Launchpad · Kyma · SAP Build</b><span>AI·앱·배포 통합 운영</span></td></tr>
+          </tbody>
+        </table>
+        <span class="external-group-frame" aria-hidden="true"></span>
+      </div>
+
+      <p class="conclusion"><b>OPEX</b> (CSP + S/4·LoB 연동 운영) &gt; <b>OPEX</b> (SAP BTP)</p>
+      <span class="footer">SAP | BTP AI Solution Advisory</span>
+      <span class="slide-page-number">17</span>
+    </main>
+  </body>
+</html>

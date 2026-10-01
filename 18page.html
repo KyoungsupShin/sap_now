@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>SAP BTP AI</title>
+    <link rel="stylesheet" href="sap-template.css" />
+    <style>
+      :root { --sap-blue: #002a86; --ink: #102a43; }
+      * { box-sizing: border-box; }
+      html, body {
+        min-width: 320px;
+        min-height: 100%;
+        margin: 0;
+        background: #102a43;
+        font-family: "72 Brand", "72", Arial, sans-serif;
+      }
+      .slide {
+        position: relative;
+        width: min(100vw, 1600px);
+        min-height: 900px;
+        margin: auto;
+        overflow: hidden;
+        background: #fff;
+        color: var(--ink);
+      }
+      .brand {
+        position: absolute;
+        top: 44px;
+        right: 78px;
+        color: #173b5b;
+        font-size: 17px;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+      }
+      .brand b { color: #0070f2; }
+      h1 {
+        position: absolute;
+        top: 166px;
+        left: 110px;
+        width: 650px;
+        margin: 0;
+        color: #102a43;
+        font-size: 52px;
+        font-weight: 500;
+        line-height: 1.08;
+        letter-spacing: -0.055em;
+        white-space: normal;
+      }
+      h1 span { color: #0070f2; }
+      .geometric-art {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 50%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+      .footer {
+        position: absolute;
+        left: 110px;
+        bottom: 30px;
+        z-index: 1;
+        color: rgba(255,255,255,.88);
+        font-size: 14px;
+        font-weight: 700;
+      }
+      .slide-page-number {
+        position: absolute;
+        right: 78px;
+        bottom: 27px;
+        z-index: 1;
+        color: rgba(255,255,255,.92);
+        font-size: 15px;
+        font-weight: 700;
+      }
+      @media (max-width: 800px) {
+        .slide { min-height: 100vh; }
+        .brand { top: 28px; right: 30px; font-size: 13px; }
+        h1 { top: 130px; left: 30px; right: 30px; font-size: 36px; white-space: normal; }
+        .geometric-art { width: 46%; }
+        .footer { left: 30px; bottom: 18px; font-size: 11px; }
+        .slide-page-number { right: 30px; bottom: 16px; font-size: 12px; }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="slide">
+      <div class="brand">SAP BTP AI</div>
+      <h1>Reference <span>SAP BTP<br />Architecture &amp; Cost</span></h1>
+      <img class="geometric-art" src="assets/sap-template-geometric-half.png" alt="" />
+      <span class="footer">SAP | BTP AI Solution Advisory</span>
+      <span class="slide-page-number">18</span>
+    </main>
+  </body>
+</html>

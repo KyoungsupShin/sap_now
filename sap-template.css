@@ -1,0 +1,294 @@
+/* SAP BTP 2023 template alignment */
+:root {
+  --sap-blue: #1b90ff !important;
+  --sap-link-blue: #0070f2;
+  --blue: #1b90ff !important;
+  --orange: #e76500 !important;
+  --sap-ink: #1d2d3e;
+  --ink: var(--sap-ink) !important;
+  --muted: #556b82 !important;
+  --line: #d5dde5 !important;
+  --sap-surface: #ffffff;
+  --sap-subtle: #f5f6f7;
+}
+
+html,
+body {
+  background: #f5f6f7 !important;
+  font-family: "72 Brand", "SAP 72", Arial, sans-serif !important;
+}
+
+.slide {
+  width: min(100vw, 1600px) !important;
+  min-height: 900px !important;
+  padding: 76px 110px 78px !important;
+  background-color: #fff !important;
+  background-image: url("assets/sap-template-ripple.svg") !important;
+  background-position: right -160px bottom -125px !important;
+  background-repeat: no-repeat !important;
+  background-size: 720px auto !important;
+  color: var(--sap-ink) !important;
+}
+
+.top-line,
+.top {
+  height: 6px !important;
+  background: var(--sap-blue) !important;
+}
+
+.brand {
+  top: 31px !important;
+  color: #223548 !important;
+  font-family: "72 Brand Medium", "72 Brand", "SAP 72", Arial, sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0 !important;
+}
+
+.brand b,
+h1 span,
+.kicker,
+.number {
+  color: var(--sap-link-blue) !important;
+}
+
+.kicker {
+  margin: 3px 0 14px !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  letter-spacing: .08em !important;
+}
+
+h1 {
+  color: var(--sap-ink) !important;
+  font-family: "72 Brand Medium", "72 Brand", "SAP 72", Arial, sans-serif !important;
+  font-size: clamp(38px, 3vw, 48px) !important;
+  font-weight: 500 !important;
+  line-height: 1.08 !important;
+  letter-spacing: -.035em !important;
+  white-space: nowrap !important;
+}
+
+h2,
+h3,
+strong,
+b {
+  font-family: "72 Brand Medium", "72 Brand", "SAP 72", Arial, sans-serif;
+}
+
+/* Reduce the dashboard feel while retaining the original information structure. */
+article,
+.module,
+.level,
+.team-card,
+.process-card,
+.lane,
+.ticket,
+.step,
+.item,
+.architecture {
+  box-shadow: none !important;
+}
+
+.module,
+.level,
+.team-card,
+.process-card,
+.lane,
+.ticket,
+.step,
+.item,
+.architecture {
+  border-color: var(--line) !important;
+}
+
+.module,
+.level,
+.team-card,
+.process-card,
+.lane,
+.ticket,
+.step,
+.item,
+.architecture,
+.process-node,
+.mini-module,
+.mini-live {
+  border-radius: 3px !important;
+}
+
+.footer {
+  position: absolute !important;
+  left: 110px !important;
+  right: auto !important;
+  bottom: 25px !important;
+  color: #6a6d70 !important;
+  font-family: "72 Brand", "SAP 72", Arial, sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+}
+
+.slide-page-number {
+  position: absolute;
+  right: 110px;
+  bottom: 24px;
+  color: #6a6d70;
+  font-family: "72 Brand Medium", "72 Brand", "SAP 72", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Agent capability summary — the outcome delivered by the To-Be flow. */
+.agent-capability {
+  position: absolute;
+  z-index: 2;
+  right: 110px;
+  bottom: 57px;
+  left: 110px;
+  display: grid;
+  grid-template-columns: 190px repeat(2, minmax(0, 1fr));
+  gap: 0;
+  min-height: 56px;
+  border-top: 1px solid #b9c6d4;
+  border-bottom: 1px solid #d5dde5;
+  background: rgba(255, 255, 255, .92);
+}
+
+.agent-capability-label,
+.agent-capability-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 8px 18px;
+}
+
+.agent-capability-label {
+  padding-left: 0;
+  color: #0070f2;
+  font-family: "72 Brand Medium", "72 Brand", "SAP 72", Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .06em;
+}
+
+.agent-capability-item {
+  border-left: 1px solid #d5dde5;
+  color: #1d2d3e;
+  font-size: 13px;
+  line-height: 1.25;
+}
+
+.agent-capability-item b {
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.agent-capability-item span {
+  display: block;
+  margin-top: 2px;
+  color: #556b82;
+  font-size: 12px;
+}
+
+/* The official template uses restrained accent colors for semantic states. */
+.issue,
+.new .process-head b,
+.to-be .process-head b,
+.cost-badge {
+  border-color: #e76500 !important;
+}
+
+.new .process-head b,
+.to-be .process-head b {
+  background: #e76500 !important;
+  color: #fff !important;
+}
+
+.issue .cost-badge,
+.process-card.new .cost-badge,
+.process-card.to-be .cost-badge {
+  background: #fff3eb !important;
+  color: #a93d00 !important;
+}
+
+/* Cover: leave the page deliberately spare, following the template's title treatment. */
+.slide:has(.advisory) {
+  background-image: none !important;
+  overflow: hidden;
+}
+
+.slide:has(.advisory)::after {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  right: 0;
+  width: 50.1%;
+  height: 100%;
+  background-color: #002a86;
+  background-image: url("assets/sap-template-cover.png");
+  background-position: -451px 0;
+  background-repeat: no-repeat;
+  background-size: 3041px 900px;
+  content: "";
+}
+
+.slide:has(.advisory) .brand {
+  left: 110px !important;
+}
+
+.slide:has(.advisory) .top-line,
+.slide:has(.advisory) .brand,
+.slide:has(.advisory) h1,
+.slide:has(.advisory) .advisory {
+  z-index: 1;
+}
+
+.slide:has(.advisory) h1 {
+  top: 46% !important;
+  font-size: clamp(54px, 4.2vw, 68px) !important;
+  line-height: 1 !important;
+}
+
+.slide:has(.advisory) .advisory {
+  color: #6a6d70 !important;
+  font-family: "72 Brand", "SAP 72", Arial, sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+}
+
+.slide:has(.advisory) .advisory strong {
+  color: var(--sap-ink) !important;
+  font-family: "72 Brand Medium", "72 Brand", "SAP 72", Arial, sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+}
+
+@media (max-width: 800px) {
+  .slide {
+    padding: 70px 30px 72px !important;
+    background-position: right -230px bottom -80px !important;
+    background-size: 560px auto !important;
+  }
+  .brand { top: 27px !important; left: 30px !important; right: auto !important; }
+  h1 { font-size: clamp(30px, 8vw, 42px) !important; white-space: normal !important; }
+  .footer { left: 30px !important; bottom: 22px !important; }
+  .slide-page-number { right: 30px; bottom: 22px; }
+  .agent-capability {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    grid-template-columns: 1fr;
+    margin: 28px 0 12px;
+  }
+  .agent-capability-label,
+  .agent-capability-item { padding: 10px 0; }
+  .agent-capability-item { border-top: 1px solid #d5dde5; border-left: 0; }
+  .slide:has(.advisory) h1 { left: 30px !important; font-size: clamp(44px, 12vw, 64px) !important; }
+  .slide:has(.advisory) {
+    background-image: none !important;
+  }
+  .slide:has(.advisory)::after { width: 38%; background-position: -370px 0; background-size: 2432px 720px; }
+}

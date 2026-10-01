@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>SAP BTP AI</title>
+    <link rel="stylesheet" href="sap-template.css" />
+    <style>
+      :root { --blue:#0a6ed1; --ink:#102a43; --line:#b8d7e9; }
+      * { box-sizing:border-box; }
+      html, body { margin:0; min-width:320px; background:#102a43; font-family:"72 Brand","SAP 72",Arial,sans-serif; }
+      .slide { position:relative; width:min(100vw,1600px); min-height:900px; margin:auto; overflow:hidden; padding:76px 110px 72px; background:radial-gradient(circle at 88% 82%,rgba(117,188,233,.18),transparent 22%),#f8fbff; color:var(--ink); }
+      .top { position:absolute; inset:0 0 auto; height:9px; background:var(--blue); }
+      .brand { position:absolute; top:44px; right:78px; color:#173b5b; font-size:17px; font-weight:800; }
+      .brand b, h1 span { color:var(--blue); }
+      .kicker { margin:0 0 14px; color:var(--blue); font-size:18px; font-weight:800; letter-spacing:.11em; }
+      h1 { margin:0; font-size:52px; line-height:1.05; letter-spacing:-.055em; white-space:nowrap; }
+      .divider { display:flex; align-items:center; gap:16px; margin:14px 0 8px; color:#b9512b; font-size:14px; font-weight:800; letter-spacing:.1em; text-transform:uppercase; }
+      .divider:before, .divider:after { flex:1; height:1px; background:#e8bdac; content:""; }
+      .divider.operation { margin-top:19px; color:#365d78; }
+      .divider.operation:before, .divider.operation:after { background:#aebfcb; }
+      .divider.solution:before, .divider.solution:after { background:#9dcbe7; }
+      .divider.solution { color:var(--blue); }
+      .operation-table { width:100%; border-collapse:separate; border-spacing:3px; background:transparent; table-layout:fixed; }
+      .operation-table th, .operation-table td { vertical-align:middle; text-align:left; }
+      .operation-table th { width:18%; padding:11px 18px; color:#0a5fae; background:#eef8ff; font-size:17px; font-weight:700; letter-spacing:-.04em; }
+      .operation-table td { padding:9px 12px; color:#315f7c; background:rgba(255,255,255,.68); font-size:11.5px; line-height:1.28; }
+      .operation-table .enterprise-row td { padding:12px 18px; color:#0a6ed1; background:#f5fbff; font-size:13px; font-weight:700; text-align:center; }
+      .enterprise-kpis { display:block; text-align:center; white-space:nowrap; }
+      .enterprise-kpis span { display:inline-block; }
+      .enterprise-kpis span + span:before { margin:0 18px; color:#79a6c4; content:"·"; }
+      .operation-table .organization th { color:#286b92; background:#f5fbfe; }
+      .operation-table .team th { color:#39779d; background:#f9fcfe; }
+      .operation-table .organization td, .operation-table .team td { text-align:center; }
+      .operation-table .team td { color:#426f88; font-size:11px; }
+      .cell-title { display:block; margin-bottom:2px; color:#315f7c; font-size:12px; font-weight:400; }
+      .team .cell-title { color:#426f88; font-size:11.5px; font-weight:400; }
+      .message { margin:12px 0 0; color:#43647c; font-size:18px; letter-spacing:-.02em; text-align:center; }
+      .message b { color:#173b5b; }
+      .response-table { width:100%; border-collapse:collapse; border:1px solid transparent; background:#fff; table-layout:fixed; }
+      .response-table th, .response-table td { vertical-align:middle; text-align:left; }
+      .response-table td { border-bottom:1px solid transparent; }
+      .response-table tr:last-child td { border-bottom:0; }
+      .response-table th { width:22%; padding:12px 22px; color:#a44725; background:#fff4ee; border-right:1px solid transparent; font-size:18px; font-weight:700; letter-spacing:-.04em; }
+      .response-table td { position:relative; padding:10px 24px 10px 40px; color:#6c3826; font-size:14px; font-weight:400; line-height:1.3; }
+      .response-table td:before { position:absolute; top:50%; left:24px; width:6px; height:6px; border-radius:50%; background:#d17a55; transform:translateY(-50%); content:""; }
+      .response-table.solution-table { border-color:transparent; }
+      .response-table.solution-table th { color:#0a5fae; background:#eef8ff; border-right-color:transparent; }
+      .response-table.solution-table td { color:#173b5b; border-bottom-color:transparent; }
+      .response-table.solution-table td:before { background:var(--blue); }
+      .footer { position:absolute; right:78px; bottom:30px; color:#637994; font-size:14px; font-weight:700; }
+      @media (max-width:800px) { .slide { min-height:100vh; padding:72px 30px 84px; } h1 { font-size:40px; white-space:normal; } .operation-table th { width:31%; padding:12px; font-size:15px; } .operation-table td { padding:12px; font-size:13px; } .response-table th { width:31%; padding:12px; font-size:15px; } .response-table td { padding:12px; } .footer { right:30px; } }
+    </style>
+  </head>
+  <body>
+    <main class="slide">
+      <div class="top"></div>
+      <div class="brand">SAP BTP AI</div><p class="kicker">02 · AUTONOMOUS ENTERPRISE FOUNDATION</p>
+      <h1>Toward an <span>Autonomous Enterprise</span></h1>
+      <div class="divider operation">Business Operation</div>
+      <table class="operation-table" aria-label="전사 KPI와 조직 및 팀별 업무 관점"><tbody>
+        <tr class="enterprise-row"><td colspan="5"><div class="enterprise-kpis"><span>원가 경쟁력</span><span>운영 안정성</span><span>고객 가치</span><span>기술 · 지속가능 리더십</span></div></td></tr>
+        <tr class="organization"><th scope="rowgroup" rowspan="2">조직별<br />성과 View</th><td><span class="cell-title">영업 · 수요</span>수요예측 · 수주 변동</td><td><span class="cell-title">구매 · 공급계획</span>공급 연속성 · 협력사 리스크</td><td><span class="cell-title">생산 · 품질</span>생산능력 · 품질 이슈</td><td><span class="cell-title">SCM · 고객</span>납기 준수 · 물류 예외</td></tr>
+        <tr class="organization"><td><span class="cell-title">재무 · 경영관리</span>원가 · 손익 변동</td><td><span class="cell-title">IT · Data</span>시스템 가용성 · 데이터 신뢰성</td><td colspan="2"></td></tr>
+        <tr class="team"><th scope="rowgroup" rowspan="2">팀별<br />실행 View</th><td><span class="cell-title">영업팀</span>수주 변동 · 고객 요청</td><td><span class="cell-title">수요계획팀</span>Forecast · 수요 조정</td><td><span class="cell-title">생산계획팀</span>계획 변경 · 생산 우선순위</td><td><span class="cell-title">구매팀</span>지연 자재 · 긴급 발주</td></tr>
+        <tr class="team"><td><span class="cell-title">품질관리팀</span>품질 이슈 · 시정 조치</td><td><span class="cell-title">SCM팀</span>재고 부족 · 물류 예외</td><td><span class="cell-title">영업관리팀</span>오더 반영 · 납기 회신</td><td><span class="cell-title">IT·Data팀</span>데이터 오류 · 인터페이스 대응</td></tr>
+      </tbody></table>
+      <p class="message"><b>동일한 전사 KPI</b>를 조직과 팀은 각자의 데이터·업무 상태·우선순위 관점에서 다르게 판단</p>
+      <div class="divider">Pain Points</div>
+      <table class="response-table" aria-label="Pain Points"><tbody><tr><th scope="rowgroup" rowspan="4">Pain Points</th><td>조직·팀별 데이터와 업무 맥락이 분리되어, 동일 KPI에 대한 전체 최적화 판단과 협업이 어려움</td></tr><tr><td>수요·공급·생산·물류의 변동 발생 시, 영향 범위와 우선순위를 사람이 수작업으로 재확인해야 함</td></tr><tr><td>요청·처리 이력이 개인과 시스템에 분산되어, 반복 업무의 기준과 전문성이 재활용되지 못함</td></tr><tr><td>업무 변화에 따른 앱·업무 로직 수정이 IT 개발 요청과 배포 절차에 의존하여 대응 리드타임이 길어짐</td></tr></tbody></table>
+      <div class="divider solution">Autonomous Solution</div>
+      <table class="response-table solution-table" aria-label="Autonomous Solution"><tbody><tr><th scope="rowgroup" rowspan="3">Autonomous<br />Solution</th><td>팀별 Wiki를 중심으로 KPI·업무 상태·요청 이력을 연결하는 Agent 기반 협업 구조</td></tr><tr><td>팀별 App Builder AI Coding으로 업무 변화에 맞춰 앱을 보완·배포하고 개발 비용을 절감</td></tr><tr><td>팀별 Harness 구조로 분석·업무 지시·결과 Wiki 저장을 연결하고, 업무 이력의 Life Cycle을 사내 Knowledge로 축적</td></tr></tbody></table>
+      <span class="footer">SAP | BTP AI Solution Advisory</span>
+      <span class="slide-page-number">02</span>
+    </main>
+  </body>
+</html>

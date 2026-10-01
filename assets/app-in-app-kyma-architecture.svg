@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="760" viewBox="0 0 1600 760" role="img" aria-labelledby="title desc">
+  <title id="title">App-in-App Portal architecture on SAP BTP Kyma Runtime</title>
+  <desc id="desc">The App-in-App Portal connects to Portal, LLM Wiki, Harness, n8n and App Builder workloads on Kyma Runtime, using SAP AI Core, HANA Knowledge Graph, Joule and platform services.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0 0L9 4.5L0 9Z" fill="#58738d"/></marker>
+    <style>
+      .t{font-family:'72 Brand','SAP 72',Arial,sans-serif;fill:#1d2d3e;font-weight:400}.title{font-size:22px}.heading{font-size:16px}.copy{font-size:14px}.small{font-size:11px}.italic{font-size:12px;font-style:italic;fill:#58738d}.appcopy{font-size:11px;font-style:italic;fill:#58738d}.portalname{font-size:18px}.blue{fill:#0a6ed1}.pink{fill:#d900d9}.line{stroke:#58738d;stroke-width:2.5;fill:none;marker-end:url(#arrow)}.dash{stroke:#647f99;stroke-width:2.5;stroke-dasharray:7 6;fill:#f9fbfd}.box{fill:#fff;stroke:#0a6ed1;stroke-width:2.5}.soft{fill:#eef8ff;stroke:#0a6ed1;stroke-width:2.5}.pinkbox{fill:#fff4ff;stroke:#d900d9;stroke-width:2.5}.chip{fill:#fff;stroke:#0a6ed1;stroke-width:2}.tag{fill:#fff;stroke:#58738d;stroke-width:1.8}
+    </style>
+  </defs>
+  <rect width="1600" height="760" fill="#fff"/>
+
+  <!-- The existing App-in-App Portal remains the entry point -->
+  <rect x="36" y="80" width="210" height="374" rx="18" class="dash"/>
+  <text x="63" y="110" class="t italic">Business Workspace</text>
+  <rect x="56" y="142" width="170" height="49" rx="15" class="pinkbox"/>
+  <text x="141" y="164" text-anchor="middle" class="t heading">Live Assistant</text>
+  <text x="141" y="183" text-anchor="middle" class="t italic">업무 요청 · AI 대화</text>
+  <path d="M141 192V253" class="line"/>
+  <rect x="110" y="213" width="62" height="23" rx="10" class="tag"/><text x="141" y="230" text-anchor="middle" class="t small" fill="#267a4b">API</text>
+  <rect x="82" y="264" width="118" height="65" rx="8" fill="#eef8ff" stroke="#58738d" stroke-width="3"/>
+  <path d="M107 285H175V309H107Z" fill="none" stroke="#0a6ed1" stroke-width="3"/>
+  <text x="141" y="361" text-anchor="middle" class="t copy">Mobile/Desktop</text>
+  <text x="141" y="387" text-anchor="middle" class="t portalname">App-in-App Portal</text>
+
+  <!-- SAP BTP and Subaccount frames -->
+  <rect x="275" y="28" width="935" height="686" rx="19" fill="#eef8ff" stroke="#0a6ed1" stroke-width="3"/>
+  <text x="302" y="78" class="t title blue">SAP</text><text x="366" y="78" class="t title">BTP</text>
+  <rect x="297" y="100" width="885" height="592" rx="17" fill="#fff" stroke="#0a6ed1" stroke-width="2.5"/>
+  <text x="322" y="138" class="t title">Subaccount</text>
+
+  <!-- Kyma: current five application modules, kept as the original 13-page content -->
+  <rect x="472" y="154" width="310" height="408" rx="15" class="box"/>
+  <circle cx="507" cy="188" r="19" fill="#eef8ff" stroke="#c5ddeb"/><text x="507" y="195" text-anchor="middle" class="t heading blue">◈</text>
+  <text x="537" y="196" class="t heading">SAP Kyma Runtime</text>
+  <rect x="493" y="218" width="268" height="39" rx="13" class="pinkbox"/>
+  <text x="516" y="242" class="t heading">Portal</text><text x="738" y="242" text-anchor="end" class="t italic">업무 앱 진입</text>
+  <rect x="493" y="266" width="268" height="39" rx="13" class="pinkbox"/>
+  <text x="516" y="290" class="t heading">LLM Wiki</text><text x="746" y="290" text-anchor="end" class="t appcopy">KPI · SOP · Ticket</text>
+  <rect x="493" y="314" width="268" height="39" rx="13" class="pinkbox"/>
+  <text x="516" y="338" class="t heading">Harness</text><text x="738" y="338" text-anchor="end" class="t italic">분석 · 업무 지시</text>
+  <rect x="493" y="362" width="268" height="39" rx="13" class="pinkbox"/>
+  <text x="516" y="386" class="t heading">n8n</text><text x="746" y="386" text-anchor="end" class="t appcopy">업무 자동화 실행</text>
+  <rect x="493" y="410" width="268" height="39" rx="13" class="pinkbox"/>
+  <text x="516" y="434" class="t heading">App Builder</text><text x="746" y="434" text-anchor="end" class="t appcopy">변경 · 배포 · Self-Healing</text>
+  <rect x="511" y="472" width="232" height="65" rx="12" class="soft"/>
+  <text x="627" y="500" text-anchor="middle" class="t heading">XSUAA · Worker · API</text>
+  <text x="627" y="522" text-anchor="middle" class="t italic">Platform Services</text>
+
+  <!-- AI Core / Knowledge services: original foundation content in Generative AI Hub form -->
+  <rect x="846" y="106" width="302" height="456" rx="16" class="box"/>
+  <text x="997" y="138" text-anchor="middle" class="t heading">SAP BTP AI Services</text>
+  <rect x="868" y="157" width="258" height="60" rx="15" class="soft"/>
+  <text x="898" y="184" class="t heading">SAP AI Core</text>
+  <text x="898" y="205" class="t italic">AI 실행 · 오케스트레이션</text>
+  <path d="M997 217V231" class="line"/>
+  <rect x="868" y="231" width="258" height="107" rx="15" class="soft"/>
+  <text x="997" y="258" text-anchor="middle" class="t heading">Orchestration</text>
+  <rect x="884" y="276" width="105" height="30" rx="10" class="chip"/><text x="936" y="297" text-anchor="middle" class="t copy">Agent flow</text>
+  <rect x="1003" y="276" width="106" height="30" rx="10" class="chip"/><text x="1056" y="297" text-anchor="middle" class="t copy">Guardrails</text>
+  <rect x="868" y="352" width="258" height="59" rx="14" class="pinkbox"/>
+  <text x="997" y="377" text-anchor="middle" class="t heading">HANA Knowledge Graph</text>
+  <text x="997" y="398" text-anchor="middle" class="t italic">KPI · SOP · Ticket Context</text>
+  <rect x="868" y="425" width="258" height="48" rx="13" class="soft"/>
+  <text x="997" y="455" text-anchor="middle" class="t heading">Destination · Joule</text>
+  <rect x="868" y="487" width="258" height="48" rx="13" class="soft"/>
+  <text x="997" y="512" text-anchor="middle" class="t heading">SAP HANA Cloud Database</text>
+  <text x="997" y="528" text-anchor="middle" class="t italic">BTP Data Persistence</text>
+
+  <!-- App Builder deployment relationship kept from the original diagram -->
+  <rect x="472" y="586" width="310" height="76" rx="15" class="box"/>
+  <text x="502" y="615" class="t heading">SAP Build</text>
+  <rect x="493" y="625" width="268" height="24" rx="10" class="pinkbox"/>
+  <text x="627" y="643" text-anchor="middle" class="t copy">App Builder · Build &amp; Deploy</text>
+  <path d="M627 562V586" class="line"/>
+
+  <!-- Existing relationship set, shown with the reference diagram's routing language -->
+  <!-- App-in-App Portal enters Kyma through one common runtime endpoint -->
+  <path d="M200 303H390V237H472" class="line"/>
+  <rect x="391" y="229" width="61" height="23" rx="10" class="tag"/><text x="422" y="246" text-anchor="middle" class="t small" fill="#267a4b">HTTPS</text>
+  <!-- Kyma workloads consume BTP AI Services through one common integration path -->
+  <path d="M782 358H816V288H846" class="line"/>
+
+  <!-- External SAP and execution endpoints for Destination/Joule and n8n -->
+  <rect x="1262" y="481" width="300" height="235" rx="18" class="dash"/>
+  <text x="1290" y="512" class="t italic">Connected business systems</text>
+  <rect x="1283" y="530" width="258" height="76" rx="13" class="box"/>
+  <text x="1412" y="561" text-anchor="middle" class="t title">SAP S/4HANA</text><text x="1412" y="586" text-anchor="middle" class="t heading">업무 조회 · 실행</text>
+  <rect x="1283" y="625" width="258" height="69" rx="13" class="box"/>
+  <text x="1412" y="654" text-anchor="middle" class="t title">3rd Party Apps</text><text x="1412" y="677" text-anchor="middle" class="t heading">외부 업무 시스템 연계</text>
+  <!-- Destination and Joule use one common route to connected business systems -->
+  <path d="M1126 460H1218V600H1262" class="line"/>
+  <path d="M1126 300H1242V350H1283" class="line"/>
+  <rect x="1263" y="316" width="278" height="68" rx="13" class="dash"/>
+  <text x="1402" y="345" text-anchor="middle" class="t heading">Foundation Models</text><text x="1402" y="368" text-anchor="middle" class="t italic">SAP · Partner models</text>
+  <rect x="1172" y="338" width="62" height="23" rx="10" class="tag"/><text x="1203" y="355" text-anchor="middle" class="t small" fill="#267a4b">HTTPS</text>
+</svg>

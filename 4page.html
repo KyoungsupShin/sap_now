@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>SAP BTP AI</title>
+    <link rel="stylesheet" href="sap-template.css" />
+    <style>
+      :root {
+        --sap-blue: #0a6ed1;
+        --ink: #102a43;
+        --muted: #526f89;
+        --line: #c5ddeb;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        min-width: 320px;
+        min-height: 100%;
+        margin: 0;
+        background: #102a43;
+        font-family: Arial, "SAP 72", sans-serif;
+      }
+      .slide {
+        position: relative;
+        width: min(100vw, 1600px);
+        min-height: 900px;
+        margin: auto;
+        overflow: hidden;
+        padding: 76px 110px 72px;
+        background:
+          radial-gradient(
+            circle at 88% 82%,
+            rgba(117, 188, 233, 0.18),
+            transparent 22%
+          ),
+          #f8fbff;
+        color: var(--ink);
+      }
+      .top-line {
+        position: absolute;
+        inset: 0 0 auto;
+        height: 9px;
+        background: var(--sap-blue);
+      }
+      .brand {
+        position: absolute;
+        top: 44px;
+        right: 78px;
+        color: #173b5b;
+        font-size: 17px;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+      }
+      .brand b,
+      h1 span {
+        color: var(--sap-blue);
+      }
+      .kicker {
+        margin: 0 0 22px;
+        color: var(--sap-blue);
+        font-size: 18px;
+        font-weight: 800;
+        letter-spacing: 0.11em;
+      }
+      h1 {
+        margin: 0;
+        font-size: clamp(40px, 3.25vw, 52px);
+        line-height: 1.05;
+        letter-spacing: -0.055em;
+        white-space: nowrap;
+      }
+      .assistant-map {
+        display: grid;
+        grid-template-columns: 1fr 110px 1.1fr 110px 1fr;
+        align-items: center;
+        gap: 14px;
+        margin-top: 28px;
+      }
+      .stack {
+        display: grid;
+        gap: 18px;
+      }
+      .module {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 112px;
+        padding: 18px 21px;
+        border: 1px solid var(--line);
+        border-top: 6px solid #75bce9;
+        border-radius: 15px;
+        background: #fff;
+        box-shadow: 0 8px 20px rgba(28, 68, 102, 0.07);
+      }
+      .module small {
+        color: #39779d;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.1em;
+      }
+      .module h2 {
+        margin: 12px 0 6px;
+        color: #173b5b;
+        font-size: 23px;
+        line-height: 1.08;
+        letter-spacing: -0.04em;
+      }
+      .module p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 700;
+        line-height: 1.3;
+      }
+      .knowledge .module:last-child {
+        border-top-color: #4d99c6;
+        background: #f8fcff;
+      }
+      .live {
+        min-height: 302px;
+        border-top-color: var(--sap-blue);
+        background: #f2faff;
+        text-align: center;
+        align-items: center;
+      }
+      .live h2 {
+        margin-top: 14px;
+        font-size: 31px;
+        color: var(--sap-blue);
+      }
+      .live p {
+        max-width: 190px;
+      }
+      .harness {
+        border-top-color: #39779d;
+        background: #f6fbfe;
+      }
+      .n8n {
+        border-top-color: #d66d2d;
+        background: #fff9f5;
+      }
+      .app-builder {
+        border-top-color: #3e8e67;
+        background: #f6fcf8;
+      }
+      .joule {
+        border-top-color: #7d6ec7;
+        background: #faf9ff;
+      }
+      .connector {
+        position: relative;
+        height: 2px;
+        background: #b8daed;
+      }
+      .connector::after {
+        position: absolute;
+        top: 50%;
+        right: -2px;
+        width: 11px;
+        height: 11px;
+        border-top: 2px solid #6d9eb9;
+        border-right: 2px solid #6d9eb9;
+        content: "";
+        transform: translateY(-50%) rotate(45deg);
+      }
+      .connector-label {
+        position: absolute;
+        top: -26px;
+        left: 50%;
+        color: #39779d;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.06em;
+        white-space: nowrap;
+        transform: translateX(-50%);
+      }
+      .footer {
+        position: absolute;
+        right: 78px;
+        bottom: 30px;
+        color: #637994;
+        font-size: 14px;
+        font-weight: 700;
+      }
+      @media (max-width: 800px) {
+        .slide {
+          min-height: 100vh;
+          padding: 72px 30px 84px;
+        }
+        .brand {
+          top: 28px;
+          right: 30px;
+          font-size: 13px;
+        }
+        .assistant-map {
+          grid-template-columns: 1fr;
+        }
+        .connector {
+          width: 2px;
+          height: 28px;
+          margin: auto;
+        }
+        .connector::after {
+          top: auto;
+          right: 50%;
+          bottom: -1px;
+          transform: translateX(50%) rotate(135deg);
+        }
+        .connector-label {
+          top: 7px;
+          left: calc(50% + 12px);
+          transform: none;
+        }
+        .footer {
+          right: 30px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="slide">
+      <div class="top-line"></div>
+      <div class="brand">SAP BTP AI</div><p class="kicker">04 · CONNECTED AI APPLICATION FOUNDATION</p>
+      <h1>The foundation of <span>connected AI applications</span></h1>
+      <section
+        class="assistant-map"
+        aria-label="Live Assistant connected operating model"
+      >
+        <div class="stack knowledge">
+          <article class="module">
+            <small>TEAM KNOWLEDGE</small>
+            <h2>Wiki Assistant</h2>
+            <p>팀 KPI · SOP · 비즈니스 이슈 ·<br />미팅 등 팀 관리 정보</p>
+          </article>
+          <article class="module">
+            <small>ENTERPRISE KNOWLEDGE</small>
+            <h2>HANA Knowledge Graph</h2>
+            <p>컴플라이언스 · IT · HR 등<br />전사 정보를 온톨로지로 관리</p>
+          </article>
+        </div>
+        <div class="connector">
+          <span class="connector-label">업무 근거</span>
+        </div>
+        <article class="module live">
+          <small>BUSINESS ENTRY</small>
+          <h2>Live Assistant</h2>
+          <p>현업의 질문과 업무 지시를 받는 하나의 창구</p>
+        </article>
+        <div class="connector">
+          <span class="connector-label">분석 · 지시</span>
+        </div>
+        <div class="stack">
+          <article class="module harness">
+            <small>ANALYZE &amp; ORCHESTRATE</small>
+            <h2>Harness Assistant</h2>
+            <p>분석 및 업무 지시</p>
+          </article>
+          <article class="module n8n">
+            <small>AUTOMATION AI · HARNESS CONNECTED</small>
+            <h2>n8n Assistant</h2>
+            <p>업무 자동화 실행</p>
+          </article>
+          <article class="module app-builder">
+            <small>RUN &amp; BUILD</small>
+            <h2>App Builder Assistant</h2>
+            <p>업무 앱 운영 · 개발</p>
+          </article>
+          <article class="module joule">
+            <small>SAP INTERFACE</small>
+            <h2>Joule Assistant</h2>
+            <p>SAP 업무 인터페이스</p>
+          </article>
+        </div>
+      </section>
+      <span class="footer">SAP | BTP AI Solution Advisory</span>
+      <span class="slide-page-number">04</span>
+    </main>
+  </body>
+</html>

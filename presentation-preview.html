@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SAP NOW — Presentation Review</title>
+    <style>
+      :root { --blue:#0070f2; --ink:#1d2d3e; --muted:#556b82; --line:#d5dde5; --canvas:#f5f6f7; }
+      * { box-sizing:border-box; }
+      html { scroll-behavior:smooth; }
+      body { margin:0; background:var(--canvas); color:var(--ink); font-family:"72 Brand","SAP 72",Arial,sans-serif; }
+      .review-shell { display:grid; grid-template-columns:236px minmax(0,1fr); min-height:100vh; }
+      .rail { position:sticky; top:0; height:100vh; padding:24px 16px; overflow-y:auto; border-right:1px solid var(--line); background:#fff; }
+      .rail h1 { margin:0; font-size:20px; font-weight:600; letter-spacing:-.02em; }
+      .rail p { margin:7px 0 21px; color:var(--muted); font-size:12px; line-height:1.35; }
+      .mode-switch { display:grid; grid-template-columns:1fr 1fr; margin-bottom:18px; border:1px solid var(--line); }
+      button { border:0; background:none; color:inherit; font:inherit; cursor:pointer; }
+      .mode-switch button { padding:9px 4px; color:var(--muted); font-size:11px; font-weight:700; letter-spacing:.06em; }
+      .mode-switch button.active { background:var(--blue); color:#fff; }
+      .thumbs { display:grid; grid-template-columns:repeat(2,1fr); gap:8px; }
+      .thumb { position:relative; min-height:66px; padding:8px; border:1px solid var(--line); background:#fff; text-align:left; }
+      .thumb:hover,.thumb.active { border-color:var(--blue); box-shadow:inset 0 0 0 1px var(--blue); }
+      .thumb .number { display:block; color:var(--blue); font-size:13px; font-weight:700; }
+      .thumb .name { display:-webkit-box; overflow:hidden; margin-top:5px; color:var(--muted); font-size:9px; line-height:1.2; -webkit-line-clamp:2; -webkit-box-orient:vertical; }
+      .badge { display:inline-block; margin:5px 0 0; padding:2px 4px; background:#eaf3ff; color:var(--blue); font-size:8px; font-weight:700; letter-spacing:.05em; }
+      .badge.revised { background:#fff3e7; color:#a93d00; }
+      main { padding:38px clamp(20px,4vw,72px) 80px; }
+      .deck-header { max-width:1280px; margin:0 auto 34px; }
+      .deck-header h2 { margin:0; font-size:32px; font-weight:500; letter-spacing:-.035em; }
+      .deck-header p { margin:8px 0 0; color:var(--muted); font-size:15px; }
+      .slide-review { max-width:1380px; margin:0 auto 54px; scroll-margin-top:20px; }
+      .slide-meta { display:flex; align-items:baseline; justify-content:space-between; gap:16px; margin:0 0 10px; }
+      .slide-meta h3 { margin:0; font-size:18px; font-weight:600; letter-spacing:-.02em; }
+      .source { color:var(--muted); font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:11px; white-space:nowrap; }
+      .frame-wrap { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; border:1px solid #c6d3df; background:#102a43; box-shadow:0 2px 10px rgba(29,45,62,.10); }
+      .frame-wrap iframe { position:absolute; inset:0; width:1600px; height:900px; border:0; transform:scale(calc(100% / 1600)); transform-origin:top left; }
+      /* JS sets a pixel scale so iframe content keeps the source slide dimensions. */
+      .review-notes { display:grid; grid-template-columns:120px minmax(0,1fr); gap:0 18px; margin-top:12px; padding:16px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+      .review-notes dt { padding:5px 0; color:var(--muted); font-size:10px; font-weight:700; letter-spacing:.08em; }
+      .review-notes dd { margin:0; padding:4px 0; font-size:14px; line-height:1.35; }
+      .compare-button { margin-top:12px; padding:8px 10px; border:1px solid var(--line); color:var(--blue); font-size:12px; font-weight:700; }
+      .compare-button:hover { border-color:var(--blue); }
+      .comparison { display:none; grid-template-columns:1fr 1fr; gap:18px; margin-top:14px; }
+      .comparison.open { display:grid; }
+      .comparison-label { margin:0 0 7px; color:var(--muted); font-size:11px; font-weight:700; letter-spacing:.07em; }
+      .comparison .frame-wrap { box-shadow:none; }
+      .presentation { display:none; position:fixed; z-index:10; inset:0; background:#101820; color:#fff; }
+      .presentation.open { display:flex; flex-direction:column; }
+      .presentation-bar { display:flex; align-items:center; justify-content:space-between; min-height:56px; padding:0 20px; background:#172433; }
+      .presentation-bar strong { font-size:14px; font-weight:500; }
+      .presentation-controls { display:flex; align-items:center; gap:8px; }
+      .presentation-controls button { padding:7px 10px; border:1px solid #50677d; color:#fff; font-size:12px; }
+      .presentation-stage { display:flex; flex:1; align-items:center; justify-content:center; padding:20px; }
+      .presentation-stage .frame-wrap { width:min(100%,calc((100vh - 96px) * 1.7777)); max-height:calc(100vh - 96px); box-shadow:0 8px 36px rgba(0,0,0,.35); }
+      @media(max-width:760px){ .review-shell{display:block}.rail{position:sticky;z-index:5;height:auto;padding:12px;border-right:0;border-bottom:1px solid var(--line)}.rail h1,.rail p{display:none}.thumbs{display:flex;overflow-x:auto}.thumb{min-width:54px;min-height:40px}.thumb .name{display:none}.badge{margin:3px 0 0}main{padding:26px 14px 56px}.slide-meta{align-items:flex-start;flex-direction:column;gap:3px}.review-notes{grid-template-columns:92px minmax(0,1fr)}.comparison{grid-template-columns:1fr}.presentation-stage{padding:8px}.presentation-bar{padding:0 10px} }
+    </style>
+  </head>
+  <body>
+    <div class="review-shell">
+      <aside class="rail" aria-label="Slide navigation">
+        <h1>SAP NOW</h1><p>Review-only deck viewer<br />23 presentation slides</p>
+        <div class="mode-switch"><button class="active" id="overview-mode">OVERVIEW</button><button id="presentation-mode">PRESENT</button></div>
+        <nav class="thumbs" id="thumbnails"></nav>
+      </aside>
+      <main><header class="deck-header"><h2>Autonomous Enterprise</h2><p>Review the complete story, slides, draft status, and revision notes in sequence.</p></header><div id="deck"></div></main>
+    </div>
+    <section class="presentation" id="presentation" aria-label="Presentation mode">
+      <div class="presentation-bar"><strong id="presentation-title"></strong><div class="presentation-controls"><button id="previous">← Previous</button><button id="next">Next →</button><button id="exit">Exit · Esc</button></div></div>
+      <div class="presentation-stage"><div class="frame-wrap"><iframe id="presentation-frame" title="Current presentation slide"></iframe></div></div>
+    </section>
+    <script src="slides.js"></script>
+    <script>
+      (() => {
+        const deck = document.querySelector('#deck'); const thumbs = document.querySelector('#thumbnails');
+        const presentation = document.querySelector('#presentation'); const frame = document.querySelector('#presentation-frame');
+        const title = document.querySelector('#presentation-title'); let current = 0;
+        const statusLabel = status => status === 'new' ? 'NEW' : status === 'revised' ? 'REVISED' : '';
+        const scaleFrames = () => document.querySelectorAll('.frame-wrap').forEach(wrap => {
+          const iframe = wrap.querySelector('iframe'); if (!iframe) return;
+          const scale = wrap.clientWidth / 1600; iframe.style.transform = `scale(${scale})`;
+        });
+        const createFrame = (src, label) => `<div class="frame-wrap"><iframe loading="lazy" src="${src}" title="${label}"></iframe></div>`;
+        slides.forEach((slide, index) => {
+          const badge = statusLabel(slide.status); const thumb = document.createElement('button');
+          thumb.className = 'thumb'; thumb.dataset.index = index; thumb.innerHTML = `<span class="number">${String(slide.order).padStart(2,'0')}</span><span class="name">${slide.title}</span>${badge ? `<span class="badge ${slide.status}">${badge}</span>` : ''}`;
+          thumb.addEventListener('click', () => document.querySelector(`#slide-${slide.order}`).scrollIntoView({behavior:'smooth',block:'start'})); thumbs.appendChild(thumb);
+          const item = document.createElement('article'); item.className = 'slide-review'; item.id = `slide-${slide.order}`;
+          item.innerHTML = `<header class="slide-meta"><h3>${String(slide.order).padStart(2,'0')} — ${slide.title}</h3><span class="source">${slide.file}</span></header>${createFrame(slide.file, slide.title)}<dl class="review-notes"><dt>STATUS</dt><dd>${slide.status.toUpperCase()}</dd><dt>VISUAL AUDIT</dt><dd>${slide.visualAudit}</dd><dt>PURPOSE</dt><dd>${slide.purpose}</dd><dt>KEY MESSAGE</dt><dd>${slide.keyMessage}</dd><dt>CHANGES</dt><dd>${slide.changes}</dd></dl>${slide.beforeFile ? `<button class="compare-button" aria-expanded="false">BEFORE / AFTER</button><div class="comparison"><div><p class="comparison-label">ORIGINAL</p>${createFrame(slide.beforeFile, `Original — ${slide.title}`)}</div><div><p class="comparison-label">REVISED</p>${createFrame(slide.file, `Revised — ${slide.title}`)}</div></div>` : ''}`;
+          item.querySelector('.compare-button')?.addEventListener('click', event => { const panel = item.querySelector('.comparison'); panel.classList.toggle('open'); event.currentTarget.setAttribute('aria-expanded', panel.classList.contains('open')); scaleFrames(); }); deck.appendChild(item);
+        });
+        const observer = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) { current = slides.findIndex(s => `slide-${s.order}` === entry.target.id); document.querySelectorAll('.thumb').forEach(t => t.classList.toggle('active', Number(t.dataset.index) === current)); }}), {rootMargin:'-35% 0px -60% 0px'});
+        document.querySelectorAll('.slide-review').forEach(item => observer.observe(item));
+        const showPresentation = index => { current = Math.max(0, Math.min(index, slides.length - 1)); const slide = slides[current]; frame.src = slide.file; title.textContent = `${String(slide.order).padStart(2,'0')} — ${slide.title}`; presentation.classList.add('open'); document.querySelector('#presentation-mode').classList.add('active'); document.querySelector('#overview-mode').classList.remove('active'); scaleFrames(); };
+        const exitPresentation = () => { presentation.classList.remove('open'); document.querySelector('#overview-mode').classList.add('active'); document.querySelector('#presentation-mode').classList.remove('active'); document.querySelector(`#slide-${slides[current].order}`).scrollIntoView({block:'start'}); };
+        document.querySelector('#presentation-mode').addEventListener('click', () => showPresentation(current)); document.querySelector('#overview-mode').addEventListener('click', exitPresentation);
+        document.querySelector('#previous').addEventListener('click', () => showPresentation(current - 1)); document.querySelector('#next').addEventListener('click', () => showPresentation(current + 1)); document.querySelector('#exit').addEventListener('click', exitPresentation);
+        document.addEventListener('keydown', event => { if (!presentation.classList.contains('open')) return; if (event.key === 'ArrowLeft') showPresentation(current - 1); if (event.key === 'ArrowRight' || event.key === ' ') { event.preventDefault(); showPresentation(current + 1); } if (event.key === 'Home') showPresentation(0); if (event.key === 'End') showPresentation(slides.length - 1); if (event.key === 'Escape') exitPresentation(); });
+        window.addEventListener('resize', scaleFrames); window.addEventListener('load', scaleFrames); scaleFrames();
+      })();
+    </script>
+  </body>
+</html>

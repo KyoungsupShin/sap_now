@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>SAP BTP AI</title>
+    <link rel="stylesheet" href="sap-template.css" />
+    <style>
+      :root {
+        --sap-blue: #0a6ed1;
+        --ink: #102a43;
+        --muted: #526f89;
+        --line: #c5ddeb;
+        --pale-blue: #eef8ff;
+        --warm: #fff7e8;
+      }
+
+      * { box-sizing: border-box; }
+
+      html, body {
+        min-width: 320px;
+        min-height: 100%;
+        margin: 0;
+        background: #102a43;
+        font-family: Arial, "SAP 72", sans-serif;
+      }
+
+      .slide {
+        position: relative;
+        width: min(100vw, 1600px);
+        min-height: 900px;
+        margin: auto;
+        overflow: hidden;
+        padding: 76px 110px 72px;
+        background:
+          radial-gradient(circle at 76% 38%, rgba(117, 188, 233, .23), transparent 30%),
+          linear-gradient(135deg, rgba(238, 248, 255, .88), transparent 52%),
+          #f8fbff;
+        color: var(--ink);
+      }
+
+      .top-line {
+        position: absolute;
+        inset: 0 0 auto;
+        height: 9px;
+        background: var(--sap-blue);
+      }
+
+      .brand {
+        position: absolute;
+        top: 48px;
+        left: 110px;
+        color: #173b5b;
+        font-size: 17px;
+        font-weight: 800;
+        letter-spacing: -.02em;
+      }
+
+      .brand b { color: var(--sap-blue); }
+
+      h1 {
+        position: absolute;
+        top: 50%;
+        left: 110px;
+        margin: 0;
+        color: var(--ink);
+        font-size: clamp(52px, 4.5vw, 72px);
+        line-height: .98;
+        letter-spacing: -.055em;
+        transform: translateY(-57%);
+      }
+
+      h1 span { color: var(--sap-blue); }
+
+      .advisory {
+        position: absolute;
+        left: 110px;
+        bottom: 52px;
+        color: #39779d;
+        font-size: 15px;
+        font-weight: 700;
+        line-height: 1.45;
+        text-align: left;
+      }
+
+      .advisory strong {
+        display: block;
+        color: #173b5b;
+        font-size: 17px;
+        letter-spacing: -.03em;
+      }
+
+      @media (max-width: 800px) {
+        .slide { min-height: 100vh; padding: 72px 30px 84px; }
+        .brand { top: 28px; left: 30px; font-size: 13px; }
+        h1 { top: 48%; left: 30px; font-size: clamp(54px, 14vw, 76px); }
+        .advisory { left: 30px; bottom: 36px; }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="slide">
+      <div class="top-line"></div>
+      <div class="brand">SAP BTP AI</div>
+
+      <h1>SAP BTP Agent Demo<br /><span>for Autonomous Enterprise.</span></h1>
+
+      <div class="advisory">
+        <strong>BTP AI Solution Advisory</strong>
+        2026. 09. 29.
+      </div>
+    </main>
+  </body>
+</html>
