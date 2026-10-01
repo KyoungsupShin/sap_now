@@ -1,4 +1,45 @@
 <!doctype html>
-<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>App Builder Explanation | SAP BTP AI</title><link rel="stylesheet" href="sap-template.css"><link rel="stylesheet" href="assets/deck-flow.css"><link rel="stylesheet" href="assets/korean-editorial.css"><link rel="stylesheet" href="assets/sap-official-template.css"><style>
-.app-builder-detail h1{margin:0}.app-builder-original{margin:52px 0 0;height:500px}.app-builder-original img{display:block;width:100%;height:100%;object-fit:contain}.build-capabilities{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:30px;border-top:1px solid #d1efff;padding-top:23px}.build-capabilities h2{font-size:24px;font-weight:500;margin:0 0 12px}.build-capabilities p{font-size:20px;line-height:1.4;color:#475e75;margin:0}@media(max-width:800px){.app-builder-original{height:auto}.build-capabilities{grid-template-columns:1fr}}
-</style></head><body><main class="slide app-builder-detail"><h1>App Builder Explanation</h1><figure class="app-builder-original" aria-label="Original App Builder scenario"><img src="assets/dry-run-p05-app-builder-explanation.png" alt="원본 App Builder 사례: 정상 OCR·AI Agent Interface·입고 반영, 형식 변경에 따른 IT 추가 개발·배포, App Builder 코드 보완·배포·재처리 흐름 비교"></figure><section class="build-capabilities" aria-label="App Builder capabilities"><div><h2>Change Adaptation</h2><p>AI Coding으로 신규 문서 형식에 맞춰 처리 기준과 코드를 보완합니다.</p></div><div><h2>Deployment &amp; Reprocessing</h2><p>변경 내용을 배포하고, 신규 문서를 재처리해 입고 업무에 반영합니다.</p></div></section><span class="slide-page-number">14</span></main></body></html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>App Builder Explanation | SAP BTP AI</title><link rel="stylesheet" href="sap-template.css"><link rel="stylesheet" href="assets/deck-flow.css"><link rel="stylesheet" href="assets/korean-editorial.css"><link rel="stylesheet" href="assets/sap-official-template.css"><link rel="stylesheet" href="assets/app-builder-explanation.css"></head><body><main class="slide app-builder-detail"><h1>App Builder Explanation</h1><section class="workflow-shell" aria-label="Self-healing daily and new supplier processes">
+        <div class="shared-entry"><small>COMMON START</small><strong>납품 문서 수신</strong></div>
+        <div class="format-rail" aria-label="수신 Data 형식">
+          <div class="format-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M10 5h20l8 8v30H10z"/><path d="M30 5v9h8"/><circle cx="19" cy="22" r="3"/><path d="m14 33 7-7 5 5 4-4 4 6"/></svg><strong>Image 문서</strong></div>
+          <div class="format-icon issue"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 8h32v32H8z"/><path d="M8 18h32M8 28h32M19 8v32M30 8v32"/><path d="M13 13h1M24 13h1M35 13h1"/></svg><strong>CSV · 다양한 형식</strong></div>
+        </div>
+        <div class="process-grid">
+        <article class="process-card">
+          <div class="process-head"><b>DAILY</b> 일상 업무 Process</div>
+          <div class="process-flow">
+            <div class="process-node"><em class="cost-badge">System 유지비</em><strong>OCR</strong><span>납품 문서 인식</span></div>
+            <div class="process-node"><em class="cost-badge">Token 비용</em><strong>AI Agent Interface</strong><span>업무 정보 연결</span></div>
+            <div class="process-node"><strong>입고 반영</strong><span>운영 계획 반영</span></div>
+          </div>
+        </article>
+        <article class="process-card new">
+          <div class="process-head"><b>ISSUE · AS-IS</b> 신규 업체 추가 Process</div>
+          <div class="process-flow">
+            <div class="process-node"><em class="cost-badge">형식 차이</em><strong>OCR 실패</strong><span>인식 불가 형식 감지</span></div>
+            <div class="process-node"><em class="cost-badge">IT 인력 필요</em><strong>IT 추가개발 요청</strong><span>개발 요청 · 우선순위 조율</span></div>
+            <div class="process-node"><em class="cost-badge">개발 대기</em><strong>추가개발</strong><span>신규 형식 대응 Logic 구현</span></div>
+            <div class="process-node"><em class="cost-badge">운영 지연</em><strong>배포</strong><span>변경 사항 운영 반영</span></div>
+            <div class="process-node"><em class="cost-badge">기준 보완</em><strong>기준수정</strong><span>처리 기준 반영</span></div>
+            <div class="process-node"><em class="cost-badge">재작업</em><strong>입고 반영</strong><span>운영 계획 반영</span></div>
+          </div>
+        </article>
+        <article class="process-card to-be">
+          <div class="process-head"><b>ISSUE · TO-BE</b> 신규 업체 추가 Process</div>
+          <div class="process-flow">
+            <div class="process-node"><em class="cost-badge">형식 차이</em><strong>OCR</strong><span>인식 불가 형식 감지</span></div>
+            <div class="process-node"><em class="cost-badge">자동 보완</em><strong>App Builder</strong><span>코드 수정</span></div>
+            <div class="process-node"><em class="cost-badge">자동 배포</em><strong>배포</strong><span>처리 흐름 적용</span></div>
+            <div class="process-node"><em class="cost-badge">자동 재처리</em><strong>입고 반영</strong><span>운영 계획 반영</span></div>
+          </div>
+        </article>
+        </div>
+      </section>
+      <section class="agent-capability" aria-label="App Builder 제공 기능">
+        <div class="agent-capability-label">APP BUILDER<br />CAPABILITY</div>
+        <div class="agent-capability-item"><b>변경 자동 보완</b><span>AI Coding으로 처리 기준을 보완</span></div>
+        <div class="agent-capability-item"><b>배포 · 재처리 연결</b><span>신규 App 배포 후 업무 흐름에 반영</span></div>
+      </section>
+      <span class="slide-page-number">14</span>
+    </main></body></html>

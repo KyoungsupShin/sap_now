@@ -1,0 +1,39 @@
+/* User-supplied App Builder process, rendered as editable HTML. */
+.app-builder-detail * { box-sizing:border-box; }
+.app-builder-detail .workflow-shell { display:grid; grid-template-columns:180px 100px minmax(0,1fr); gap:24px; margin-top:52px; height:530px; }
+.app-builder-detail .shared-entry { position:relative; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:15px; border:1px solid #d1efff; border-top:4px solid #1b90ff; padding:20px; text-align:center; }
+.app-builder-detail .shared-entry small { color:#0070f2; font-size:12px; }
+.app-builder-detail .shared-entry strong { color:#000; font-size:22px; font-weight:500; }
+.app-builder-detail .format-rail { display:grid; grid-template-rows:repeat(3,1fr); gap:16px; }
+.app-builder-detail .format-icon { position:relative; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; color:#0070f2; text-align:center; }
+.app-builder-detail .format-icon.issue { grid-row:span 2; color:#a64b00; }
+.app-builder-detail .format-icon svg { width:40px; height:40px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+.app-builder-detail .format-icon strong { font-size:14px; font-weight:500; }
+.app-builder-detail .format-icon.issue strong { font-size:12px; white-space:nowrap; }
+.app-builder-detail .process-grid { display:grid; grid-template-rows:repeat(3,minmax(0,1fr)); gap:16px; }
+.app-builder-detail .process-card { padding:16px; border:1px solid #d1efff; background:#fff; }
+.app-builder-detail .process-card.new,.app-builder-detail .process-card.to-be { border-color:#f1d3b5; }
+.app-builder-detail .process-head { display:flex; align-items:center; gap:12px; margin-bottom:12px; color:#000; font-size:20px; font-weight:500; }
+.app-builder-detail .process-head b { padding:5px 8px; background:#eaf5ff; color:#0070f2; font-size:12px; font-weight:500; }
+.app-builder-detail .new .process-head b,.app-builder-detail .to-be .process-head b { background:#fff0df; color:#a64b00; }
+.app-builder-detail .process-flow { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; }
+.app-builder-detail .new .process-flow { grid-template-columns:repeat(6,minmax(0,1fr)); }
+.app-builder-detail .to-be .process-flow { grid-template-columns:repeat(4,minmax(0,1fr)); }
+.app-builder-detail .process-node { position:relative; display:flex; flex-direction:column; justify-content:center; min-height:103px; padding:28px 10px 10px; border-top:3px solid #1b90ff; background:#f5faff; }
+.app-builder-detail .new .process-node,.app-builder-detail .to-be .process-node { border-top-color:#e9730c; background:#fff8f0; }
+.app-builder-detail .process-node strong { display:block; color:#000; font-size:17px; font-weight:500; line-height:1.25; }
+.app-builder-detail .process-node span { display:block; margin-top:6px; color:#475e75; font-size:13px; line-height:1.35; }
+.app-builder-detail .cost-badge { position:absolute; top:7px; right:7px; color:#0070f2; font-size:11px; font-style:normal; white-space:nowrap; }
+.app-builder-detail .new .cost-badge,.app-builder-detail .to-be .cost-badge { color:#a64b00; }
+.app-builder-detail .shared-entry::after,.app-builder-detail .format-icon::after,.app-builder-detail .process-node:not(:last-child)::after { position:absolute; z-index:1; top:50%; right:-20px; color:#0070f2; content:'→'; font-size:22px; transform:translateY(-50%); }
+.app-builder-detail .process-node:not(:last-child)::after { right:-16px; font-size:18px; }
+.app-builder-detail .agent-capability { font-weight:400; }
+@media(max-width:800px) {
+ .app-builder-detail .workflow-shell { grid-template-columns:1fr; height:auto; gap:20px; margin-top:32px; }
+ .app-builder-detail .shared-entry { min-height:100px; }
+ .app-builder-detail .format-rail { grid-template-rows:none; grid-template-columns:1fr 1fr; }
+ .app-builder-detail .format-icon.issue { grid-row:auto; }
+ .app-builder-detail .process-grid { grid-template-rows:none; }
+ .app-builder-detail .process-flow,.app-builder-detail .new .process-flow,.app-builder-detail .to-be .process-flow { grid-template-columns:1fr; }
+ .app-builder-detail .shared-entry::after,.app-builder-detail .format-icon::after,.app-builder-detail .process-node:not(:last-child)::after { content:none; }
+}
