@@ -12,7 +12,7 @@ const slides = [
   },
   {
     "file": "agenda.html",
-    "title": "발표 순서",
+    "title": "Presentation Agenda",
     "status": "new",
     "purpose": "Orient the audience to the five sections.",
     "keyMessage": "Vision, agent execution, control, platform and demonstration form one story.",
