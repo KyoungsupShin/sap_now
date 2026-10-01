@@ -73,7 +73,20 @@ const slides = [
     "sectionNumber": "01"
   },
   {
-    "order": 7,
+    "file": "app-ai-development-draft.html",
+    "title": "App & AI Development — 필요한 실행 역량을 확장",
+    "status": "draft",
+    "purpose": "Draft the missing App & AI Development capability explanation in agenda 01.",
+    "keyMessage": "Define a capability gap, build App/Skill/Workflow, validate and approve, then deploy and reuse.",
+    "changes": "Added an editable HTML draft, distinguishing SAP development foundations from the App Builder role in this presentation.",
+    "visualAudit": "DRAFT",
+    "section": "Autonomous Enterprise & Governance",
+    "sectionNumber": "01",
+    "agents": "App Builder",
+    "order": 7
+  },
+  {
+    "order": 8,
     "file": "7page.html",
     "title": "판단 · 실행 · 검증을 통제된 순환으로",
     "status": "new",
@@ -82,6 +95,19 @@ const slides = [
     "changes": "Moved into agenda 01 to explain Business Context and the governed Execution Loop before Human Oversight.",
     "visualAudit": "SIMPLIFY",
     "agents": "Agent · 요청 이해부터 판단·실행·검증까지",
+    "section": "Autonomous Enterprise & Governance",
+    "sectionNumber": "01"
+  },
+  {
+    "order": 9,
+    "file": "6page.html",
+    "title": "Integrated Operating Model",
+    "status": "new",
+    "purpose": "Explain how Joule, Harness and App Builder combine in the intended operating model.",
+    "keyMessage": "Harness orchestrates SAP execution through Joule and tools; App Builder extends capabilities through a conditional reviewed build path.",
+    "changes": "Moved into agenda 01 as the integrated Agentic Execution capability explanation.",
+    "visualAudit": "REDESIGN",
+    "agents": "Joule + Harness + App Builder",
     "section": "Autonomous Enterprise & Governance",
     "sectionNumber": "01"
   },
@@ -96,23 +122,10 @@ const slides = [
     "kind": "divider",
     "section": "Agentic Execution",
     "sectionNumber": "02",
-    "order": 8
+    "order": 10
   },
   {
-    "order": 9,
-    "file": "6page.html",
-    "title": "Integrated Operating Model",
-    "status": "new",
-    "purpose": "Explain how Joule, Harness and App Builder combine in the intended operating model.",
-    "keyMessage": "Harness orchestrates SAP execution through Joule and tools; App Builder extends capabilities through a conditional reviewed build path.",
-    "changes": "Moved to agenda 02 as the integrated operating model and Human + Agent role allocation before individual agent explanations.",
-    "visualAudit": "REDESIGN",
-    "agents": "Joule + Harness + App Builder",
-    "section": "Agentic Execution",
-    "sectionNumber": "02"
-  },
-  {
-    "order": 10,
+    "order": 11,
     "file": "14page.html",
     "title": "Human + Agent Operating Model",
     "status": "new",
@@ -125,7 +138,7 @@ const slides = [
     "sectionNumber": "02"
   },
   {
-    "order": 11,
+    "order": 12,
     "file": "10page.html",
     "title": "SAP 업무에 연결되는 Joule 경험",
     "status": "revised",
@@ -139,7 +152,7 @@ const slides = [
     "sectionNumber": "02"
   },
   {
-    "order": 12,
+    "order": 13,
     "file": "9page.html",
     "title": "전사 지식을 연결해 업무 관계를 이해",
     "status": "revised",
@@ -153,7 +166,7 @@ const slides = [
     "sectionNumber": "02"
   },
   {
-    "order": 13,
+    "order": 14,
     "file": "11page.html",
     "title": "업무 요청을 분석과 실행으로 연결",
     "status": "revised",
@@ -177,10 +190,10 @@ const slides = [
     "section": "Agentic Execution",
     "sectionNumber": "02",
     "agents": "App Builder",
-    "order": 14
+    "order": 15
   },
   {
-    "order": 15,
+    "order": 16,
     "file": "12page.html",
     "title": "Harness Deep Agent Explanation",
     "status": "revised",
@@ -194,7 +207,7 @@ const slides = [
     "sectionNumber": "02"
   },
   {
-    "order": 16,
+    "order": 17,
     "file": "13page.html",
     "title": "Harness A2A Explanation",
     "status": "revised",
@@ -218,10 +231,10 @@ const slides = [
     "kind": "divider",
     "section": "SAP BTP Architecture",
     "sectionNumber": "03",
-    "order": 17
+    "order": 18
   },
   {
-    "order": 18,
+    "order": 19,
     "file": "4page.html",
     "title": "업무를 연결하는 공통 AI 기반",
     "status": "revised",
@@ -234,7 +247,7 @@ const slides = [
     "sectionNumber": "03"
   },
   {
-    "order": 19,
+    "order": 20,
     "file": "16page.html",
     "title": "왜 SAP BTP인가?",
     "status": "revised",
@@ -247,7 +260,7 @@ const slides = [
     "sectionNumber": "03"
   },
   {
-    "order": 20,
+    "order": 21,
     "file": "19page.html",
     "title": "BTP Standard Architecture",
     "status": "revised",
@@ -260,7 +273,7 @@ const slides = [
     "sectionNumber": "03"
   },
   {
-    "order": 21,
+    "order": 22,
     "file": "20page.html",
     "title": "SAP BTP Kyma 기반 App-in-App Portal Architecture",
     "status": "revised",
@@ -273,7 +286,7 @@ const slides = [
     "sectionNumber": "03"
   },
   {
-    "order": 22,
+    "order": 23,
     "file": "17page.html",
     "title": "왜 운영에도 SAP BTP인가?",
     "status": "revised",
@@ -296,10 +309,10 @@ const slides = [
     "kind": "divider",
     "section": "Demo & Business Value",
     "sectionNumber": "04",
-    "order": 23
+    "order": 24
   },
   {
-    "order": 24,
+    "order": 25,
     "file": "2page.html",
     "title": "Demo Context & Business Challenges",
     "status": "existing",
@@ -311,7 +324,7 @@ const slides = [
     "sectionNumber": "04"
   },
   {
-    "order": 25,
+    "order": 26,
     "file": "5page.html",
     "title": "Target Operating Model — Cross-Team Collaboration",
     "status": "revised",
@@ -324,7 +337,7 @@ const slides = [
     "sectionNumber": "04"
   },
   {
-    "order": 26,
+    "order": 27,
     "file": "22page.html",
     "title": "Autonomous Operations SCM Demo",
     "status": "revised",
@@ -338,7 +351,7 @@ const slides = [
     "sectionNumber": "04"
   },
   {
-    "order": 27,
+    "order": 28,
     "file": "23page.html",
     "title": "반복 조율은 줄이고, 중요한 판단에 집중",
     "status": "new",
