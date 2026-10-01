@@ -130,6 +130,21 @@
         1884,
         776
       ]
+    },
+    {
+      "file": "sap-pdf-p29-business-ai-portfolio.png",
+      "pdf_page": 29,
+      "method": "unaltered diagram-region rasterization at 3x PDF points, including original Security & Compliance layer",
+      "crop_pdf_points": [
+        106,
+        58,
+        855,
+        506
+      ],
+      "size": [
+        2247,
+        1344
+      ]
     }
   ]
 }

@@ -3,15 +3,37 @@
 <head>
  <meta charset="utf-8">
  <meta name="viewport" content="width=device-width, initial-scale=1">
- <title>Business Context을 이해해야 Agent가 올바르게 실행 | SAP BTP AI</title>
+ <title>SAP Business AI is embedded across the portfolio | SAP BTP AI</title>
  <link rel="stylesheet" href="sap-template.css">
- <link rel="stylesheet" href="assets/draft-visuals.css">
-<link rel="stylesheet" href="assets/korean-editorial.css"><link rel="stylesheet" href="assets/sap-official-template.css"></head>
+ <link rel="stylesheet" href="assets/korean-editorial.css">
+ <link rel="stylesheet" href="assets/sap-official-template.css">
+ <style>
+ .portfolio-slide h1 { margin:0; }
+ .portfolio-layout { display:grid; grid-template-columns:minmax(0,2.5fr) minmax(0,1fr); align-items:center; gap:40px; margin-top:52px; }
+ .portfolio-layout figure { margin:0; }
+ .portfolio-layout img { display:block; width:100%; height:auto; }
+ .portfolio-notes h2 { margin:0 0 26px; font-size:28px; font-weight:500; line-height:1.25; color:#000; }
+ .portfolio-notes dl { margin:0; }
+ .portfolio-notes dl div { padding:22px 0; border-top:1px solid #d1efff; }
+ .portfolio-notes dt { color:#0070f2; font-size:22px; font-weight:500; }
+ .portfolio-notes dd { margin:12px 0 0; font-size:19px; color:#475e75; line-height:1.5; }
+ @media(max-width:800px) { .portfolio-layout { grid-template-columns:1fr; gap:30px; margin-top:32px; } }
+ </style>
+</head>
 <body>
- <main class="slide draft-slide">
-  <div class="top-line" aria-hidden="true"></div>
-  <h1>Business Context을 이해해야 <span>Agent가 올바르게 실행</span></h1>
-  <figure class="hero pdf-hero "><img src="assets/sap-pdf-p19-business-context.png" alt="SAP Joule Studio architecture showing agent purpose, context, skills, data and models above SAP Business Data Cloud, SAP Knowledge Graph, and SAP and non-SAP applications."><aside class="visual-notes" aria-label="Business context"><p class="visual-eyebrow">실행 전 Business Context 이해</p><h2>기업의 업무 지식을<br>Agent의 판단 근거로</h2><dl><div><dt>Data & Knowledge</dt><dd>SAP Data · 문서 · 업무 간 관계</dd></div><div><dt>Process & Purpose</dt><dd>업무 의도 · 의존 관계 · 기대 결과</dd></div><div><dt>Authorization & Policy</dt><dd>접근 권한 · 실행 범위 · 승인 조건</dd></div></dl></aside></figure>
+ <main class="slide portfolio-slide">
+  <h1>SAP Business AI is embedded across the portfolio</h1>
+  <section class="portfolio-layout" aria-label="Agent Workflow and Governance across the SAP portfolio">
+   <figure><img src="assets/sap-pdf-p29-business-ai-portfolio.png" alt="SAP 원본 그림: Joule이 CX, Analytics, Finance, Supply Chain, HR, Spend Agent를 연결하고, SAP 업무 영역 전반에 Embedded AI를 제공. AI Foundation은 Custom AI를 지원하며 전체 구조에 built-in Security & Compliance 적용."></figure>
+   <aside class="portfolio-notes">
+    <h2>Agent Workflow<br>&amp; Governance</h2>
+    <dl>
+     <div><dt>End-to-End Orchestration</dt><dd>Joule이 업무 영역별 Agent를 연결해 전체 Process의 실행을 조율합니다.</dd></div>
+     <div><dt>Embedded AI + Custom AI</dt><dd>SAP 업무에 내장된 AI와 AI Foundation 기반 Custom AI를 함께 활용합니다.</dd></div>
+     <div><dt>Security &amp; Compliance</dt><dd>공통 보안·규정 준수 기반 위에서 Agent Workflow를 운영합니다.</dd></div>
+    </dl>
+   </aside>
+  </section>
   <span class="slide-page-number">06</span>
  </main>
 </body>

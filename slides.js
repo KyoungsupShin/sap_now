@@ -63,11 +63,11 @@ const slides = [
   {
     "order": 6,
     "file": "3page.html",
-    "title": "Business Context을 이해해야 Agent가 올바르게 실행",
+    "title": "SAP Business AI is embedded across the portfolio",
     "status": "new",
-    "purpose": "Explain why enterprise AI needs more than a generic LLM.",
-    "keyMessage": "Autonomous AI requires data, process, knowledge, identity, and policy context.",
-    "changes": "Moved into agenda 01 to explain Business Context and the governed Execution Loop before Human Oversight.",
+    "purpose": "Explain SAP portfolio-wide Agent Workflow & Governance using the original SAP PDF page 29 visual.",
+    "keyMessage": "Joule orchestrates agents across SAP business domains; AI Foundation supports Custom AI, with built-in Security & Compliance across the portfolio.",
+    "changes": "Reframed page 6 as the detailed counterpart to Agent Workflow & Governance, with original PDF page 29 artwork and Korean supporting explanations.",
     "visualAudit": "SIMPLIFY",
     "section": "Autonomous Enterprise & Governance",
     "sectionNumber": "01"
