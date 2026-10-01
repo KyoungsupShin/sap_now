@@ -1,0 +1,29 @@
+/* Match the editable App Builder explanation's card and connector treatment. */
+.comparison-template .content { grid-template-columns:180px 240px minmax(0,1fr); gap:24px; margin-top:52px; height:530px; }
+.comparison-template .request { gap:15px; padding:20px; border:1px solid #d1efff; border-top:4px solid #1b90ff; border-radius:0; background:#fff; box-shadow:none; }
+.comparison-template .request small,.comparison-template .question-rail small { color:#0070f2; font-size:12px; font-weight:400; letter-spacing:0; }
+.comparison-template .request h2 { font-size:22px; font-weight:500; line-height:1.25; letter-spacing:0; }
+.comparison-template .request p { font-size:13px; font-weight:400; line-height:1.4; }
+.comparison-template .question-rail { padding:10px 14px; }
+.comparison-template .question-rail strong { font-size:17px; font-weight:500; line-height:1.5; letter-spacing:0; word-break:keep-all; }
+.comparison-template .compare { grid-template-rows:repeat(2,minmax(0,1fr)); gap:16px; }
+.comparison-template .lane,.comparison-template .lane.ai { padding:16px; border:1px solid #d1efff; border-radius:3px; background:#fff; box-shadow:none; }
+.comparison-template .lane-head { margin-bottom:12px; font-size:20px; font-weight:500; letter-spacing:0; }
+.comparison-template .lane-head b { padding:5px 8px; border-radius:0; background:#fff0df; color:#a64b00; font-size:12px; font-weight:500; letter-spacing:0; }
+.comparison-template .ai .lane-head b { background:#eaf5ff; color:#0070f2; }
+.comparison-template .flow { gap:16px; height:calc(100% - 38px); }
+.comparison-template .item,.comparison-template .ai .item { display:flex; flex-direction:column; justify-content:center; min-width:0; padding:28px 10px 10px; border:0; border-top:3px solid #e9730c; background:#fff8f0; }
+.comparison-template .item { border-top-color:#e9730c !important; }
+.comparison-template .ai .item { border-top-color:#1b90ff !important; background:#f5faff; }
+.comparison-template .item small { color:#a64b00; font-size:11px; font-weight:400; letter-spacing:0; }
+.comparison-template .ai .item small { color:#0070f2; }
+.comparison-template .item h2 { margin:8px 0 6px; font-size:17px; font-weight:500; line-height:1.25; letter-spacing:0; }
+.comparison-template .item p { font-size:13px; font-weight:400; line-height:1.35; }
+.comparison-template .request::after,.comparison-template .question-rail::after,.comparison-template .item:not(:last-child)::after { width:auto; height:auto; display:block; right:-20px; border:0; border-radius:0; background:transparent; color:#0070f2; font-size:22px; font-weight:400; }
+.comparison-template .item:not(:last-child)::after,.comparison-template .ai .item:not(:last-child)::after { right:-16px; color:#0070f2; font-size:18px; }
+@media(max-width:800px) {
+ .comparison-template .content { grid-template-columns:1fr; height:auto; gap:24px; margin-top:32px; }
+ .comparison-template .compare { grid-template-rows:none; margin-top:0; }
+ .comparison-template .flow { grid-template-columns:1fr; height:auto; }
+ .comparison-template .request::after,.comparison-template .question-rail::after,.comparison-template .item:not(:last-child)::after { content:none; }
+}
