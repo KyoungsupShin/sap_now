@@ -21,34 +21,59 @@ const { chromium } = require('playwright');
       if (!box || box.width !== 1600 || box.height !== 900) throw new Error(`Unexpected slide dimensions: ${slide.file} ${JSON.stringify(box)}`);
       const filename = `${String(slide.order).padStart(2, '0')}.png`;
       await page.screenshot({ path: path.join(output, filename), clip: box, animations: 'disabled' });
-      // Render simple card backgrounds as editable native PowerPoint rectangles.
-      const cards = await page.evaluate(() => {
-        if(document.querySelector('main.original-scenario'))return [];
-        const selector = '.cap,.development-step,.execution-stage,.process-node,.item,.model-node,.oversight-card,.request,.shared-entry';
-        return [...document.querySelectorAll(selector)].filter(e => !e.querySelector(selector)).map((e, i) => {
-          e.dataset.exportCard = i;
-          const b = e.getBoundingClientRect(), c = getComputedStyle(e);
-          const lines=[];
-          const walker=document.createTreeWalker(e,NodeFilter.SHOW_TEXT);
-          while(walker.nextNode()) {
-            const node=walker.currentNode, style=getComputedStyle(node.parentElement);
-            if(style.visibility==='hidden'||style.display==='none') continue;
-            let line;
-            for(let j=0;j<node.textContent.length;j++) {
-              const range=document.createRange();range.setStart(node,j);range.setEnd(node,j+1);
-              const r=range.getBoundingClientRect(),char=node.textContent[j];
-              if(!r.width||!r.height)continue;
-              if(!line||Math.abs(line.y-r.y)>1){line={text:'',x:r.x,y:r.y,width:0,height:r.height,fontSize:parseFloat(style.fontSize),font:style.fontFamily.split(',')[0].replaceAll('"',''),weight:style.fontWeight,color:style.color,italic:style.fontStyle==='italic'};lines.push(line);}
-              line.text+=char;line.width=r.right-line.x;
+      const content = await page.evaluate(() => {
+        const root = document.querySelector('main.slide');
+        const textLines = [];
+        const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+        const parents = new Set();
+        const owners = new Map();
+        while (walker.nextNode()) {
+          const node = walker.currentNode, parent = node.parentElement;
+          if (parent.closest('script,style,svg')) continue;
+          const style = getComputedStyle(parent);
+          if (style.visibility === 'hidden' || style.display === 'none' || style.opacity === '0') continue;
+          const owner=parent.closest('h1,h2,h3,h4,p,li,dt,dd,th,td,.conclusion') || parent;
+          if(!owners.has(owner))owners.set(owner,owners.size);
+          let line;
+          for (let j=0; j<node.textContent.length; j++) {
+            const range=document.createRange(); range.setStart(node,j); range.setEnd(node,j+1);
+            const r=range.getBoundingClientRect(); let char=node.textContent[j];
+            if (!r.width || !r.height || r.bottom<=0 || r.top>=900) continue;
+            if (style.textTransform==='uppercase') char=char.toUpperCase();
+            if (style.textTransform==='lowercase') char=char.toLowerCase();
+            if (!line || Math.abs(line.y-r.y)>1) {
+              line={owner:owners.get(owner),text:'',x:r.x,y:r.y,width:0,height:r.height,fontSize:parseFloat(style.fontSize),font:style.fontFamily.split(',')[0].replaceAll('"',''),weight:style.fontWeight,color:style.color,italic:style.fontStyle==='italic'};
+              textLines.push(line);
             }
+            line.text+=char; line.width=r.right-line.x; parents.add(parent);
           }
-          return {id:i,x:b.x,y:b.y,width:b.width,height:b.height,fill:c.backgroundColor,border:c.borderLeftColor,borderWidth:parseFloat(c.borderLeftWidth),topColor:c.borderTopColor,topWidth:parseFloat(c.borderTopWidth),radius:parseFloat(c.borderTopLeftRadius),textLines:lines};
+        }
+        const selector='.cap,.development-step,.execution-stage,.process-node,.item,.model-node,.oversight-card,.request,.shared-entry';
+        const cards=document.querySelector('main.original-scenario') ? [] : [...root.querySelectorAll(selector)].filter(e=>!e.querySelector(selector)).map((e,i)=> {
+          const b=e.getBoundingClientRect(),c=getComputedStyle(e);
+          e.dataset.exportCard=i;
+          return {id:i,x:b.x,y:b.y,width:b.width,height:b.height,fill:c.backgroundColor,border:c.borderLeftColor,borderWidth:parseFloat(c.borderLeftWidth),topColor:c.borderTopColor,topWidth:parseFloat(c.borderTopWidth),radius:parseFloat(c.borderTopLeftRadius)};
         });
+        // Hide text ink only: retain layout, images, card geometry and icons.
+        for (const parent of parents) {
+          parent.style.setProperty('color','transparent','important');
+          parent.style.setProperty('-webkit-text-fill-color','transparent','important');
+          parent.style.setProperty('text-shadow','none','important');
+          parent.style.setProperty('text-decoration-color','transparent','important');
+        }
+        for (const e of root.querySelectorAll('[data-export-card]')) {
+          e.style.setProperty('background','transparent','important');
+          e.style.setProperty('border-color','transparent','important');
+        }
+        return {cards,textLines:textLines.filter(l=>l.text.trim())};
       });
-      await page.addStyleTag({content:'[data-export-card]{visibility:hidden !important}[data-export-card]::after{visibility:visible !important}'});
-      await page.screenshot({ path:path.join(output, `${String(slide.order).padStart(2,'0')}-base.png`),clip:box,animations:'disabled'});
+      // Preserve CSS-generated arrow glyphs in the raster background.
+      await page.addStyleTag({content:'main.slide *::before,main.slide *::after{-webkit-text-fill-color:initial !important}'});
+      await page.screenshot({path:path.join(output,`${String(slide.order).padStart(2,'0')}-base.png`),clip:box,animations:'disabled'});
+      const cards=content.cards;
+      slide.nativeText=content.textLines;
       slide.nativeCards = cards;
-      console.log(`${slide.order}/${slides.length}: ${slide.title} (${cards.length} editable cards)`);
+      console.log(`${slide.order}/${slides.length}: ${slide.title} (${cards.length} cards, ${content.textLines.length} editable text boxes)`);
     }
     fs.writeFileSync(path.join(output, 'manifest.json'), JSON.stringify(slides, null, 2));
   } finally { await browser.close(); }

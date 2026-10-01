@@ -13,7 +13,9 @@ import re
 from PIL import Image
 
 root = Path(__file__).resolve().parents[1]
-rendered = Path(sys.argv[1]) if len(sys.argv) > 1 else root / 'exports' / 'rendered'
+editable_only = '--editable-only' in sys.argv
+paths = [arg for arg in sys.argv[1:] if not arg.startswith('--')]
+rendered = Path(paths[0]) if paths else root / 'exports' / 'rendered'
 output = root / 'exports'
 slides = json.loads((rendered / 'manifest.json').read_text())
 prs = Presentation()
@@ -22,20 +24,21 @@ prs.core_properties.title = 'SAP NOW — Autonomous Enterprise'
 prs.core_properties.subject = 'Faithful export of the HTML presentation'
 prs.core_properties.author = 'KyoungsupShin'
 doc = fitz.open()
-for item in slides:
-    png = rendered / f"{item['order']:02}.png"
-    with Image.open(png) as image:
-        assert image.size == (3200, 1800), (png, image.size)
-    slide = prs.slides.add_slide(prs.slide_layouts[6])
-    slide.shapes.add_picture(str(png), 0, 0, width=prs.slide_width, height=prs.slide_height)
-    slide.notes_slide.notes_text_frame.text = f"{item['order']:02} — {item['title']}\nHTML source: {item['file']}"
-    page = doc.new_page(width=960, height=540)
-    page.insert_image(page.rect, filename=str(png))
-prs.save(output / 'SAP_NOW_exact.pptx')
+if not editable_only:
+    for item in slides:
+        png = rendered / f"{item['order']:02}.png"
+        with Image.open(png) as image:
+            assert image.size == (3200, 1800), (png, image.size)
+        slide = prs.slides.add_slide(prs.slide_layouts[6])
+        slide.shapes.add_picture(str(png), 0, 0, width=prs.slide_width, height=prs.slide_height)
+        slide.notes_slide.notes_text_frame.text = f"{item['order']:02} — {item['title']}\nHTML source: {item['file']}"
+        page = doc.new_page(width=960, height=540)
+        page.insert_image(page.rect, filename=str(png))
+    prs.save(output / 'SAP_NOW_exact.pptx')
 # A second deck keeps original complex content but exposes flat card geometry.
 hybrid = Presentation()
 hybrid.slide_width, hybrid.slide_height = prs.slide_width, prs.slide_height
-hybrid.core_properties.title = 'SAP NOW — Editable card shapes'
+hybrid.core_properties.title = 'SAP NOW — Editable text and shapes'
 def color(value):
     parts = [int(v) for v in re.findall(r'[\d.]+', value)[:3]]
     return RGBColor(*parts)
@@ -65,23 +68,34 @@ for item in slides:
             top = slide.shapes.add_shape(MSO_SHAPE.RECTANGLE, unit(x), unit(y), unit(w), unit(card['topWidth']))
             for style in list(top._element.findall(qn('p:style'))): top._element.remove(style)
             top.fill.solid(); top.fill.fore_color.rgb = color(card['topColor']); top.line.fill.background()
-        for line in card.get('textLines', []):
-            if not line['text'].strip():
-                continue
-            text = slide.shapes.add_textbox(unit(line['x']), unit(line['y']), unit(line['width'] + 8), unit(line['height'] + 8))
-            frame = text.text_frame
-            frame.margin_left = frame.margin_right = frame.margin_top = frame.margin_bottom = 0
-            frame.word_wrap = False
-            frame.auto_size = MSO_AUTO_SIZE.NONE
-            paragraph = frame.paragraphs[0]
-            paragraph.space_before = paragraph.space_after = Pt(0)
+    groups = []
+    for line in item.get('nativeText', []):
+        group = next((g for g in groups if g['owner'] == line.get('owner') and abs(g['y'] - line['y']) < 1.5), None)
+        if group is None:
+            group = {'owner':line.get('owner'), 'y':line['y'], 'runs':[]}
+            groups.append(group)
+        group['runs'].append(line)
+    for group in groups:
+        lines = sorted(group['runs'], key=lambda l:l['x'])
+        left = min(l['x'] for l in lines)
+        right = max(l['x']+l['width'] for l in lines)
+        height = max(l['height'] for l in lines)
+        text = slide.shapes.add_textbox(unit(left), unit(group['y']), unit(right-left+16), unit(height+8))
+        frame = text.text_frame
+        frame.margin_left = frame.margin_right = frame.margin_top = frame.margin_bottom = 0
+        frame.word_wrap = False
+        frame.auto_size = MSO_AUTO_SIZE.NONE
+        paragraph = frame.paragraphs[0]
+        paragraph.space_before = paragraph.space_after = Pt(0)
+        for line in lines:
             run = paragraph.add_run(); run.text = line['text']
             run.font.name = line['font']; run.font.size = Pt(line['fontSize'] * .6)
             run.font.bold = int(line['weight']) >= 600
             run.font.italic = line['italic']; run.font.color.rgb = color(line['color'])
-    slide.notes_slide.notes_text_frame.text = f"{item['order']:02} — {item['title']}\nEditable card backgrounds, borders and text; complex content preserves the original raster appearance."
+    slide.notes_slide.notes_text_frame.text = f"{item['order']:02} — {item['title']}\nAll HTML text is editable; card backgrounds and borders are native shapes. Text embedded in source images remains part of those images."
 hybrid.save(output / 'SAP_NOW_editable.pptx')
-doc.set_metadata({'title': 'SAP NOW — Autonomous Enterprise', 'author': 'KyoungsupShin'})
-doc.save(output / 'SAP_NOW.pdf', garbage=4, deflate=True)
-assert len(prs.slides) == len(doc) == len(slides)
-print(f'Created PPTX and PDF: {len(slides)} pages, 3200×1800 source images, 16:9.')
+if not editable_only:
+    doc.set_metadata({'title': 'SAP NOW — Autonomous Enterprise', 'author': 'KyoungsupShin'})
+    doc.save(output / 'SAP_NOW.pdf', garbage=4, deflate=True)
+assert len(hybrid.slides) == len(slides)
+print(f'Created editable PPTX: {len(slides)} pages, {sum(1 for slide in hybrid.slides for shape in slide.shapes if shape.has_text_frame and shape.text.strip())} text boxes.')
