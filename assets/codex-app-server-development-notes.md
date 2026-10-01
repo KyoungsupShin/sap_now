@@ -13,3 +13,7 @@
 ## Concept illustration revision
 
 User requested the isometric illustration style of slide 27 and business-level concepts instead of server internals. The visible diagram now uses Business Request, AI Development, Validation, Business Application and central App Builder. Thread, Turn, protocol and server implementation labels are omitted. The existing four lifecycle cards retain Define, Build, Validate and Deploy roles. The artwork is custom generated, not an official SAP asset.
+
+## UI-led visual revision
+
+The user clarified the preferred reference is supplied SAP AI PDF file page 9, "Joule as new AI UX Layer". Replaced the isometric scene with a front-facing 2D product-experience montage: Business Request, AI Development and Validate & Apply. These are conceptual UI illustrations, not real SAP or Codex screenshots. No protocol terms, 3D platforms or faceted cores appear. Existing four lifecycle cards stay intact.

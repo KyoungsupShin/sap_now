@@ -91,7 +91,7 @@ const slides = [
     "status": "draft",
     "purpose": "Explain App & AI Development as a business concept integrated into four lifecycle cards.",
     "keyMessage": "App Builder connects business requests, AI-assisted development, validation and application reuse.",
-    "changes": "Replaced protocol diagram with a purple/cyan isometric concept illustration matching slide 27; removed technical implementation terms from the lifecycle cards.",
+    "changes": "Replaced the 3D illustration with a 2D UI concept montage referencing supplied SAP AI PDF page 9, Joule as new AI UX Layer; retained four business lifecycle cards.",
     "visualAudit": "DRAFT",
     "section": "Autonomous Enterprise & Governance",
     "sectionNumber": "01",
