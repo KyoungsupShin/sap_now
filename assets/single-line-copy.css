@@ -1,0 +1,15 @@
+/* Keep presentation labels on one visual row so editable exports use one text box. */
+@media (min-width:801px) {
+ .cover-subtitle { position:absolute; left:66px; top:435px; margin:0; font-size:32px; color:#000; }
+ .slide.chapter-slide.single-line-chapter h1 { font-size:44px !important; }
+ .pdf-capability-map .cap h2 { font-size:20px; }
+ .comparison-template .question-rail strong { font-size:15px; }
+ .comparison-wrap .external-group-frame { left:11%; width:57%; }
+ .comparison col:nth-child(1) { width:11%; }
+ .comparison col:nth-child(2), .comparison col:nth-child(3) { width:18%; }
+ .comparison col:nth-child(4) { width:21%; }
+ .comparison col:nth-child(5) { width:32%; }
+}
+@media (max-width:800px) {
+ .cover-subtitle { position:absolute; left:30px; top:435px; margin:0; font-size:25px; }
+}
