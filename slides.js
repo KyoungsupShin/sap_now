@@ -105,7 +105,7 @@ const slides = [
     "status": "new",
     "purpose": "Explain how Joule, Harness and App Builder combine in the intended operating model.",
     "keyMessage": "Harness orchestrates SAP execution through Joule and tools; App Builder extends capabilities through a conditional reviewed build path.",
-    "changes": "Replaced the flat operating flow with a 2D UI concept image matching slide 8, retaining four role cards and the conditional App Builder path.",
+    "changes": "Promoted the conditional App Builder -> Validate/Approve/Release -> Reuse path into the UI image; removed duplicate below-image text and shortened four role cards.",
     "visualAudit": "REDESIGN",
     "agents": "Joule + Harness + App Builder",
     "section": "Autonomous Enterprise & Governance",
