@@ -25,6 +25,11 @@
 .app-builder-detail .process-node span { display:block; margin-top:6px; color:#475e75; font-size:13px; line-height:1.35; }
 .app-builder-detail .cost-badge { position:absolute; top:7px; right:7px; color:#0070f2; font-size:11px; font-style:normal; white-space:nowrap; }
 .app-builder-detail .new .cost-badge,.app-builder-detail .to-be .cost-badge { color:#a64b00; }
+.app-builder-detail .process-card.new { border-color:#f1baba !important; }
+.app-builder-detail .new .process-head b { background:#ffe4e4; color:#a52222; }
+.app-builder-detail .new .process-node { border-top-color:#d23b3b; background:#fff1f1; }
+.app-builder-detail .new .cost-badge { color:#a52222; }
+.app-builder-detail .new .process-node:not(:last-child)::after { color:#d23b3b; }
 .app-builder-detail .shared-entry::after,.app-builder-detail .format-icon::after,.app-builder-detail .process-node:not(:last-child)::after { position:absolute; z-index:1; top:50%; right:-20px; color:#0070f2; content:'→'; font-size:22px; transform:translateY(-50%); }
 .app-builder-detail .process-node:not(:last-child)::after { right:-16px; font-size:18px; }
 .app-builder-detail .agent-capability { font-weight:400; }
