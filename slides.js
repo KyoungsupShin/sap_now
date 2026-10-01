@@ -73,20 +73,7 @@ const slides = [
     "sectionNumber": "01"
   },
   {
-    "file": "app-ai-development-draft.html",
-    "title": "App & AI Development — 필요한 실행 역량을 확장",
-    "status": "draft",
-    "purpose": "Draft the missing App & AI Development capability explanation in agenda 01.",
-    "keyMessage": "Define a capability gap, build App/Skill/Workflow, validate and approve, then deploy and reuse.",
-    "changes": "Added an editable HTML draft, distinguishing SAP development foundations from the App Builder role in this presentation.",
-    "visualAudit": "DRAFT",
-    "section": "Autonomous Enterprise & Governance",
-    "sectionNumber": "01",
-    "agents": "App Builder",
-    "order": 7
-  },
-  {
-    "order": 8,
+    "order": 7,
     "file": "7page.html",
     "title": "판단 · 실행 · 검증을 통제된 순환으로",
     "status": "new",
@@ -97,6 +84,19 @@ const slides = [
     "agents": "Agent · 요청 이해부터 판단·실행·검증까지",
     "section": "Autonomous Enterprise & Governance",
     "sectionNumber": "01"
+  },
+  {
+    "file": "app-ai-development-draft.html",
+    "title": "App & AI Development — 필요한 실행 역량을 확장",
+    "status": "draft",
+    "purpose": "Draft the missing App & AI Development capability explanation in agenda 01.",
+    "keyMessage": "Define a capability gap, build App/Skill/Workflow, validate and approve, then deploy and reuse.",
+    "changes": "Added an editable HTML draft, distinguishing SAP development foundations from the App Builder role in this presentation.",
+    "visualAudit": "DRAFT",
+    "section": "Autonomous Enterprise & Governance",
+    "sectionNumber": "01",
+    "agents": "App Builder",
+    "order": 8
   },
   {
     "order": 9,
