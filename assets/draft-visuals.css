@@ -5,15 +5,15 @@ body { margin: 0; }
 .draft-slide .brand { position: absolute; right: 110px; }
 .draft-slide .top-line { position: absolute; inset: 0 0 auto; }
 .draft-slide h1 { margin: 0; max-width: 1340px; white-space: normal !important; font-size: 54px !important; line-height: 1.08 !important; letter-spacing: -.04em !important; }
-.draft-slide .intro { margin: 18px 0 0; color: #556b82; font-size: 23px; line-height: 1.4; }
+.draft-slide .intro { margin: 18px 0 0; color: #475e75; font-size: 23px; line-height: 1.4; }
 .draft-slide .hero { margin: 25px 0 0; width: 100%; }
 .draft-slide .hero img { display: block; width: 100%; height: 500px; object-fit: contain; }
-.draft-slide .takeaway { display: flex; align-items: center; gap: 22px; margin: 23px 0 0; padding-top: 20px; border-top: 1px solid #c9d9e9; }
+.draft-slide .takeaway { display: flex; align-items: center; gap: 22px; margin: 23px 0 0; padding-top: 20px; border-top: 1px solid #d1efff; }
 .draft-slide .takeaway .label { color: #0070f2; font-size: 12px; letter-spacing: .1em; font-weight: 700; white-space: nowrap; }
-.draft-slide .takeaway p { margin: 0; font-size: 22px; line-height: 1.4; color: #223548; }
+.draft-slide .takeaway p { margin: 0; font-size: 22px; line-height: 1.4; color: #000000; }
 .draft-slide .takeaway b { color: #0070f2; font-weight: 600; }
 .draft-slide .value-strip { display: flex; flex-wrap: wrap; gap: 15px 38px; margin: 0; padding: 0; list-style: none; }
-.draft-slide .value-strip li { font-size: 20px; color: #223548; }
+.draft-slide .value-strip li { font-size: 20px; color: #000000; }
 .draft-slide .value-strip li::before { content: ''; display: inline-block; width: 7px; height: 7px; margin-right: 12px; margin-bottom: 3px; border-top: 2px solid #0070f2; border-right: 2px solid #0070f2; transform: rotate(45deg); }
 .draft-slide .footer { max-width: calc(100% - 190px); }
 @media (max-width:800px) {
@@ -31,34 +31,34 @@ body { margin: 0; }
 .draft-slide .pdf-hero { display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr); align-items: center; gap: 56px; height: 500px; }
 .draft-slide .pdf-hero img { width: 100%; height: 475px; min-width: 0; object-fit: contain; }
 .draft-slide .visual-notes { min-width: 0; }
-.draft-slide .visual-eyebrow { margin: 0 0 18px; font-size: 12px; font-weight: 700; letter-spacing: .1em; color: #7045ff; }
+.draft-slide .visual-eyebrow { margin: 0 0 18px; font-size: 12px; font-weight: 700; letter-spacing: .1em; color: #7858ff; }
 .draft-slide .visual-notes h2 { margin: 0 0 25px; font-size: 34px; font-weight: 500; line-height: 1.12; letter-spacing: -.025em; }
 .draft-slide .visual-notes dl { margin: 0; }
 .draft-slide .visual-notes dl div { padding: 16px 0; border-top: 1px solid #dbe3ee; }
-.draft-slide .visual-notes dt { color: #223548; font-size: 24px; font-weight: 600; }
-.draft-slide .visual-notes dd { margin: 8px 0 0; color: #556b82; font-size: 19px; line-height: 1.35; }
+.draft-slide .visual-notes dt { color: #000000; font-size: 24px; font-weight: 600; }
+.draft-slide .visual-notes dd { margin: 8px 0 0; color: #475e75; font-size: 19px; line-height: 1.35; }
 .draft-slide .execution-stages { margin: 0; padding: 0; list-style: none; counter-reset: execution; }
 .draft-slide .execution-stages li { display: grid; grid-template-columns: 35px 100px minmax(0, 1fr); align-items: baseline; column-gap: 14px; padding: 15px 0; border-top: 1px solid #dbe3ee; counter-increment: execution; }
-.draft-slide .execution-stages li::before { content: '0' counter(execution); color: #7045ff; font-size: 13px; }
+.draft-slide .execution-stages li::before { content: '0' counter(execution); color: #7858ff; font-size: 13px; }
 .draft-slide .execution-stages b { font-size: 22px; font-weight: 500; }
-.draft-slide .execution-stages span { color: #556b82; font-size: 17px; line-height: 1.4; }
+.draft-slide .execution-stages span { color: #475e75; font-size: 17px; line-height: 1.4; }
 .draft-slide .pdf-loop { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 105px; }
 .draft-slide .loop-stages { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 26px; padding: 0; margin: 30px 0 25px; list-style: none; counter-reset: loop; }
 .draft-slide .loop-stages li { font-size: 23px; counter-increment: loop; }
-.draft-slide .loop-stages li::before { content: '0' counter(loop); display: inline-block; margin-right: 13px; font-size: 13px; color: #7045ff; }
-.draft-slide .note-caption { font-size: 19px; color: #556b82; line-height: 1.45; }
+.draft-slide .loop-stages li::before { content: '0' counter(loop); display: inline-block; margin-right: 13px; font-size: 13px; color: #7858ff; }
+.draft-slide .note-caption { font-size: 19px; color: #475e75; line-height: 1.45; }
 .draft-slide .pdf-wide { display: flex; flex-direction: column; align-items: stretch; justify-content: center; gap: 30px; }
 .draft-slide .pdf-wide img { height: 335px; }
 .draft-slide .autonomy-labels { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
 .draft-slide .autonomy-labels div { border-top: 2px solid #c0acff; padding-top: 17px; }
-.draft-slide .autonomy-labels small { color: #7045ff; font-size: 11px; letter-spacing: .05em; font-weight: 700; }
+.draft-slide .autonomy-labels small { color: #7858ff; font-size: 11px; letter-spacing: .05em; font-weight: 700; }
 .draft-slide .autonomy-labels h2 { margin: 12px 0 0; font-size: 24px; font-weight: 500; line-height: 1.25; }
 .draft-slide .pdf-platform { grid-template-columns: minmax(0, 1.9fr) minmax(0, 1fr); gap: 45px; }
-.draft-slide .value-notes p:not(.visual-eyebrow) { color: #556b82; font-size: 23px; line-height: 1.45; margin: 0; }
+.draft-slide .value-notes p:not(.visual-eyebrow) { color: #475e75; font-size: 23px; line-height: 1.45; margin: 0; }
 .draft-slide .value-notes h2 { margin-bottom: 13px; }
 .draft-slide .value-before { padding: 0 0 28px; border-bottom: 1px solid #dbe3ee; }
 .draft-slide .value-after { padding-top: 28px; }
-.draft-slide .value-after h2, .draft-slide .value-after b { color: #7045ff; }
+.draft-slide .value-after h2, .draft-slide .value-after b { color: #7858ff; }
 .draft-slide .source-credit { position: absolute; left: 110px; bottom: 50px; color: #6a6d70; font-size: 11px; max-width: calc(100% - 220px); }
 @media (max-width:800px) {
  .draft-slide .pdf-hero { display: flex; flex-direction: column; height: auto; gap: 30px; overflow: visible; }

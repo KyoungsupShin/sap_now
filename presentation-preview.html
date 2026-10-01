@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>SAP NOW — Presentation Review</title>
+    <title>SAP NOW — 발표 자료</title>
     <style>
       :root { --blue:#0070f2; --ink:#1d2d3e; --muted:#556b82; --line:#d5dde5; --canvas:#f5f6f7; }
       * { box-sizing:border-box; }
@@ -53,19 +53,20 @@
       .presentation-stage { display:flex; flex:1; align-items:center; justify-content:center; padding:20px; }
       .presentation-stage .frame-wrap { width:min(100%,calc((100vh - 96px) * 1.7777)); max-height:calc(100vh - 96px); box-shadow:0 8px 36px rgba(0,0,0,.35); }
       @media(max-width:760px){ .review-shell{display:block}.rail{position:sticky;z-index:5;height:auto;padding:12px;border-right:0;border-bottom:1px solid var(--line)}.rail h1,.rail p{display:none}.thumbs{display:flex;overflow-x:auto}.thumb{min-width:54px;min-height:40px}.thumb .name{display:none}.badge{margin:3px 0 0}main{padding:26px 14px 56px}.slide-meta{align-items:flex-start;flex-direction:column;gap:3px}.review-notes{grid-template-columns:92px minmax(0,1fr)}.comparison{grid-template-columns:1fr}.presentation-stage{padding:8px}.presentation-bar{padding:0 10px} }
+      .section-caption { color:var(--muted); font-size:12px; }
     </style>
   </head>
   <body>
     <div class="review-shell">
       <aside class="rail" aria-label="Slide navigation">
-        <h1>SAP NOW</h1><p>Review-only deck viewer<br /><span id="slide-count"></span> presentation slides</p>
-        <div class="mode-switch"><button class="active" id="overview-mode">OVERVIEW</button><button id="presentation-mode">PRESENT</button></div>
+        <h1>SAP NOW</h1><p>발표 자료 · 총 <span id="slide-count"></span>장</p>
+        <div class="mode-switch"><button class="active" id="overview-mode">전체 보기</button><button id="presentation-mode">발표 모드</button></div>
         <nav class="thumbs" id="thumbnails"></nav>
       </aside>
-      <main><header class="deck-header"><h2>Autonomous Enterprise</h2><p>Review the complete story, slides, draft status, and revision notes in sequence.</p></header><div id="deck"></div></main>
+      <main><header class="deck-header"><h2>자율형 기업을 위한 SAP BTP Agent</h2></header><div id="deck"></div></main>
     </div>
     <section class="presentation" id="presentation" aria-label="Presentation mode">
-      <div class="presentation-bar"><strong id="presentation-title"></strong><div class="presentation-controls"><button id="previous">← Previous</button><button id="next">Next →</button><button id="exit">Exit · Esc</button></div></div>
+      <div class="presentation-bar"><strong id="presentation-title"></strong><div class="presentation-controls"><button id="previous">← 이전</button><button id="next">다음 →</button><button id="exit">닫기 · Esc</button></div></div>
       <div class="presentation-stage"><div class="frame-wrap"><iframe id="presentation-frame" title="Current presentation slide"></iframe></div></div>
     </section>
     <script src="slides.js"></script>
@@ -75,7 +76,7 @@
         const presentation = document.querySelector('#presentation'); const frame = document.querySelector('#presentation-frame');
         const title = document.querySelector('#presentation-title'); let current = 0;
         document.querySelector('#slide-count').textContent = slides.length;
-        const statusLabel = status => status === 'new' ? 'NEW' : status === 'revised' ? 'REVISED' : '';
+        const statusLabel = status => '';
         const scaleFrames = () => document.querySelectorAll('.frame-wrap').forEach(wrap => {
           const iframe = wrap.querySelector('iframe'); if (!iframe) return;
           const scale = wrap.clientWidth / 1600; iframe.style.transform = `scale(${scale})`;
@@ -86,8 +87,8 @@
           thumb.className = 'thumb'; thumb.dataset.index = index; thumb.innerHTML = `<span class="number">${String(slide.order).padStart(2,'0')}</span><span class="name">${slide.title}</span>${badge ? `<span class="badge ${slide.status}">${badge}</span>` : ''}`;
           thumb.addEventListener('click', () => document.querySelector(`#slide-${slide.order}`).scrollIntoView({behavior:'smooth',block:'start'})); thumbs.appendChild(thumb);
           const item = document.createElement('article'); item.className = 'slide-review'; item.id = `slide-${slide.order}`;
-          item.innerHTML = `<header class="slide-meta"><h3>${String(slide.order).padStart(2,'0')} — ${slide.title}</h3><span class="source">${slide.file}</span></header>${createFrame(slide.file, slide.title)}<dl class="review-notes"><dt>STATUS</dt><dd>${slide.status.toUpperCase()}</dd><dt>SECTION</dt><dd>${slide.section ? `${slide.sectionNumber} · ${slide.section}` : 'Opening / Agenda'}</dd>${slide.agents ? `<dt>AGENTS / ROLE</dt><dd>${slide.agents}</dd>` : ''}<dt>VISUAL AUDIT</dt><dd>${slide.visualAudit || '—'}</dd><dt>PURPOSE</dt><dd>${slide.purpose}</dd><dt>KEY MESSAGE</dt><dd>${slide.keyMessage}</dd><dt>CHANGES</dt><dd>${slide.changes}</dd></dl>${slide.beforeFile ? `<button class="compare-button" aria-expanded="false">BEFORE / AFTER</button><div class="comparison"><div><p class="comparison-label">ORIGINAL</p>${createFrame(slide.beforeFile, `Original — ${slide.title}`)}</div><div><p class="comparison-label">REVISED</p>${createFrame(slide.file, `Revised — ${slide.title}`)}</div></div>` : ''}`;
-          item.querySelector('.compare-button')?.addEventListener('click', event => { const panel = item.querySelector('.comparison'); panel.classList.toggle('open'); event.currentTarget.setAttribute('aria-expanded', panel.classList.contains('open')); scaleFrames(); }); deck.appendChild(item);
+          item.innerHTML = `<header class="slide-meta"><h3>${String(slide.order).padStart(2,'0')} — ${slide.title}</h3>${slide.section ? `<span class="section-caption">${slide.sectionNumber} · ${slide.section}</span>` : ''}</header>${createFrame(slide.file, slide.title)}`;
+          deck.appendChild(item);
         });
         const observer = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) { current = slides.findIndex(s => `slide-${s.order}` === entry.target.id); document.querySelectorAll('.thumb').forEach(t => t.classList.toggle('active', Number(t.dataset.index) === current)); }}), {rootMargin:'-35% 0px -60% 0px'});
         document.querySelectorAll('.slide-review').forEach(item => observer.observe(item));

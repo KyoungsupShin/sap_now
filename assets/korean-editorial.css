@@ -1,0 +1,11 @@
+/* Korean-first presentation copy. Embedded SAP PDF graphics stay original. */
+.slide h1 { white-space:normal !important; word-break:keep-all; line-height:1.15 !important; }
+.slide h2, .slide p, .slide dt, .slide dd, .slide b, .slide small { word-break:keep-all; }
+.draft-slide .hero { margin-top:44px; }
+.flow-slide .chapter-subtitle { margin-top:25px; }
+.flow-slide .native-layout { margin-top:60px; }
+.flow-slide .native-layout img { height:490px; }
+.team-foundation-image { height:145px; }
+.draft-slide .value-strip { gap:15px 35px; }
+.draft-slide .takeaway .label { font-size:13px; letter-spacing:0; }
+.agent-marker b { letter-spacing:0; }

@@ -1,17 +1,17 @@
 <!doctype html>
 <html lang="ko">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Why SAP BTP? | SAP BTP AI</title>
-    <link rel="stylesheet" href="sap-template.css" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>왜  SAP BTP인가? | SAP BTP AI</title>
+    <link rel="stylesheet" href="sap-template.css">
     <style>
-      :root { --sap-blue:#0a6ed1; --ink:#102a43; --muted:#526f89; --line:#c5ddeb; --orange:#e76500; }
+      :root { --sap-blue:#0a6ed1; --ink:#000000; --muted:#475e75; --line:#c5ddeb; --orange:#e76500; }
       * { box-sizing:border-box; }
-      html, body { min-width:320px; min-height:100%; margin:0; background:#102a43; font-family:"72 Brand","SAP 72",Arial,sans-serif; }
+      html, body { min-width:320px; min-height:100%; margin:0; background:#000000; font-family:"72 Brand","SAP 72",Arial,sans-serif; }
       .slide { position:relative; width:min(100vw,1600px); min-height:900px; margin:auto; overflow:hidden; padding:76px 110px 72px; background:radial-gradient(circle at 89% 85%,rgba(117,188,233,.18),transparent 24%),#f8fbff; color:var(--ink); }
       .top-line { position:absolute; inset:0 0 auto; height:9px; background:var(--sap-blue); }
-      .brand { position:absolute; top:44px; right:78px; color:#173b5b; font-size:17px; font-weight:800; letter-spacing:-.02em; }
+      .brand { position:absolute; top:44px; right:78px; color:#000000; font-size:17px; font-weight:800; letter-spacing:-.02em; }
       .brand b, h1 span { color:var(--sap-blue); }
       .kicker { margin:0 0 22px; color:var(--sap-blue); font-size:18px; font-weight:800; letter-spacing:.11em; }
       h1 { margin:0; font-size:46px; line-height:1.05; letter-spacing:-.055em; white-space:nowrap; }
@@ -22,7 +22,7 @@
       .comparison col:nth-child(2), .comparison col:nth-child(3) { width:19%; }
       .comparison col:nth-child(4) { width:21%; }
       .comparison col:nth-child(5) { width:34%; }
-      .comparison th { height:64px; padding:13px 14px 11px; border:0; color:#173b5b; font-family:"72 Brand Medium","72 Brand","SAP 72",Arial,sans-serif; font-size:25px; font-weight:600; letter-spacing:-.035em; text-align:center; vertical-align:middle; }
+      .comparison th { height:64px; padding:13px 14px 11px; border:0; color:#000000; font-family:"72 Brand Medium","72 Brand","SAP 72",Arial,sans-serif; font-size:25px; font-weight:600; letter-spacing:-.035em; text-align:center; vertical-align:middle; }
       .comparison th.aws, .comparison th.category, .comparison th.work, .comparison th.btp { background:transparent; }
       .comparison th.work { color:#c65b00; font-size:17px; text-align:center; }
       .comparison th.btp { color:var(--sap-blue); }
@@ -34,42 +34,39 @@
       .comparison tbody tr:nth-child(even) td { background:#fff; }
       .comparison small { display:block; color:#39779d; font-size:10px; font-weight:800; letter-spacing:.08em; }
       .comparison td.btp small { color:var(--sap-blue); }
-      .comparison b { display:block; margin-top:0; color:#173b5b; font-family:"72 Brand Medium","72 Brand","SAP 72",Arial,sans-serif; font-size:14px; font-weight:600; letter-spacing:-.025em; }
+      .comparison b { display:block; margin-top:0; color:#000000; font-family:"72 Brand Medium","72 Brand","SAP 72",Arial,sans-serif; font-size:14px; font-weight:600; letter-spacing:-.025em; }
       .comparison span { display:block; margin-top:3px; color:var(--muted); font-size:10px; font-weight:700; line-height:1.2; }
       .comparison td.work b { margin-top:0; color:#c65b00; font-size:12px; }
-      .comparison td.work span { color:#6a6d70; font-size:9px; }
+      .comparison td.work span { color:#5b738b; font-size:9px; }
       .comparison td.btp b { color:var(--sap-blue); font-size:18px; }
       .comparison td.btp span { font-size:12px; }
-      .conclusion { display:flex; align-items:center; justify-content:center; min-height:86px; margin-top:18px; padding:16px 21px; border:1px solid #9dcbe7; border-left:7px solid var(--sap-blue); background:#eef8ff; color:#173b5b; font-family:"72 Brand Medium","72 Brand","SAP 72",Arial,sans-serif; font-size:29px; font-weight:600; letter-spacing:-.03em; line-height:1.2; text-align:center; }
+      .conclusion { display:flex; align-items:center; justify-content:center; min-height:86px; margin-top:18px; padding:16px 21px; border:1px solid #9dcbe7; border-left:7px solid var(--sap-blue); background:#eef8ff; color:#000000; font-family:"72 Brand Medium","72 Brand","SAP 72",Arial,sans-serif; font-size:29px; font-weight:600; letter-spacing:-.03em; line-height:1.2; text-align:center; }
       .conclusion b { color:var(--sap-blue); }
-      .footer { position:absolute; right:78px; bottom:30px; color:#637994; font-size:14px; font-weight:700; }
+      .footer { position:absolute; right:78px; bottom:30px; color:#5b738b; font-size:14px; font-weight:700; }
       @media (max-width:800px) { .slide { min-height:100vh; padding:72px 30px 84px; } .brand { top:28px; right:30px; font-size:13px; } h1 { font-size:37px; white-space:normal; } .comparison-wrap { margin-top:27px; } .external-group-frame { display:none; } .comparison { display:block; } .comparison thead,.comparison tbody,.comparison tr,.comparison th,.comparison td { display:block; width:100%; height:auto; } .comparison th { padding:18px; } .comparison td { padding:14px 18px; } .footer { right:30px; } }
     </style>
-  </head>
+  <link rel="stylesheet" href="assets/korean-editorial.css"><link rel="stylesheet" href="assets/sap-official-template.css"></head>
   <body>
     <main class="slide">
       <div class="top-line"></div>
-      <div class="brand">SAP BTP AI</div><p class="kicker">22 · WHY SAP BTP</p>
-      <h1>Why <span>SAP BTP?</span></h1>
+      <h1>왜 <span>SAP BTP인가?</span></h1>
       <div class="comparison-wrap">
       <table class="comparison" aria-label="AWS Azure and SAP BTP comparison for SAP business AI">
-        <colgroup><col /><col /><col /><col /><col /></colgroup>
+        <colgroup><col><col><col><col><col></colgroup>
         <thead><tr><th class="category" aria-label="항목"></th><th class="aws">AWS</th><th class="aws">Azure</th><th class="work">S/4 연동 시 필요한 작업</th><th class="btp">SAP BTP</th></tr></thead>
         <tbody>
-          <tr><td class="category">RUNTIME</td><td class="aws"><b>EKS · ECS</b></td><td class="aws"><b>AKS · Container Apps</b></td><td class="work"><b>업무 앱 개발·배포·운영</b><span>개발·테스트·배포 체계 구성</span></td><td class="btp"><b>Kyma · SAP Build</b><span>업무 앱 변경·배포·운영</span></td></tr>
-          <tr><td class="category">AI / AGENT</td><td class="aws"><b>Amazon Bedrock</b></td><td class="aws"><b>Azure OpenAI</b></td><td class="work"><b>Agent 실행·업무 지시 구성</b><span>프롬프트·실행 흐름 직접 설계</span></td><td class="btp"><b>AI Core · Joule</b><span>AI 실행과 업무 지시</span></td></tr>
-          <tr><td class="category knowledge-graph">Knowledge<br />Graph</td><td class="aws"><b>Neptune · OpenSearch</b></td><td class="aws"><b>Cosmos DB · Azure AI Search</b></td><td class="work"><b>KPI·SOP·Ticket 관계 지식화</b><span>업무 맥락·근거·감사 구조 설계</span></td><td class="btp"><b>HANA Knowledge Graph</b><span>관계 기반 업무 지식</span></td></tr>
+          <tr><td class="category">실행 환경</td><td class="aws"><b>EKS · ECS</b></td><td class="aws"><b>AKS · Container Apps</b></td><td class="work"><b>업무 앱 개발·배포·운영</b><span>개발·테스트·배포 체계 구성</span></td><td class="btp"><b>Kyma · SAP Build</b><span>업무 앱 변경·배포·운영</span></td></tr>
+          <tr><td class="category">AI / Agent</td><td class="aws"><b>Amazon Bedrock</b></td><td class="aws"><b>Azure OpenAI</b></td><td class="work"><b>Agent 실행·업무 지시 구성</b><span>프롬프트·실행 흐름 직접 설계</span></td><td class="btp"><b>AI Core · Joule</b><span>AI 실행과 업무 지시</span></td></tr>
+          <tr><td class="category knowledge-graph">업무 지식<br>관계 모델</td><td class="aws"><b>Neptune · OpenSearch</b></td><td class="aws"><b>Cosmos DB · Azure AI Search</b></td><td class="work"><b>KPI·SOP·Ticket 관계 지식화</b><span>업무 맥락·근거·감사 구조 설계</span></td><td class="btp"><b>HANA Knowledge Graph</b><span>관계 기반 업무 지식</span></td></tr>
           <tr><td class="category">SAP API</td><td class="aws"><b>API Gateway</b></td><td class="aws"><b>API Management</b></td><td class="work"><b>S/4 API·데이터 의미 정합</b><span>형식 변환·오류 처리·변경 대응</span></td><td class="btp"><b>SAP API · Destination</b><span>표준 연결과 데이터 접근</span></td></tr>
           <tr><td class="category">EAI</td><td class="aws"><b>EventBridge · Step Functions</b></td><td class="aws"><b>Logic Apps · Service Bus</b></td><td class="work"><b>업무 이벤트·예외 프로세스 설계</b><span>시스템 간 연계와 재처리 관리</span></td><td class="btp"><b>Integration Suite</b><span>프로세스·이벤트 통합</span></td></tr>
-          <tr><td class="category">AUTHORIZATION</td><td class="aws"><b>AWS IAM</b></td><td class="aws"><b>Microsoft Entra ID</b></td><td class="work"><b>SAP 조직·권한 정책 정합</b><span>Cloud IAM과 SAP 권한 동기화</span></td><td class="btp"><b>BTP Authorization</b><span>업무 권한·접근 통제</span></td></tr>
-          <tr><td class="category">Governance</td><td class="aws"><b>CloudTrail · Config</b></td><td class="aws"><b>Purview · Policy</b></td><td class="work"><b>감사·정책·접근 기준 관리</b><span>AI·데이터 사용 기준의 지속 정합</span></td><td class="btp"><b>AI Launchpad · BTP Cockpit</b><span>AI·데이터 사용 거버넌스</span></td></tr>
+          <tr><td class="category">권한 관리</td><td class="aws"><b>AWS IAM</b></td><td class="aws"><b>Microsoft Entra ID</b></td><td class="work"><b>SAP 조직·권한 정책 정합</b><span>Cloud IAM과 SAP 권한 동기화</span></td><td class="btp"><b>BTP Authorization</b><span>업무 권한·접근 통제</span></td></tr>
+          <tr><td class="category">거버넌스</td><td class="aws"><b>CloudTrail · Config</b></td><td class="aws"><b>Purview · Policy</b></td><td class="work"><b>감사·정책·접근 기준 관리</b><span>AI·데이터 사용 기준의 지속 정합</span></td><td class="btp"><b>AI Launchpad · BTP Cockpit</b><span>AI·데이터 사용 거버넌스</span></td></tr>
         </tbody>
       </table>
       <span class="external-group-frame" aria-hidden="true"></span>
       </div>
 
-      <p class="conclusion"><b>TCO</b> (CSP + S/4 연동 개발·운영) &gt; <b>TCO</b> (SAP BTP)</p>
-      <span class="footer">SAP | BTP AI Solution Advisory</span>
       <span class="slide-page-number">22</span>
     </main>
   </body>

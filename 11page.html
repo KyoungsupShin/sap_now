@@ -1,15 +1,15 @@
 <!doctype html>
 <html lang="ko">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>SAP BTP AI</title>
-    <link rel="stylesheet" href="sap-template.css" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>업무 요청을  분석과 실행으로 연결 | SAP BTP AI</title>
+    <link rel="stylesheet" href="sap-template.css">
     <style>
       :root {
         --blue: #0a6ed1;
-        --ink: #102a43;
-        --muted: #526f89;
+        --ink: #000000;
+        --muted: #475e75;
         --line: #c5ddeb;
         --orange: #e9730c;
       }
@@ -21,7 +21,7 @@
         min-width: 320px;
         min-height: 100%;
         margin: 0;
-        background: #102a43;
+        background: #000000;
         font-family: Arial, "SAP 72", sans-serif;
       }
       .slide {
@@ -50,7 +50,7 @@
         position: absolute;
         top: 44px;
         right: 78px;
-        color: #173b5b;
+        color: #000000;
         font-size: 17px;
         font-weight: 800;
       }
@@ -102,7 +102,7 @@
       }
       .request h2 {
         margin: 0;
-        color: #173b5b;
+        color: #000000;
         font-size: 19px;
         line-height: 1.1;
         letter-spacing: -0.03em;
@@ -169,7 +169,7 @@
       }
       .question-rail strong {
         display: block;
-        color: #173b5b;
+        color: #000000;
         font-size: 12px;
         line-height: 1.32;
         letter-spacing: -0.04em;
@@ -196,7 +196,7 @@
         align-items: center;
         gap: 10px;
         margin-bottom: 14px;
-        color: #173b5b;
+        color: #000000;
         font-size: 20px;
         font-weight: 800;
         letter-spacing: -0.04em;
@@ -263,7 +263,7 @@
       }
       .item h2 {
         margin: 9px 0 5px;
-        color: #173b5b;
+        color: #000000;
         font-size: 18px;
         line-height: 1.1;
         letter-spacing: -0.05em;
@@ -279,7 +279,7 @@
         position: absolute;
         right: 78px;
         bottom: 30px;
-        color: #637994;
+        color: #5b738b;
         font-size: 14px;
         font-weight: 700;
       }
@@ -324,27 +324,25 @@
         }
       }
     </style>
-  <link rel="stylesheet" href="assets/deck-flow.css"/></head>
+  <link rel="stylesheet" href="assets/deck-flow.css"><link rel="stylesheet" href="assets/korean-editorial.css"><link rel="stylesheet" href="assets/sap-official-template.css"></head>
   <body>
-    <main class="slide"><aside class="agent-marker" aria-label="Agent role"><b>ORCHESTRATION</b><span>Harness Assistant · Analysis and coordination</span></aside>
+    <main class="slide"><aside class="agent-marker" aria-label="Agent role"><b>업무 조율</b><span>Harness Assistant · 분석과 업무 조율</span></aside>
       <div class="top"></div>
-      <div class="brand">SAP BTP AI</div><p class="kicker">15 · HARNESS</p>
-      <h1>Turn a request into <span>coordinated work</span></h1>
+      <h1>업무 요청을 <span>분석과 실행으로 연결</span></h1>
       <section class="content" aria-label="Harness comparison">
         <article class="request">
-          <small>COMMON START</small>
+          <small>업무 시작</small>
           <h2>오늘 업무 실행</h2>
           <p>오늘의 루틴 업무 실행 요청</p>
         </article>
         <div class="question-rail" aria-label="분석 질문 예시">
           <div>
-            <small>EXECUTION REQUEST</small
-            ><strong>“오늘 루틴 업무를 진행해줘.”</strong>
+            <small>실행 요청</small><strong>“오늘 루틴 업무를 진행해줘.”</strong>
           </div>
         </div>
         <div class="compare">
           <article class="lane">
-            <div class="lane-head"><b>HARNESS 없음</b></div>
+            <div class="lane-head"><b>Harness 미적용</b></div>
             <div class="flow">
               <div class="item">
                 <small>01</small>
@@ -369,7 +367,7 @@
             </div>
           </article>
           <article class="lane ai">
-            <div class="lane-head"><b>HARNESS 존재</b></div>
+            <div class="lane-head"><b>Harness 적용</b></div>
             <div class="flow">
               <div class="item">
                 <small>01</small>
@@ -396,11 +394,10 @@
         </div>
       </section>
       <section class="agent-capability" aria-label="Harness 제공 기능">
-        <div class="agent-capability-label">HARNESS<br />CAPABILITY</div>
+        <div class="agent-capability-label">Harness<br>핵심 기능</div>
         <div class="agent-capability-item"><b>근거 기반 분석</b><span>Wiki · KG · SAP 정보를 연결해 가능 여부 판단</span></div>
         <div class="agent-capability-item"><b>대응 방식 오케스트레이션</b><span>보완 범위와 업무 지시를 실행 흐름으로 연결</span></div>
       </section>
-      <span class="footer">SAP | BTP AI Solution Advisory</span>
       <span class="slide-page-number">15</span>
     </main>
   </body>

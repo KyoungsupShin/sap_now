@@ -1,0 +1,61 @@
+{
+  "source": "SAP_BTP.potx",
+  "sha256": "2ee86be02c83195011df52ce1760fffc09db6a32653ef02866845fb253a0f766",
+  "size_emu": [
+    12195175,
+    6858000
+  ],
+  "colors": {
+    "text": "#000000",
+    "background": "#FFFFFF",
+    "blue6": "#1B90FF",
+    "link_blue": "#0070F2",
+    "blue10": "#002A86",
+    "indigo6": "#7858FF"
+  },
+  "title_margin_px": 66,
+  "fonts": {
+    "title": "72 Brand Medium",
+    "body": "72 Brand",
+    "korean_fallback": "Malgun Gothic / Noto Sans CJK KR"
+  },
+  "assets": [
+    {
+      "file": "sap-official-btp-logo.png",
+      "source": "ppt/media/image1.png"
+    },
+    {
+      "file": "sap-official-cover-art.png",
+      "template_slide": 1,
+      "pdf_crop_points": [
+        477,
+        0,
+        960,
+        510
+      ],
+      "render_scale": 2
+    },
+    {
+      "file": "sap-official-divider-art.png",
+      "template_slide": 6,
+      "pdf_crop_points": [
+        0,
+        270,
+        960,
+        510
+      ],
+      "render_scale": 2
+    },
+    {
+      "file": "sap-official-agenda-art.png",
+      "template_slide": 5,
+      "pdf_crop_points": [
+        640,
+        0,
+        960,
+        510
+      ],
+      "render_scale": 2
+    }
+  ]
+}
