@@ -1,2 +1,438 @@
 <!doctype html>
-<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Specialist Agent가 협업해 하나의 업무를 완수 | SAP BTP AI</title><link rel="stylesheet" href="sap-template.css"><style>*{box-sizing:border-box}body{margin:0;font-family:"72 Brand","SAP 72","Malgun Gothic",Arial,sans-serif}.slide{position:relative;width:min(100vw,1600px);min-height:900px;margin:auto;padding:76px 110px;color:#000000;overflow:hidden}.top-line{position:absolute;inset:0 0 auto;height:6px;background:#1b90ff}.brand{position:absolute;top:31px;right:110px}.kicker{margin:3px 0 14px;color:#0070f2;font-size:12px;font-weight:700;letter-spacing:.08em}h1{margin:0;font-size:52px;line-height:1.04;letter-spacing:-.04em}.center{position:absolute;top:410px;left:50%;width:270px;padding:28px;border:6px solid #0070f2;background:#f4f9ff;text-align:center;transform:translate(-50%,-50%)}.center small,.agent small{color:#0070f2;font-size:11px;font-weight:700;letter-spacing:.08em}.center h2{margin:13px 0 0;font-size:28px;font-weight:500}.agents{position:absolute;top:270px;right:110px;left:110px;display:flex;justify-content:space-between}.agent{width:230px;padding:20px 0;border-top:1px solid #d5dde5;border-bottom:1px solid #d5dde5;background:#fff}.agent h2{margin:12px 0 0;font-size:23px;font-weight:500}.agent span{display:block;margin-top:8px;color:#475e75;font-size:14px}.agent:nth-child(2){margin-top:260px}.line{position:absolute;top:462px;right:260px;left:260px;border-top:1px solid #8bb9de}.footer{position:absolute;left:110px;bottom:25px;color:#5b738b;font-size:11px}.slide-page-number{position:absolute;right:110px;bottom:24px;color:#5b738b;font-size:12px;font-weight:600}</style><link rel="stylesheet" href="assets/deck-flow.css"><link rel="stylesheet" href="assets/korean-editorial.css"><link rel="stylesheet" href="assets/sap-official-template.css"></head><body><main class="slide"><aside class="agent-marker" aria-label="Agent role"><b>A2A Collaboration</b><span>영업 · 생산 · 구매 Agent / A2A</span></aside><div class="top-line"></div><h1>Specialist Agent가 협업해 <span>하나의 업무를 완수</span></h1><div class="line"></div><section class="agents"><article class="agent"><small>Sales Agent</small><h2>Demand</h2><span>고객 · 가격 · Demand Forecast</span></article><article class="agent"><small>Production Agent</small><h2>Production Capacity</h2><span>계획 · 제약 · 일정</span></article><article class="agent"><small>Procurement Agent</small><h2>Supply</h2><span>자재 · 협력사 · Lead Time</span></article></section><div class="center"><small>A2A Collaboration</small><h2>Shared Business Objective</h2></div><span class="slide-page-number">16</span></main></body></html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Harness A2A Explanation | SAP BTP AI</title>
+    <link rel="stylesheet" href="sap-template.css" />
+    <style>
+      :root {
+        --sap-blue: #0a6ed1;
+        --ink: #102a43;
+        --muted: #526f89;
+        --line: #c5ddeb;
+        --green: #3e8e67;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        min-width: 320px;
+        min-height: 100%;
+        margin: 0;
+        background: #102a43;
+        font-family: Arial, "SAP 72", sans-serif;
+      }
+      .slide {
+        position: relative;
+        width: min(100vw, 1600px);
+        min-height: 900px;
+        margin: auto;
+        overflow: hidden;
+        padding: 76px 110px 72px;
+        background:
+          radial-gradient(
+            circle at 89% 85%,
+            rgba(117, 188, 233, 0.18),
+            transparent 23%
+          ),
+          #f8fbff;
+        color: var(--ink);
+      }
+      .top-line {
+        position: absolute;
+        inset: 0 0 auto;
+        height: 9px;
+        background: var(--sap-blue);
+      }
+      .brand {
+        position: absolute;
+        top: 44px;
+        right: 78px;
+        color: #173b5b;
+        font-size: 17px;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+      }
+      .brand b,
+      h1 span {
+        color: var(--sap-blue);
+      }
+      .kicker {
+        margin: 0 0 22px;
+        color: var(--sap-blue);
+        font-size: 18px;
+        font-weight: 800;
+        letter-spacing: 0.11em;
+      }
+      h1 {
+        margin: 0;
+        font-size: clamp(40px, 3.25vw, 52px);
+        line-height: 1.05;
+        letter-spacing: -0.055em;
+        white-space: nowrap;
+      }
+      .story-label {
+        display: flex;
+        align-items: center;
+        gap: 13px;
+        margin-top: 38px;
+        color: #39779d;
+        font-size: 14px;
+        font-weight: 800;
+        letter-spacing: 0.1em;
+      }
+      .story-label:before {
+        width: 42px;
+        height: 2px;
+        background: var(--sap-blue);
+        content: "";
+      }
+      .scenario {
+        display: grid;
+        grid-template-columns: 188px 52px 1fr;
+        align-items: stretch;
+        margin-top: 28px;
+      }
+      .request {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        min-height: 450px;
+        padding: 22px 18px;
+        border: 1px solid #9dcbe7;
+        border-top: 6px solid var(--sap-blue);
+        border-radius: 12px;
+        background: #fff;
+        box-shadow: 0 8px 18px rgba(28, 68, 102, 0.08);
+        text-align: center;
+      }
+      .request small,
+      .ticket small {
+        color: #39779d;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.09em;
+      }
+      .request h2 {
+        margin: 0;
+        color: #173b5b;
+        font-size: 20px;
+        line-height: 1.1;
+        letter-spacing: -0.03em;
+      }
+      .request p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 1.3;
+      }
+      .main-arrow {
+        position: relative;
+        align-self: center;
+        height: 2px;
+        background: #9dcbe7;
+      }
+      .main-arrow:after,
+      .arrow:after {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        width: 10px;
+        height: 10px;
+        border-top: 2px solid #6d9eb9;
+        border-right: 2px solid #6d9eb9;
+        content: "";
+        transform: translateY(-50%) rotate(45deg);
+      }
+      .team-flow {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+      }
+      .team {
+        position: relative;
+        min-height: 450px;
+        padding: 18px;
+        border: 1px solid var(--line);
+        border-top: 7px solid var(--sap-blue);
+        border-radius: 16px;
+        background: #fff;
+        box-shadow: 0 10px 24px rgba(28, 68, 102, 0.08);
+      }
+      .team:nth-child(2) {
+        border-top-color: #4d99c6;
+        background: #fbfdff;
+      }
+      .team:nth-child(3) {
+        border-top-color: #39779d;
+        background: #f8fcfe;
+      }
+      .team:not(:last-child):after {
+        position: absolute;
+        z-index: 3;
+        top: 50%;
+        right: -31px;
+        display: grid;
+        width: 38px;
+        height: 38px;
+        place-items: center;
+        border: 1px solid #9dcbe7;
+        border-radius: 50%;
+        background: #fff;
+        color: var(--sap-blue);
+        content: "→";
+        font-size: 21px;
+        font-weight: 800;
+      }
+      .team h2 {
+        margin: 0 0 15px;
+        color: #173b5b;
+        font-size: 24px;
+        letter-spacing: -0.05em;
+      }
+      .ticket {
+        padding: 13px;
+        border: 1px solid #d6e8f4;
+        border-left: 5px solid #75bce9;
+        border-radius: 10px;
+        background: #fff;
+      }
+      .ticket b {
+        display: block;
+        margin-top: 6px;
+        color: #173b5b;
+        font-size: 15px;
+        letter-spacing: -0.04em;
+      }
+      .ticket p {
+        margin: 5px 0 0;
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 1.28;
+      }
+      .arrow {
+        position: relative;
+        width: 2px;
+        height: 22px;
+        margin: 5px auto;
+        background: #a9cfe5;
+      }
+      .arrow:after {
+        top: auto;
+        right: 50%;
+        bottom: 0;
+        width: 7px;
+        height: 7px;
+        border-width: 0 2px 2px 0;
+        transform: translateX(50%) rotate(45deg);
+      }
+      .investigation {
+        position: relative;
+        margin-top: 14px;
+        padding: 4px 0 0 18px;
+        border-left: 2px dashed #a9cfe5;
+      }
+      .investigation:before {
+        position: absolute;
+        top: -7px;
+        left: -5px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--sap-blue);
+        content: "";
+      }
+      .step {
+        position: relative;
+        padding: 0 0 11px;
+        color: #39779d;
+        font-size: 10px;
+        font-weight: 800;
+        line-height: 1.1;
+        letter-spacing: 0.08em;
+      }
+      .step:before {
+        position: absolute;
+        top: 2px;
+        left: -23px;
+        width: 8px;
+        height: 8px;
+        border: 2px solid #75bce9;
+        border-radius: 50%;
+        background: #fff;
+        content: "";
+      }
+      .step b {
+        display: block;
+        margin-top: 4px;
+        color: #173b5b;
+        font-size: 14px;
+        font-weight: 800;
+        line-height: 1.2;
+        letter-spacing: -0.035em;
+      }
+      .step span {
+        display: block;
+        margin-top: 3px;
+        color: var(--muted);
+        font-size: 11px;
+        font-weight: 700;
+        line-height: 1.25;
+        letter-spacing: 0;
+      }
+      .step.joule,
+      .step.harness,
+      .step.answer {
+        color: #39779d;
+      }
+      .step.joule:before,
+      .step.harness:before,
+      .step.answer:before {
+        border-color: #75bce9;
+        background: #fff;
+      }
+      .step.answer {
+        padding-bottom: 0;
+      }
+      .footer {
+        position: absolute;
+        right: 78px;
+        bottom: 30px;
+        color: #637994;
+        font-size: 14px;
+        font-weight: 700;
+      }
+      @media (max-width: 800px) {
+        .slide {
+          min-height: 100vh;
+          padding: 72px 30px 84px;
+        }
+        .brand {
+          top: 28px;
+          right: 30px;
+          font-size: 13px;
+        }
+        .scenario {
+          grid-template-columns: 1fr;
+        }
+        .request {
+          min-height: auto;
+        }
+        .main-arrow {
+          width: 2px;
+          height: 28px;
+          margin: auto;
+        }
+        .main-arrow:after {
+          top: auto;
+          right: 50%;
+          bottom: 0;
+          transform: translateX(50%) rotate(135deg);
+        }
+        .team-flow {
+          grid-template-columns: 1fr;
+          margin-top: 28px;
+        }
+        .team:not(:last-child):after {
+          top: auto;
+          right: 50%;
+          bottom: -33px;
+          transform: translateX(50%) rotate(90deg);
+        }
+        .footer {
+          right: 30px;
+        }
+      }
+    </style>
+  <link rel="stylesheet" href="assets/korean-editorial.css"><link rel="stylesheet" href="assets/sap-official-template.css"></head>
+  <body>
+    <main class="slide">
+      <div class="top-line"></div>
+
+
+      <h1>Harness A2A <span>Explanation</span></h1>
+
+      <section
+        class="scenario"
+        aria-label="Sales to production control to procurement scenario"
+      >
+        <article class="request">
+          <small>CUSTOMER REQUEST</small>
+          <h2>물량 · 가격 ·<br />납기 변경</h2>
+        </article>
+        <i class="main-arrow"></i>
+        <div class="team-flow">
+          <article class="team">
+            <h2>영업 Team</h2>
+            <div class="ticket">
+              <small>WIKI · TICKET NOTE</small><b>수주 조건 확인 요청</b>
+              <p>고객 요청 · 계약 조건 · 협의 이력</p>
+            </div>
+            <i class="arrow"></i>
+            <div class="investigation">
+              <div class="step joule">
+                JOULE 조회<b>수주 · 가격 · 수익성</b>
+              </div>
+              <div class="step">
+                조건 확인<span>현재 계약 조건과 수익성</span>
+              </div>
+              <div class="step harness">HARNESS 결론 생성</div>
+              <div class="step">분석 결과<b>수주 조건 초안</b></div>
+              <div class="step answer">
+                WIKI 답변<b>영업 Team 검토 결과 공유</b>
+              </div>
+            </div>
+          </article>
+          <article class="team">
+            <h2>생산관리 Team</h2>
+            <div class="ticket">
+              <small>WIKI · TICKET NOTE</small><b>생산 가능 여부 요청</b>
+              <p>수주 조건 · 우선순위 · 검토 Note</p>
+            </div>
+            <i class="arrow"></i>
+            <div class="investigation">
+              <div class="step joule">
+                JOULE 조회<b>생산계획 · Line 여력</b>
+              </div>
+              <div class="step">조건 확인<span>기존 고객 납기 약속</span></div>
+              <div class="step harness">HARNESS 결론 생성</div>
+              <div class="step">분석 결과<b>생산 가능 조건</b></div>
+              <div class="step answer">
+                WIKI 답변<b>생산관리 Team 검토 결과 공유</b>
+              </div>
+            </div>
+          </article>
+          <article class="team">
+            <h2>구매 Team</h2>
+            <div class="ticket">
+              <small>WIKI · TICKET NOTE</small><b>자재 확보 가능 여부 요청</b>
+              <p>필요 자재 · 공급 Risk · 대응 Note</p>
+            </div>
+            <i class="arrow"></i>
+            <div class="investigation">
+              <div class="step joule">
+                JOULE 조회<b>재고 · 발주 · 공급사 · 단가</b>
+              </div>
+              <div class="step">
+                조건 확인<span>대체 가능성 · 납기 · 원가 영향</span>
+              </div>
+              <div class="step harness">HARNESS 결론 생성</div>
+              <div class="step">분석 결과<b>공급 가능 조건 · 원가 영향</b></div>
+              <div class="step answer">
+                WIKI 답변<b>구매 Team 검토 결과 공유</b>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <span class="slide-page-number">16</span>
+    </main>
+  </body>
+</html>

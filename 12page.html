@@ -1,2 +1,565 @@
 <!doctype html>
-<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>단순한 답변을 넘어 복합 업무를 계획하는 Agent | SAP BTP AI</title><link rel="stylesheet" href="sap-template.css"><style>*{box-sizing:border-box}body{margin:0;font-family:"72 Brand","SAP 72","Malgun Gothic",Arial,sans-serif}.slide{position:relative;width:min(100vw,1600px);min-height:900px;margin:auto;padding:76px 110px;color:#000000;overflow:hidden}.top-line{position:absolute;inset:0 0 auto;height:6px;background:#1b90ff}.brand{position:absolute;top:31px;right:110px}.kicker{margin:3px 0 14px;color:#0070f2;font-size:12px;font-weight:700;letter-spacing:.08em}h1{margin:0;font-size:52px;line-height:1.04;letter-spacing:-.04em}.question{margin:50px 0;color:#475e75;font-size:22px}.model{display:flex;align-items:center}.stage{flex:1;min-height:210px;padding:23px 26px;border-left:1px solid #d5dde5}.stage:first-child{border-left:0}.stage small{color:#0070f2;font-size:11px;font-weight:700;letter-spacing:.08em}.stage h2{margin:18px 0 0;font-size:29px;line-height:1.06;font-weight:500}.stage span{display:block;margin-top:12px;color:#475e75;font-size:15px}.arrow{width:48px;color:#0070f2;font-size:30px;text-align:center}.result{padding-left:30px;border-left:6px solid #0070f2;background:#f4f9ff}.footer{position:absolute;left:110px;bottom:25px;color:#5b738b;font-size:11px}.slide-page-number{position:absolute;right:110px;bottom:24px;color:#5b738b;font-size:12px;font-weight:600}</style><link rel="stylesheet" href="assets/deck-flow.css"><link rel="stylesheet" href="assets/korean-editorial.css"><link rel="stylesheet" href="assets/sap-official-template.css"></head><body><main class="slide"><aside class="agent-marker" aria-label="Agent role"><b>Planning & Reasoning</b><span>Deep Agent · 근거 수집과 복합 업무 계획</span></aside><div class="top-line"></div><h1>단순한 답변을 넘어 <span>복합 업무를 계획하는 Agent</span></h1><p class="question">“이 고객의 매출채권 위험은 언제 높아질까?”</p><section class="model"><article class="stage"><small>Understand</small><h2>질문을<br>세부 과제로 분해</h2><span>신용 · 매출채권 · 거래 조건</span></article><div class="arrow">→</div><article class="stage"><small>Investigate</small><h2>근거 수집<br>및 확인</h2><span>Wiki · HANA Knowledge Graph · Joule</span></article><div class="arrow">→</div><article class="stage"><small>Assess Risk</small><h2>위험 신호를<br>종합 판단</h2><span>신호 · 영향 · 우선순위</span></article><div class="arrow">→</div><article class="stage result"><small>Recommend</small><h2>대응 방안<br>제안</h2><span>한도 · 조건 · 승인</span></article></section><span class="slide-page-number">15</span></main></body></html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Harness Deep Agent Explanation | SAP BTP AI</title>
+    <link rel="stylesheet" href="sap-template.css" />
+    <style>
+      :root {
+        --sap-blue: #0a6ed1;
+        --ink: #102a43;
+        --muted: #526f89;
+        --line: #c5ddeb;
+        --green: #3e8e67;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        min-width: 320px;
+        min-height: 100%;
+        margin: 0;
+        background: #102a43;
+        font-family: Arial, "SAP 72", sans-serif;
+      }
+      .slide {
+        position: relative;
+        width: min(100vw, 1600px);
+        min-height: 900px;
+        margin: auto;
+        overflow: hidden;
+        padding: 76px 110px 72px;
+        background:
+          radial-gradient(
+            circle at 89% 85%,
+            rgba(117, 188, 233, 0.18),
+            transparent 23%
+          ),
+          #f8fbff;
+        color: var(--ink);
+      }
+      .top-line {
+        position: absolute;
+        inset: 0 0 auto;
+        height: 9px;
+        background: var(--sap-blue);
+      }
+      .brand {
+        position: absolute;
+        top: 44px;
+        right: 78px;
+        color: #173b5b;
+        font-size: 17px;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+      }
+      .brand b,
+      h1 span {
+        color: var(--sap-blue);
+      }
+      .kicker {
+        margin: 0 0 22px;
+        color: var(--sap-blue);
+        font-size: 18px;
+        font-weight: 800;
+        letter-spacing: 0.11em;
+      }
+      h1 {
+        margin: 0;
+        font-size: clamp(40px, 3.25vw, 52px);
+        line-height: 1.05;
+        letter-spacing: -0.055em;
+        white-space: nowrap;
+      }
+      .scenario {
+        display: grid;
+        grid-template-columns: 188px 52px 1fr;
+        align-items: stretch;
+        margin-top: 28px;
+      }
+      .request {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        min-height: 450px;
+        padding: 22px 18px;
+        border: 1px solid #9dcbe7;
+        border-top: 6px solid var(--sap-blue);
+        border-radius: 12px;
+        background: #fff;
+        box-shadow: 0 8px 18px rgba(28, 68, 102, 0.08);
+        text-align: center;
+      }
+      .request small,
+      .ticket small {
+        color: #39779d;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.09em;
+      }
+      .request h2 {
+        margin: 0;
+        color: #173b5b;
+        font-size: 20px;
+        line-height: 1.1;
+        letter-spacing: -0.03em;
+      }
+      .request p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 1.3;
+      }
+      .main-arrow {
+        position: relative;
+        align-self: center;
+        height: 2px;
+        background: #9dcbe7;
+      }
+      .main-arrow:after,
+      .arrow:after {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        width: 10px;
+        height: 10px;
+        border-top: 2px solid #6d9eb9;
+        border-right: 2px solid #6d9eb9;
+        content: "";
+        transform: translateY(-50%) rotate(45deg);
+      }
+      .agent-flow {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+      }
+      .agent-stage {
+        position: relative;
+        min-height: 450px;
+        padding: 18px;
+        border: 1px solid var(--line);
+        border-top: 7px solid var(--sap-blue);
+        border-radius: 16px;
+        background: #fff;
+        box-shadow: 0 10px 24px rgba(28, 68, 102, 0.08);
+      }
+      .agent-stage:nth-child(2) {
+        border-top-color: #4d99c6;
+        background: #fbfdff;
+      }
+      .agent-stage:nth-child(3) {
+        border-top-color: var(--green);
+        background: #f7fcf9;
+      }
+      .response-stack {
+        display: grid;
+        align-content: start;
+        gap: 12px;
+      }
+      .agent-stage.response-stage {
+        min-height: 336px;
+        border-top-color: var(--green);
+        background: #f7fcf9;
+      }
+      .agent-stage h2 {
+        margin: 0 0 15px;
+        color: #173b5b;
+        font-size: 24px;
+        letter-spacing: -0.05em;
+      }
+      .ticket {
+        padding: 13px;
+        border: 1px solid #d6e8f4;
+        border-left: 5px solid #75bce9;
+        border-radius: 10px;
+        background: #fff;
+      }
+      .ticket b {
+        display: block;
+        margin-top: 6px;
+        color: #173b5b;
+        font-size: 15px;
+        letter-spacing: -0.04em;
+      }
+      .ticket p {
+        margin: 5px 0 0;
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 1.28;
+      }
+      .arrow {
+        position: relative;
+        width: 2px;
+        height: 22px;
+        margin: 5px auto;
+        background: #a9cfe5;
+      }
+      .arrow:after {
+        top: auto;
+        right: 50%;
+        bottom: 0;
+        width: 7px;
+        height: 7px;
+        border-width: 0 2px 2px 0;
+        transform: translateX(50%) rotate(45deg);
+      }
+      .investigation,
+      .synthesis-flow {
+        position: relative;
+        margin: 14px 0 0 18px;
+        padding: 4px 0 0 18px;
+        border-left: 2px dashed #a9cfe5;
+      }
+      .investigation:before,
+      .synthesis-flow:before {
+        position: absolute;
+        top: -7px;
+        left: -5px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--sap-blue);
+        content: "";
+      }
+      .synthesis-flow:before {
+        background: var(--green);
+      }
+      .step {
+        position: relative;
+        padding: 0 0 13px;
+        color: #39779d;
+        font-size: 10px;
+        font-weight: 800;
+        line-height: 1.1;
+        letter-spacing: 0.08em;
+      }
+      .step:before {
+        position: absolute;
+        top: 2px;
+        left: -23px;
+        width: 8px;
+        height: 8px;
+        border: 2px solid #75bce9;
+        border-radius: 50%;
+        background: #fff;
+        content: "";
+      }
+      .step b {
+        display: block;
+        margin-top: 4px;
+        color: #173b5b;
+        font-size: 14px;
+        font-weight: 800;
+        line-height: 1.2;
+        letter-spacing: -0.035em;
+      }
+      .step span {
+        display: block;
+        margin-top: 3px;
+        color: var(--muted);
+        font-size: 11px;
+        font-weight: 700;
+        line-height: 1.25;
+        letter-spacing: 0;
+      }
+      .step.deep:before {
+        border-color: var(--green);
+      }
+      .step.answer {
+        padding-bottom: 0;
+      }
+      .step.skill:before {
+        border-color: #7d6ec7;
+      }
+      .step.skill b {
+        color: #5a4aa3;
+      }
+      .skill-card {
+        min-height: 102px;
+        padding: 10px 15px 10px 20px;
+        border: 1px solid #c9c1ec;
+        border-top: 5px solid #7d6ec7;
+        border-radius: 12px;
+        background: #faf9ff;
+        box-shadow: 0 8px 18px rgba(69, 57, 130, 0.08);
+      }
+      .skill-card small {
+        display: block;
+        color: #5a4aa3;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: .08em;
+      }
+      .skill-card b {
+        display: block;
+        margin-top: 4px;
+        color: #433582;
+        font-size: 14px;
+        font-weight: 800;
+        letter-spacing: -.035em;
+      }
+      .skill-card span {
+        display: block;
+        color: #6d6497;
+        font-size: 10px;
+        font-weight: 700;
+        line-height: 1.25;
+      }
+      .skill-timeline {
+        position: relative;
+        display: grid;
+        gap: 0;
+        margin: 10px 0 0 18px;
+        padding: 4px 0 0 18px;
+        border-left: 2px dashed #b9afe3;
+      }
+      .skill-timeline-step {
+        position: relative;
+        padding: 0 0 8px;
+        color: #5a4aa3;
+        font-weight: 800;
+        line-height: 1.1;
+      }
+      .skill-timeline-step::before {
+        position: absolute;
+        top: 2px;
+        left: -23px;
+        width: 8px;
+        height: 8px;
+        border: 2px solid #7d6ec7;
+        border-radius: 50%;
+        background: #faf9ff;
+        content: "";
+      }
+      .skill-timeline-step:first-child::before { background: #7d6ec7; }
+      .skill-timeline-step b {
+        display: block;
+        color: #5a4aa3;
+        font-size: 11px;
+      }
+      .parallel-queries {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+        margin-top: 18px;
+        padding-bottom: 20px;
+      }
+      .parallel-queries:after {
+        position: absolute;
+        z-index: 4;
+        right: 0;
+        bottom: 19px;
+        left: 0;
+        border-top: 2px dashed #a9cfe5;
+        content: "";
+      }
+      .parallel-query {
+        position: relative;
+        z-index: 5;
+        min-height: 138px;
+        padding: 5px 0 0 17px;
+        border-left: 2px dashed #a9cfe5;
+      }
+      .parallel-query:before {
+        position: absolute;
+        top: 0;
+        left: -5px;
+        width: 8px;
+        height: 8px;
+        border: 2px solid #75bce9;
+        border-radius: 50%;
+        background: #fff;
+        content: "";
+      }
+      .parallel-query small {
+        color: #39779d;
+        font-size: 8px;
+        font-weight: 800;
+        letter-spacing: 0.06em;
+      }
+      .parallel-query b {
+        display: block;
+        margin-top: 8px;
+        color: #173b5b;
+        font-size: 13px;
+        line-height: 1.15;
+        letter-spacing: -0.04em;
+      }
+      .parallel-query span {
+        display: block;
+        margin-top: 7px;
+        color: var(--muted);
+        font-size: 10px;
+        font-weight: 700;
+        line-height: 1.25;
+      }
+      .parallel-query.kg:before {
+        border-color: #4d99c6;
+      }
+      .parallel-query.joule:before {
+        border-color: #7d6ec7;
+      }
+      .query-merge {
+        position: relative;
+        height: 22px;
+        margin: -20px 0 0 50%;
+        border-left: 2px dashed #a9cfe5;
+      }
+      .footer {
+        position: absolute;
+        right: 78px;
+        bottom: 30px;
+        color: #637994;
+        font-size: 14px;
+        font-weight: 700;
+      }
+      @media (max-width: 800px) {
+        .slide {
+          min-height: 100vh;
+          padding: 72px 30px 84px;
+        }
+        .brand {
+          top: 28px;
+          right: 30px;
+          font-size: 13px;
+        }
+        .scenario,
+        .agent-flow {
+          grid-template-columns: 1fr;
+        }
+        .request {
+          min-height: 120px;
+        }
+        .main-arrow {
+          width: 2px;
+          height: 28px;
+          margin: auto;
+        }
+        .main-arrow:after {
+          top: auto;
+          right: 50%;
+          bottom: 0;
+          transform: translateX(50%) rotate(135deg);
+        }
+        .agent-flow {
+          margin-top: 28px;
+        }
+        .agent-stage:not(:last-child):after {
+          top: auto;
+          right: 50%;
+          bottom: -33px;
+          transform: translateX(50%) rotate(90deg);
+        }
+        .footer {
+          right: 30px;
+        }
+      }
+    </style>
+  <link rel="stylesheet" href="assets/korean-editorial.css"><link rel="stylesheet" href="assets/sap-official-template.css"></head>
+  <body>
+    <main class="slide">
+      <div class="top-line"></div>
+
+
+      <h1>Harness Deep Agent <span>Explanation</span></h1>
+      <section
+        class="scenario"
+        aria-label="Customer receivables risk assessment with Harness Deep Agent"
+      >
+        <article class="request">
+          <small>RISK ASSESSMENT REQUEST</small>
+          <h2>고객 RA</h2>
+          <p>외상 판매 ·<br />매출채권 Risk 관리</p>
+        </article>
+        <i class="main-arrow"></i>
+        <div class="agent-flow">
+          <article class="agent-stage">
+            <h2>Risk 질문</h2>
+            <div class="ticket">
+              <small>RA QUESTION</small><b>언제 부실 위험이 되는가?</b>
+              <p>고객 신용 · 채권 · 거래 조건</p>
+            </div>
+            <i class="arrow"></i>
+            <div class="investigation">
+              <div class="step">질문 분해<b>신용 · 연체 · 조건</b></div>
+              <div class="step">
+                분석 범위<span>고객 · 매출채권 · 계약</span>
+              </div>
+              <div class="step answer">확인 과제<b>위험 신호와 영향</b></div>
+            </div>
+          </article>
+          <article class="agent-stage">
+            <h2>Deep Analysis</h2>
+            <div class="ticket">
+              <small>HARNESS DEEP AGENT</small><b>분해된 질문별 근거 조회</b>
+              <p>각 정보원에 맞는 Query 실행</p>
+            </div>
+            <i class="arrow"></i>
+            <div class="parallel-queries">
+              <div class="parallel-query">
+                <small>ASYNC QUERY</small><b>LLM Wiki</b
+                ><span>과거 RA · 협의 · 대응 이력</span>
+              </div>
+              <div class="parallel-query kg">
+                <small>ASYNC QUERY</small><b>HANA KG</b
+                ><span>관계사 · 기준 · 위험 관계</span>
+              </div>
+              <div class="parallel-query joule">
+                <small>ASYNC QUERY</small><b>Joule</b
+                ><span>미수금 · 연체 · 한도 · 주문 현황</span>
+              </div>
+            </div>
+            <div class="query-merge" aria-label="병렬 Query 결과 수집"></div>
+            <div class="synthesis-flow">
+              <div class="step deep">
+                결과 수집<b>세 정보원의 Query 결과 반환</b>
+              </div>
+              <div class="step deep">
+                근거 종합<span>고객 신용 · 채권 · 관계 Risk</span>
+              </div>
+              <div class="step deep answer">
+                RA 결론<b>위험 등급 · 대응 우선순위</b>
+              </div>
+            </div>
+          </article>
+          <div class="response-stack">
+          <article class="agent-stage response-stage">
+            <h2>대응 지시</h2>
+            <div class="ticket">
+              <small>RISK ACTION</small><b>실행 가능한 조치 제안</b>
+              <p>Risk 수준에 맞춘 대응</p>
+            </div>
+            <i class="arrow"></i>
+            <div class="investigation">
+              <div class="step deep">한도 조정<b>신용 한도 · 주문 보류</b></div>
+              <div class="step deep">
+                조건 보완<span>결제 조건 · 담보 · 승인</span>
+              </div>
+              <div class="step deep answer">
+                업무 지시<b>담당자 · 후속 조치 전달</b>
+              </div>
+            </div>
+          </article>
+          <article class="skill-card" aria-label="Skill.md 축적">
+            <small>SKILL.MD ACCUMULATION</small>
+            <div class="skill-timeline" aria-label="분석 패턴을 Skill.md로 축적하고 다음 질문에 재사용하는 흐름">
+              <div class="skill-timeline-step"><b>분석 Pattern 확정</b></div>
+              <div class="skill-timeline-step"><b>Skill.md 축적</b></div>
+              <div class="skill-timeline-step"><b>다음 질문 재사용</b></div>
+            </div>
+          </article>
+          </div>
+        </div>
+      </section>
+
+      <span class="slide-page-number">15</span>
+    </main>
+  </body>
+</html>
