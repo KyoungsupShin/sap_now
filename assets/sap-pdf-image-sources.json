@@ -1,0 +1,95 @@
+{
+  "source_filename": "04.SAP AI 전략 및 Joule과 BAIP를 활용한 Custom AI 소개 및 생성형 AI 데모 시연_V1.0.pdf",
+  "source_sha256": "ab410fb8a73d59c42c16a428b68251bf1a9decf64104d55a7b297345a21d07bf",
+  "pdf_page_numbering": "1-based file pages, not the page numbers printed on the slides",
+  "extractions": [
+    {
+      "file": "sap-pdf-p19-business-context.png",
+      "pdf_page": 19,
+      "method": "unaltered diagram-region rasterization at 2.5x PDF points",
+      "crop_pdf_points": [
+        384,
+        89,
+        886,
+        537
+      ],
+      "size": [
+        1255,
+        1121
+      ]
+    },
+    {
+      "file": "sap-pdf-p15-agent-interoperability.png",
+      "pdf_page": 15,
+      "method": "unaltered diagram-region rasterization at 2.5x PDF points",
+      "crop_pdf_points": [
+        162,
+        142,
+        798,
+        414
+      ],
+      "size": [
+        1590,
+        680
+      ]
+    },
+    {
+      "file": "sap-pdf-p07-apps-data-ai-loop.png",
+      "pdf_page": 7,
+      "method": "unaltered diagram-region rasterization at 2.5x PDF points",
+      "crop_pdf_points": [
+        222,
+        100,
+        722,
+        525
+      ],
+      "size": [
+        1250,
+        1063
+      ]
+    },
+    {
+      "file": "sap-pdf-p39-joule-work.png",
+      "pdf_page": 39,
+      "method": "original diagram regions rendered at 2.5x in original relative positions; neighboring prose and callout excluded",
+      "crop_pdf_points": [
+        [
+          27,
+          260,
+          914,
+          427
+        ],
+        [
+          423,
+          204,
+          526,
+          260
+        ]
+      ],
+      "size": [
+        2218,
+        558
+      ]
+    },
+    {
+      "file": "sap-pdf-p40-business-ai-platform.png",
+      "pdf_page": 40,
+      "method": "embedded image with original alpha mask",
+      "xref": 3163,
+      "size": [
+        1212,
+        682
+      ]
+    },
+    {
+      "file": "sap-pdf-p05-autonomous-enterprise.png",
+      "pdf_page": 5,
+      "method": "embedded image with original alpha mask",
+      "xref": 208,
+      "size": [
+        1171,
+        728
+      ]
+    }
+  ]
+}
