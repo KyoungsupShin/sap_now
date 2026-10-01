@@ -126,19 +126,6 @@ const slides = [
   },
   {
     "order": 11,
-    "file": "14page.html",
-    "title": "Human + Agent Operating Model",
-    "status": "new",
-    "purpose": "Define decision rights, approval policy, exception handling and change control across the integrated model.",
-    "keyMessage": "People define boundaries; execution and application changes remain governed.",
-    "changes": "Moved to agenda 02 as the integrated operating model and Human + Agent role allocation before individual agent explanations.",
-    "visualAudit": "SIMPLIFY",
-    "agents": "Joule + Harness + App Builder",
-    "section": "Agentic Execution",
-    "sectionNumber": "02"
-  },
-  {
-    "order": 12,
     "file": "10page.html",
     "title": "SAP 업무에 연결되는 Joule 경험",
     "status": "revised",
@@ -152,7 +139,7 @@ const slides = [
     "sectionNumber": "02"
   },
   {
-    "order": 13,
+    "order": 12,
     "file": "9page.html",
     "title": "전사 지식을 연결해 업무 관계를 이해",
     "status": "revised",
@@ -166,7 +153,7 @@ const slides = [
     "sectionNumber": "02"
   },
   {
-    "order": 14,
+    "order": 13,
     "file": "11page.html",
     "title": "업무 요청을 분석과 실행으로 연결",
     "status": "revised",
@@ -190,10 +177,10 @@ const slides = [
     "section": "Agentic Execution",
     "sectionNumber": "02",
     "agents": "App Builder",
-    "order": 15
+    "order": 14
   },
   {
-    "order": 16,
+    "order": 15,
     "file": "12page.html",
     "title": "Harness Deep Agent Explanation",
     "status": "revised",
@@ -207,7 +194,7 @@ const slides = [
     "sectionNumber": "02"
   },
   {
-    "order": 17,
+    "order": 16,
     "file": "13page.html",
     "title": "Harness A2A Explanation",
     "status": "revised",
@@ -231,10 +218,10 @@ const slides = [
     "kind": "divider",
     "section": "SAP BTP Architecture",
     "sectionNumber": "03",
-    "order": 18
+    "order": 17
   },
   {
-    "order": 19,
+    "order": 18,
     "file": "4page.html",
     "title": "업무를 연결하는 공통 AI 기반",
     "status": "revised",
@@ -247,7 +234,7 @@ const slides = [
     "sectionNumber": "03"
   },
   {
-    "order": 20,
+    "order": 19,
     "file": "16page.html",
     "title": "왜 SAP BTP인가?",
     "status": "revised",
@@ -260,7 +247,7 @@ const slides = [
     "sectionNumber": "03"
   },
   {
-    "order": 21,
+    "order": 20,
     "file": "19page.html",
     "title": "BTP Standard Architecture",
     "status": "revised",
@@ -273,7 +260,7 @@ const slides = [
     "sectionNumber": "03"
   },
   {
-    "order": 22,
+    "order": 21,
     "file": "20page.html",
     "title": "SAP BTP Kyma 기반 App-in-App Portal Architecture",
     "status": "revised",
@@ -286,7 +273,7 @@ const slides = [
     "sectionNumber": "03"
   },
   {
-    "order": 23,
+    "order": 22,
     "file": "17page.html",
     "title": "왜 운영에도 SAP BTP인가?",
     "status": "revised",
@@ -309,10 +296,10 @@ const slides = [
     "kind": "divider",
     "section": "Demo & Business Value",
     "sectionNumber": "04",
-    "order": 24
+    "order": 23
   },
   {
-    "order": 25,
+    "order": 24,
     "file": "2page.html",
     "title": "Demo Context & Business Challenges",
     "status": "existing",
@@ -324,7 +311,7 @@ const slides = [
     "sectionNumber": "04"
   },
   {
-    "order": 26,
+    "order": 25,
     "file": "5page.html",
     "title": "Target Operating Model — Cross-Team Collaboration",
     "status": "revised",
@@ -337,7 +324,7 @@ const slides = [
     "sectionNumber": "04"
   },
   {
-    "order": 27,
+    "order": 26,
     "file": "22page.html",
     "title": "Autonomous Operations SCM Demo",
     "status": "revised",
@@ -351,7 +338,7 @@ const slides = [
     "sectionNumber": "04"
   },
   {
-    "order": 28,
+    "order": 27,
     "file": "23page.html",
     "title": "반복 조율은 줄이고, 중요한 판단에 집중",
     "status": "new",
