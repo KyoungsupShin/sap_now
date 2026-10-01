@@ -180,7 +180,20 @@ const slides = [
     "sectionNumber": "02"
   },
   {
-    "order": 15,
+    "file": "app-builder-explanation.html",
+    "title": "App Builder Explanation",
+    "status": "restored",
+    "purpose": "Restore the original detailed App Builder scenario from the user dry-run PDF.",
+    "keyMessage": "App Builder adapts document processing code, deploys changes and enables reprocessing rather than relying on repeated IT development requests.",
+    "changes": "Restored original PDF file page 5 scenario and its two capability messages.",
+    "visualAudit": "ORIGINAL USER SCENARIO",
+    "section": "Agentic Execution",
+    "sectionNumber": "02",
+    "agents": "App Builder",
+    "order": 15
+  },
+  {
+    "order": 16,
     "file": "12page.html",
     "title": "Harness Deep Agent Explanation",
     "status": "revised",
@@ -194,7 +207,7 @@ const slides = [
     "sectionNumber": "02"
   },
   {
-    "order": 16,
+    "order": 17,
     "file": "13page.html",
     "title": "Harness A2A Explanation",
     "status": "revised",
@@ -218,10 +231,10 @@ const slides = [
     "kind": "divider",
     "section": "SAP BTP Architecture",
     "sectionNumber": "03",
-    "order": 17
+    "order": 18
   },
   {
-    "order": 18,
+    "order": 19,
     "file": "4page.html",
     "title": "업무를 연결하는 공통 AI 기반",
     "status": "revised",
@@ -234,7 +247,7 @@ const slides = [
     "sectionNumber": "03"
   },
   {
-    "order": 19,
+    "order": 20,
     "file": "16page.html",
     "title": "왜 SAP BTP인가?",
     "status": "revised",
@@ -247,7 +260,7 @@ const slides = [
     "sectionNumber": "03"
   },
   {
-    "order": 20,
+    "order": 21,
     "file": "19page.html",
     "title": "SAP Business AI Platform Architecture",
     "status": "revised",
@@ -260,7 +273,7 @@ const slides = [
     "sectionNumber": "03"
   },
   {
-    "order": 21,
+    "order": 22,
     "file": "20page.html",
     "title": "SAP BTP Kyma 기반 App-in-App Portal Architecture",
     "status": "revised",
@@ -273,7 +286,7 @@ const slides = [
     "sectionNumber": "03"
   },
   {
-    "order": 22,
+    "order": 23,
     "file": "17page.html",
     "title": "왜 운영에도 SAP BTP인가?",
     "status": "revised",
@@ -296,10 +309,10 @@ const slides = [
     "kind": "divider",
     "section": "Demo & Business Value",
     "sectionNumber": "04",
-    "order": 23
+    "order": 24
   },
   {
-    "order": 24,
+    "order": 25,
     "file": "2page.html",
     "title": "Demo Context & Business Challenges",
     "status": "existing",
@@ -311,7 +324,7 @@ const slides = [
     "sectionNumber": "04"
   },
   {
-    "order": 25,
+    "order": 26,
     "file": "5page.html",
     "title": "Target Operating Model — Cross-Team Collaboration",
     "status": "revised",
@@ -324,7 +337,7 @@ const slides = [
     "sectionNumber": "04"
   },
   {
-    "order": 26,
+    "order": 27,
     "file": "22page.html",
     "title": "Autonomous Operations SCM Demo",
     "status": "revised",
@@ -338,7 +351,7 @@ const slides = [
     "sectionNumber": "04"
   },
   {
-    "order": 27,
+    "order": 28,
     "file": "23page.html",
     "title": "반복 조율은 줄이고, 중요한 판단에 집중",
     "status": "new",

@@ -1,0 +1,21 @@
+{
+  "source_filename": "SAP_BTP_DRY_RUN_자료.pdf",
+  "source_sha256": "7f648a0494e30d69a9ef125fe8418079dab9494e0230f446c2255f77333b458e",
+  "extractions": [
+    {
+      "file": "dry-run-p05-app-builder-explanation.png",
+      "pdf_page": 5,
+      "method": "unaltered scenario-region rasterization at 3x PDF points",
+      "crop_pdf_points": [
+        59,
+        94,
+        806,
+        346
+      ],
+      "size": [
+        2241,
+        756
+      ]
+    }
+  ]
+}
