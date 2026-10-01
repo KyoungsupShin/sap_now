@@ -60,18 +60,6 @@ const slides = [
   },
   {
     "order": 6,
-    "file": "3page.html",
-    "title": "Business Context을 이해해야 Agent가 올바르게 실행",
-    "status": "new",
-    "purpose": "Explain why enterprise AI needs more than a generic LLM.",
-    "keyMessage": "Autonomous AI requires data, process, knowledge, identity, and policy context.",
-    "changes": "New bridge between the autonomous-enterprise vision and the solution foundation.",
-    "visualAudit": "SIMPLIFY",
-    "section": "Autonomous Enterprise",
-    "sectionNumber": "01"
-  },
-  {
-    "order": 7,
     "file": "5page.html",
     "title": "Team 경계를 넘어 연결되는 Autonomous Operations",
     "status": "revised",
@@ -80,6 +68,18 @@ const slides = [
     "keyMessage": "Teams share context, orchestration, governance, and reusable capabilities.",
     "changes": "Restored a small rendering of the slide 4 foundation in all six team cards.",
     "visualAudit": "UPDATED",
+    "section": "Autonomous Enterprise",
+    "sectionNumber": "01"
+  },
+  {
+    "order": 7,
+    "file": "3page.html",
+    "title": "Business Context을 이해해야 Agent가 올바르게 실행",
+    "status": "new",
+    "purpose": "Explain why enterprise AI needs more than a generic LLM.",
+    "keyMessage": "Autonomous AI requires data, process, knowledge, identity, and policy context.",
+    "changes": "New bridge between the autonomous-enterprise vision and the solution foundation.",
+    "visualAudit": "SIMPLIFY",
     "section": "Autonomous Enterprise",
     "sectionNumber": "01"
   },
@@ -111,20 +111,32 @@ const slides = [
   },
   {
     "order": 10,
-    "file": "9page.html",
-    "title": "전사 지식을 연결해 업무 관계를 이해",
-    "status": "revised",
-    "beforeFile": "../lges_customer/7page.html",
-    "purpose": "Explain how enterprise meaning and relationships become agent context.",
-    "keyMessage": "A knowledge graph connects distributed information to business meaning.",
-    "changes": "Repositioned in the knowledge layer; title made message-led.",
-    "visualAudit": "TOO TEXT-HEAVY",
-    "agents": "HANA Knowledge Graph · Agent의 판단 근거",
+    "file": "6page.html",
+    "title": "하나의 업무 요청에서 검증된 실행까지",
+    "status": "new",
+    "purpose": "Connect all major capabilities into one business flow.",
+    "keyMessage": "A request travels through context, planning, coordination, validation, and outcome.",
+    "changes": "New end-to-end story slide.",
+    "visualAudit": "REDESIGN",
+    "agents": "Joule → Harness / Deep Agent → Specialist Agent",
     "section": "Agentic Execution",
     "sectionNumber": "02"
   },
   {
     "order": 11,
+    "file": "7page.html",
+    "title": "판단 · 실행 · 검증을 통제된 순환으로",
+    "status": "new",
+    "purpose": "Make the internal loop of an autonomous agent easy to understand.",
+    "keyMessage": "Agents understand, retrieve, reason, plan, execute, validate, and escalate.",
+    "changes": "New operational model slide.",
+    "visualAudit": "SIMPLIFY",
+    "agents": "Agent · 요청 이해부터 판단·실행·검증까지",
+    "section": "Agentic Execution",
+    "sectionNumber": "02"
+  },
+  {
+    "order": 12,
     "file": "10page.html",
     "title": "SAP 업무에 연결되는 Joule 경험",
     "status": "revised",
@@ -138,28 +150,16 @@ const slides = [
     "sectionNumber": "02"
   },
   {
-    "order": 12,
-    "file": "6page.html",
-    "title": "하나의 업무 요청에서 검증된 실행까지",
-    "status": "new",
-    "purpose": "Connect all major capabilities into one business flow.",
-    "keyMessage": "A request travels through context, planning, coordination, validation, and outcome.",
-    "changes": "New end-to-end story slide.",
-    "visualAudit": "REDESIGN",
-    "agents": "Joule → Harness / Deep Agent → Specialist Agent",
-    "section": "Agentic Execution",
-    "sectionNumber": "02"
-  },
-  {
     "order": 13,
-    "file": "7page.html",
-    "title": "판단 · 실행 · 검증을 통제된 순환으로",
-    "status": "new",
-    "purpose": "Make the internal loop of an autonomous agent easy to understand.",
-    "keyMessage": "Agents understand, retrieve, reason, plan, execute, validate, and escalate.",
-    "changes": "New operational model slide.",
-    "visualAudit": "SIMPLIFY",
-    "agents": "Agent · 요청 이해부터 판단·실행·검증까지",
+    "file": "9page.html",
+    "title": "전사 지식을 연결해 업무 관계를 이해",
+    "status": "revised",
+    "beforeFile": "../lges_customer/7page.html",
+    "purpose": "Explain how enterprise meaning and relationships become agent context.",
+    "keyMessage": "A knowledge graph connects distributed information to business meaning.",
+    "changes": "Repositioned in the knowledge layer; title made message-led.",
+    "visualAudit": "TOO TEXT-HEAVY",
+    "agents": "HANA Knowledge Graph · Agent의 판단 근거",
     "section": "Agentic Execution",
     "sectionNumber": "02"
   },
@@ -259,19 +259,6 @@ const slides = [
   },
   {
     "order": 21,
-    "file": "16page.html",
-    "title": "왜 SAP BTP인가?",
-    "status": "revised",
-    "beforeFile": "../lges_customer/15page.html",
-    "purpose": "Connect the autonomous model to SAP BTP's enterprise platform value.",
-    "keyMessage": "SAP BTP combines business context, integration, and extension capabilities.",
-    "changes": "Moved after the operating model and governance rationale.",
-    "visualAudit": "TOO TEXT-HEAVY",
-    "section": "SAP BTP Architecture",
-    "sectionNumber": "04"
-  },
-  {
-    "order": 22,
     "file": "4page.html",
     "title": "업무를 연결하는 공통 AI 기반",
     "status": "revised",
@@ -284,9 +271,22 @@ const slides = [
     "sectionNumber": "04"
   },
   {
+    "order": 22,
+    "file": "16page.html",
+    "title": "왜 SAP BTP인가?",
+    "status": "revised",
+    "beforeFile": "../lges_customer/15page.html",
+    "purpose": "Connect the autonomous model to SAP BTP's enterprise platform value.",
+    "keyMessage": "SAP BTP combines business context, integration, and extension capabilities.",
+    "changes": "Moved after the operating model and governance rationale.",
+    "visualAudit": "TOO TEXT-HEAVY",
+    "section": "SAP BTP Architecture",
+    "sectionNumber": "04"
+  },
+  {
     "order": 23,
     "file": "19page.html",
-    "title": "SAP BTP Standard Architecture",
+    "title": "SAP Business AI Platform Architecture",
     "status": "revised",
     "beforeFile": "../lges_customer/13page.html",
     "purpose": "Show the standard architecture context for the solution.",
@@ -323,19 +323,6 @@ const slides = [
     "sectionNumber": "04"
   },
   {
-    "order": 26,
-    "file": "18page.html",
-    "title": "Reference SAP BTP Architecture & Cost",
-    "status": "revised",
-    "beforeFile": "../lges_customer/12page.html",
-    "purpose": "Provide the reference architecture after the business rationale is established.",
-    "keyMessage": "The platform architecture supports the connected autonomous model.",
-    "changes": "Reordered into the architecture section.",
-    "visualAudit": "KEEP VISUAL",
-    "section": "SAP BTP Architecture",
-    "sectionNumber": "04"
-  },
-  {
     "file": "21page.html",
     "title": "Autonomous App-in-App Demo",
     "status": "revised",
@@ -346,10 +333,10 @@ const slides = [
     "kind": "divider",
     "section": "Autonomous App-in-App Demo",
     "sectionNumber": "05",
-    "order": 27
+    "order": 26
   },
   {
-    "order": 28,
+    "order": 27,
     "file": "22page.html",
     "title": "Autonomous Operations SCM Demo",
     "status": "revised",
@@ -363,7 +350,7 @@ const slides = [
     "sectionNumber": "05"
   },
   {
-    "order": 29,
+    "order": 28,
     "file": "23page.html",
     "title": "반복 조율은 줄이고, 중요한 판단에 집중",
     "status": "new",

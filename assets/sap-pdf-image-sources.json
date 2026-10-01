@@ -115,6 +115,21 @@
         800,
         1350
       ]
+    },
+    {
+      "file": "sap-pdf-p30-ai-services-architecture.png",
+      "pdf_page": 30,
+      "method": "unaltered diagram-region rasterization at 2x PDF points",
+      "crop_pdf_points": [
+        12,
+        105,
+        954,
+        493
+      ],
+      "size": [
+        1884,
+        776
+      ]
     }
   ]
 }
