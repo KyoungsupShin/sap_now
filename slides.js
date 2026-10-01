@@ -25,8 +25,8 @@ const slides = [
     "file": "divider-01-vision.html",
     "title": "Autonomous Enterprise & Governance",
     "status": "new",
-    "purpose": "Introduce the integrated enterprise operating model and its governance principles.",
-    "keyMessage": "AI-Native, integrated operating model, core capabilities, Human Oversight and Governance form the first agenda.",
+    "purpose": "Introduce the AI-Native enterprise vision, Business Context and governed Execution Loop.",
+    "keyMessage": "AI-Native, core capabilities, Business Context and the governed Execution Loop establish enterprise principles.",
     "changes": "Section divider with the current agenda section highlighted.",
     "visualAudit": "UPDATED",
     "kind": "divider",
@@ -49,19 +49,6 @@ const slides = [
   },
   {
     "order": 5,
-    "file": "6page.html",
-    "title": "Integrated Operating Model",
-    "status": "new",
-    "purpose": "Explain how Joule, Harness and App Builder combine in the intended operating model.",
-    "keyMessage": "Harness orchestrates SAP execution through Joule and tools; App Builder extends capabilities through a conditional reviewed build path.",
-    "changes": "Reframed around the integrated Joule + Harness + App Builder operating model.",
-    "visualAudit": "REDESIGN",
-    "agents": "Joule + Harness + App Builder",
-    "section": "Autonomous Enterprise & Governance",
-    "sectionNumber": "01"
-  },
-  {
-    "order": 6,
     "file": "8page.html",
     "title": "Four Core Capabilities — 통합 모델이 제공하는 역량",
     "status": "new",
@@ -74,7 +61,7 @@ const slides = [
     "sectionNumber": "01"
   },
   {
-    "order": 7,
+    "order": 6,
     "file": "3page.html",
     "title": "Business Context을 이해해야 Agent가 올바르게 실행",
     "status": "new",
@@ -86,7 +73,7 @@ const slides = [
     "sectionNumber": "01"
   },
   {
-    "order": 8,
+    "order": 7,
     "file": "7page.html",
     "title": "판단 · 실행 · 검증을 통제된 순환으로",
     "status": "new",
@@ -99,30 +86,43 @@ const slides = [
     "sectionNumber": "01"
   },
   {
-    "order": 9,
-    "file": "14page.html",
-    "title": "Human + Agent Operating Model",
-    "status": "new",
-    "purpose": "Define decision rights, approval policy, exception handling and change control across the integrated model.",
-    "keyMessage": "People define boundaries; execution and application changes remain governed.",
-    "changes": "Reframed around the integrated Joule + Harness + App Builder operating model.",
-    "visualAudit": "SIMPLIFY",
-    "agents": "Joule + Harness + App Builder",
-    "section": "Autonomous Enterprise & Governance",
-    "sectionNumber": "01"
-  },
-  {
     "file": "divider-02-agents.html",
     "title": "Agentic Execution",
     "status": "new",
     "purpose": "Introduce section 02: Agentic Execution.",
-    "keyMessage": "Agent의 판단·실행·협업 메커니즘",
+    "keyMessage": "Integrated Operating Model과 Human + Agent 역할 분담에서 개별 Agent의 실행·협업으로 연결",
     "changes": "Section divider with the current agenda section highlighted.",
     "visualAudit": "UPDATED",
     "kind": "divider",
     "section": "Agentic Execution",
     "sectionNumber": "02",
-    "order": 10
+    "order": 8
+  },
+  {
+    "order": 9,
+    "file": "6page.html",
+    "title": "Integrated Operating Model",
+    "status": "new",
+    "purpose": "Explain how Joule, Harness and App Builder combine in the intended operating model.",
+    "keyMessage": "Harness orchestrates SAP execution through Joule and tools; App Builder extends capabilities through a conditional reviewed build path.",
+    "changes": "Moved to agenda 02 as the integrated operating model and Human + Agent role allocation before individual agent explanations.",
+    "visualAudit": "REDESIGN",
+    "agents": "Joule + Harness + App Builder",
+    "section": "Agentic Execution",
+    "sectionNumber": "02"
+  },
+  {
+    "order": 10,
+    "file": "14page.html",
+    "title": "Human + Agent Operating Model",
+    "status": "new",
+    "purpose": "Define decision rights, approval policy, exception handling and change control across the integrated model.",
+    "keyMessage": "People define boundaries; execution and application changes remain governed.",
+    "changes": "Moved to agenda 02 as the integrated operating model and Human + Agent role allocation before individual agent explanations.",
+    "visualAudit": "SIMPLIFY",
+    "agents": "Joule + Harness + App Builder",
+    "section": "Agentic Execution",
+    "sectionNumber": "02"
   },
   {
     "order": 11,
