@@ -1,4 +1,4 @@
-/* Sparse emphasis across the deck: regular copy, medium hierarchy, bold key messages. */
+/* Sparse emphasis across the deck: regular copy, medium hierarchy, bold slide titles and key messages. */
 .slide, .slide * { font-weight:400 !important; }
 .slide h1, .slide h2, .slide h3, .slide h4,
 .slide th, .slide .cell-title, .slide .team > b,
@@ -16,3 +16,6 @@
 .slide .value-after p > b,
 .slide .message > b,
 .slide .key-emphasis { font-weight:600 !important; }
+
+/* Main slide titles, including inline title spans, are always bold. */
+.slide h1, .slide h1 * { font-weight:700 !important; }

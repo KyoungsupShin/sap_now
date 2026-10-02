@@ -18,38 +18,40 @@ Font emphasis was reviewed across all 31 slides: regular body text, medium hiera
 
 Slide 24 follow-up: the complete enterprise KPI message is bold, single-line and exported as exactly one text box. Compared HTML and LibreOffice PPTX render; no clipping or collision with neighboring table sections observed.
 
+Main-title follow-up: all 31 h1 titles use weight 700 and export as bold text. Verified all main titles fit on a single line within the slide boundary. Body and component emphasis remain unchanged.
+
 | Slide | HTML source | Review | Changed pixels |
 |---|---|---|---|
-| 1 | 1page.html | Layout retained; minor rendering differences | 1.427% |
-| 2 | agenda.html | Layout retained; minor rendering differences | 2.671% |
-| 3 | divider-01-vision.html | Layout retained; minor rendering differences | 2.072% |
-| 4 | ai-native.html | Layout retained; minor rendering differences | 2.197% |
-| 5 | 8page.html | Layout retained; minor rendering differences | 2.884% |
-| 6 | 3page.html | Layout retained; minor rendering differences | 3.057% |
-| 7 | 7page.html | Layout retained; minor rendering differences | 1.697% |
-| 8 | app-ai-development-draft.html | Layout retained; minor rendering differences | 3.389% |
-| 9 | 6page.html | Layout retained; minor rendering differences | 3.723% |
-| 10 | divider-02-agents.html | Layout retained; minor rendering differences | 1.860% |
-| 11 | 10page.html | Layout retained; minor rendering differences | 3.032% |
-| 12 | llm-wiki-explanation.html | Layout retained; minor rendering differences | 3.154% |
-| 13 | 9page.html | Layout retained; minor rendering differences | 4.507% |
-| 14 | 11page.html | Layout retained; minor rendering differences | 4.328% |
-| 15 | app-builder-explanation.html | Layout retained; minor rendering differences | 4.018% |
-| 16 | 12page.html | Layout retained; minor rendering differences | 3.657% |
-| 17 | 13page.html | Layout retained; minor rendering differences | 3.821% |
-| 18 | divider-04-platform.html | Layout retained; minor rendering differences | 1.886% |
-| 19 | 19page.html | Layout retained; minor rendering differences | 3.104% |
-| 20 | 20page.html | Layout retained; minor rendering differences | 4.041% |
-| 21 | 16page.html | Layout retained; minor rendering differences | 5.390% |
-| 22 | 17page.html | Layout retained; minor rendering differences | 5.047% |
-| 23 | 21page.html | Layout retained; minor rendering differences | 2.064% |
-| 24 | 2page.html | Layout retained; minor rendering differences | 7.654% |
-| 25 | 4page.html | Layout retained; minor rendering differences | 2.423% |
-| 26 | 5page.html | Layout retained; minor rendering differences | 1.789% |
-| 27 | 22page.html | Layout retained; minor rendering differences | 4.863% |
-| 28 | demo-video-01-inbound.html | Layout retained; minor rendering differences | 1.845% |
-| 29 | demo-video-02-exception.html | Layout retained; minor rendering differences | 1.720% |
-| 30 | demo-video-03-orchestration.html | Layout retained; minor rendering differences | 1.979% |
-| 31 | 23page.html | Layout retained; minor rendering differences | 2.711% |
+| 1 | 1page.html | Layout retained; minor rendering differences | 1.591% |
+| 2 | agenda.html | Layout retained; minor rendering differences | 2.752% |
+| 3 | divider-01-vision.html | Layout retained; minor rendering differences | 2.280% |
+| 4 | ai-native.html | Layout retained; minor rendering differences | 2.274% |
+| 5 | 8page.html | Layout retained; minor rendering differences | 2.978% |
+| 6 | 3page.html | Layout retained; minor rendering differences | 3.198% |
+| 7 | 7page.html | Layout retained; minor rendering differences | 1.763% |
+| 8 | app-ai-development-draft.html | Layout retained; minor rendering differences | 3.510% |
+| 9 | 6page.html | Layout retained; minor rendering differences | 3.987% |
+| 10 | divider-02-agents.html | Layout retained; minor rendering differences | 2.034% |
+| 11 | 10page.html | Layout retained; minor rendering differences | 3.178% |
+| 12 | llm-wiki-explanation.html | Layout retained; minor rendering differences | 3.327% |
+| 13 | 9page.html | Layout retained; minor rendering differences | 4.728% |
+| 14 | 11page.html | Layout retained; minor rendering differences | 4.493% |
+| 15 | app-builder-explanation.html | Layout retained; minor rendering differences | 4.144% |
+| 16 | 12page.html | Layout retained; minor rendering differences | 3.803% |
+| 17 | 13page.html | Layout retained; minor rendering differences | 3.963% |
+| 18 | divider-04-platform.html | Layout retained; minor rendering differences | 2.109% |
+| 19 | 19page.html | Layout retained; minor rendering differences | 3.286% |
+| 20 | 20page.html | Layout retained; minor rendering differences | 4.290% |
+| 21 | 16page.html | Layout retained; minor rendering differences | 5.563% |
+| 22 | 17page.html | Layout retained; minor rendering differences | 5.200% |
+| 23 | 21page.html | Layout retained; minor rendering differences | 2.343% |
+| 24 | 2page.html | Layout retained; minor rendering differences | 7.838% |
+| 25 | 4page.html | Layout retained; minor rendering differences | 2.511% |
+| 26 | 5page.html | Layout retained; minor rendering differences | 1.988% |
+| 27 | 22page.html | Layout retained; minor rendering differences | 5.030% |
+| 28 | demo-video-01-inbound.html | Layout retained; minor rendering differences | 2.065% |
+| 29 | demo-video-02-exception.html | Layout retained; minor rendering differences | 1.918% |
+| 30 | demo-video-03-orchestration.html | Layout retained; minor rendering differences | 2.245% |
+| 31 | 23page.html | Layout retained; minor rendering differences | 2.818% |
 
 Local paired review: `exports/rendered/review/SAP_NOW_layout_review.pdf` (ignored intermediate). Reproduce using `scripts/README.md`.

@@ -9,3 +9,5 @@ Before this change, 236 of 725 captured HTML text fragments had computed font we
 After: 41 of 725 captured HTML text fragments have weight >=600. The foundation thumbnail is regenerated from the current .assistant-map during slide rendering, so team diagrams follow the same typography.
 
 Slide 24 follow-up: the complete enterprise KPI message uses key-emphasis and a single plain text node, producing one fully bold native PowerPoint text box.
+
+Main slide titles (h1 and their inline children) use weight 700. Component headings retain medium weight; body text retains regular weight.
