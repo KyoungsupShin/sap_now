@@ -181,6 +181,17 @@ const slides = [
   },
   {
     "order": 15,
+    "file": "llm-wiki-explanation.html",
+    "title": "LLM Wiki — 팀 지식 축적과 요청 맥락 재활용",
+    "status": "restored",
+    "purpose": "Restore the dedicated LLM Wiki comparison from supplied dry-run PDF page 6.",
+    "keyMessage": "Team knowledge and request/answer history provide reusable context for AI.",
+    "changes": "Restored both original comparison tracks and capability messages as editable HTML.",
+    "section": "Agentic Execution",
+    "sectionNumber": "02"
+  },
+  {
+    "order": 16,
     "file": "12page.html",
     "title": "Harness Deep Agent — 복합 분석과 계획",
     "status": "revised",
@@ -194,7 +205,7 @@ const slides = [
     "sectionNumber": "02"
   },
   {
-    "order": 16,
+    "order": 17,
     "file": "13page.html",
     "title": "Harness A2A — Cross-Team 협업",
     "status": "revised",
@@ -218,10 +229,10 @@ const slides = [
     "kind": "divider",
     "section": "SAP BTP Architecture",
     "sectionNumber": "03",
-    "order": 17
+    "order": 18
   },
   {
-    "order": 18,
+    "order": 19,
     "file": "19page.html",
     "title": "SAP BTP — Standard Architecture",
     "status": "revised",
@@ -234,7 +245,7 @@ const slides = [
     "sectionNumber": "03"
   },
   {
-    "order": 19,
+    "order": 20,
     "file": "20page.html",
     "title": "SAP BTP — Kyma App-in-App Architecture",
     "status": "revised",
@@ -247,7 +258,7 @@ const slides = [
     "sectionNumber": "03"
   },
   {
-    "order": 20,
+    "order": 21,
     "file": "16page.html",
     "title": "SAP BTP — Platform Value & TCO",
     "status": "revised",
@@ -260,7 +271,7 @@ const slides = [
     "sectionNumber": "03"
   },
   {
-    "order": 21,
+    "order": 22,
     "file": "17page.html",
     "title": "SAP BTP — Operations & OPEX",
     "status": "revised",
@@ -283,10 +294,10 @@ const slides = [
     "kind": "divider",
     "section": "Demo & Business Value",
     "sectionNumber": "04",
-    "order": 22
+    "order": 23
   },
   {
-    "order": 23,
+    "order": 24,
     "file": "2page.html",
     "title": "Demo — Business Context & Challenges",
     "status": "existing",
@@ -298,7 +309,7 @@ const slides = [
     "sectionNumber": "04"
   },
   {
-    "order": 24,
+    "order": 25,
     "file": "4page.html",
     "title": "Shared AI Foundation",
     "status": "revised",
@@ -311,7 +322,7 @@ const slides = [
     "sectionNumber": "04"
   },
   {
-    "order": 25,
+    "order": 26,
     "file": "5page.html",
     "title": "Demo — Cross-Team Operating Model",
     "status": "revised",
@@ -324,7 +335,7 @@ const slides = [
     "sectionNumber": "04"
   },
   {
-    "order": 26,
+    "order": 27,
     "file": "22page.html",
     "title": "Demo — Autonomous SCM Scenarios",
     "status": "revised",
@@ -338,7 +349,7 @@ const slides = [
     "sectionNumber": "04"
   },
   {
-    "order": 27,
+    "order": 28,
     "file": "demo-video-01-inbound.html",
     "title": "Demo 01 — Inbound Process Adaptation",
     "status": "new",
@@ -349,7 +360,7 @@ const slides = [
     "sectionNumber": "04"
   },
   {
-    "order": 28,
+    "order": 29,
     "file": "demo-video-02-exception.html",
     "title": "Demo 02 — SCM Exception Handling",
     "status": "new",
@@ -360,7 +371,7 @@ const slides = [
     "sectionNumber": "04"
   },
   {
-    "order": 29,
+    "order": 30,
     "file": "demo-video-03-orchestration.html",
     "title": "Demo 03 — Demand-to-Supply Orchestration",
     "status": "new",
@@ -371,7 +382,7 @@ const slides = [
     "sectionNumber": "04"
   },
   {
-    "order": 30,
+    "order": 31,
     "file": "23page.html",
     "title": "Demo — Business Value",
     "status": "new",

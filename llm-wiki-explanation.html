@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>LLM Wiki — 팀 지식 축적과 요청 맥락 재활용 | SAP BTP AI</title>
+    <link rel="stylesheet" href="sap-template.css">
+    <style>
+      :root {
+        --blue: #0a6ed1;
+        --ink: #000000;
+        --muted: #475e75;
+        --line: #c5ddeb;
+        --orange: #e9730c;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        min-width: 320px;
+        min-height: 100%;
+        margin: 0;
+        background: #000000;
+        font-family: Arial, "SAP 72", sans-serif;
+      }
+      .slide {
+        position: relative;
+        width: min(100vw, 1600px);
+        min-height: 900px;
+        margin: auto;
+        overflow: hidden;
+        padding: 76px 110px 72px;
+        background:
+          radial-gradient(
+            circle at 88% 82%,
+            rgba(117, 188, 233, 0.18),
+            transparent 22%
+          ),
+          #f8fbff;
+        color: var(--ink);
+      }
+      .top {
+        position: absolute;
+        inset: 0 0 auto;
+        height: 9px;
+        background: var(--blue);
+      }
+      .brand {
+        position: absolute;
+        top: 44px;
+        right: 78px;
+        color: #000000;
+        font-size: 17px;
+        font-weight: 800;
+      }
+      .brand b,
+      h1 span {
+        color: var(--blue);
+      }
+      .kicker {
+        margin: 0 0 22px;
+        color: var(--blue);
+        font-size: 18px;
+        font-weight: 800;
+        letter-spacing: 0.11em;
+      }
+      h1 {
+        margin: 0;
+        font-size: clamp(40px, 3.25vw, 52px);
+        line-height: 1.05;
+        letter-spacing: -0.055em;
+        white-space: nowrap;
+      }
+      .content {
+        display: grid;
+        grid-template-columns: 190px 320px minmax(0, 1fr);
+        gap: 28px;
+        align-items: stretch;
+        margin-top: 28px;
+      }
+      .request {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 22px 18px;
+        border: 1px solid #9dcbe7;
+        border-top: 6px solid var(--blue);
+        border-radius: 12px;
+        background: #fff;
+        box-shadow: 0 8px 18px rgba(28, 68, 102, 0.08);
+        text-align: center;
+      }
+      .request small {
+        color: #39779d;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.09em;
+      }
+      .request h2 {
+        margin: 0;
+        color: #000000;
+        font-size: 19px;
+        line-height: 1.1;
+        letter-spacing: -0.03em;
+      }
+      .request p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 1.3;
+      }
+      .request:after {
+        position: absolute;
+        z-index: 3;
+        top: 50%;
+        right: -28px;
+        display: grid;
+        width: 32px;
+        height: 32px;
+        place-items: center;
+        border: 1px solid #b8daed;
+        border-radius: 50%;
+        background: #fff;
+        color: var(--blue);
+        content: "→";
+        font-size: 19px;
+        font-weight: 800;
+        transform: translateY(-50%);
+      }
+      .question-rail {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 28px;
+        color: #39779d;
+        text-align: center;
+      }
+      .question-rail::after {
+        position: absolute;
+        z-index: 3;
+        top: 50%;
+        right: -28px;
+        display: grid;
+        width: 32px;
+        height: 32px;
+        place-items: center;
+        border: 1px solid #b8daed;
+        border-radius: 50%;
+        background: #fff;
+        color: var(--blue);
+        content: "→";
+        font-size: 19px;
+        font-weight: 800;
+        transform: translateY(-50%);
+      }
+      .question-rail small {
+        display: block;
+        margin-bottom: 9px;
+        color: #39779d;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.1em;
+      }
+      .question-rail strong {
+        display: block;
+        color: #000000;
+        font-size: 12px;
+        line-height: 1.32;
+        letter-spacing: -0.04em;
+      }
+      .compare {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+      .lane {
+        padding: 18px 20px;
+        border: 1px solid var(--line);
+        border-top: 7px solid var(--orange);
+        border-radius: 17px;
+        background: #fff;
+        box-shadow: 0 10px 24px rgba(28, 68, 102, 0.08);
+      }
+      .lane.ai {
+        border-top-color: var(--blue);
+        background: #f5fbff;
+      }
+      .lane-head {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 14px;
+        color: #000000;
+        font-size: 20px;
+        font-weight: 800;
+        letter-spacing: -0.04em;
+      }
+      .lane-head b {
+        padding: 5px 8px;
+        border-radius: 999px;
+        background: #fff0df;
+        color: #b85c00;
+        font-size: 10px;
+        letter-spacing: 0.08em;
+      }
+      .ai .lane-head b {
+        background: #e8f5ff;
+        color: var(--blue);
+      }
+      .flow {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 15px;
+      }
+      .item {
+        position: relative;
+        min-height: 118px;
+        padding: 15px 14px;
+        border: 1px solid #f1d3b5;
+        border-radius: 12px;
+        background: #fffaf4;
+      }
+      .ai .item {
+        border-color: #c7e0ef;
+        background: #fff;
+      }
+      .item:not(:last-child):after {
+        position: absolute;
+        z-index: 2;
+        top: 50%;
+        right: -22px;
+        display: grid;
+        width: 28px;
+        height: 28px;
+        place-items: center;
+        border: 1px solid #f1d3b5;
+        border-radius: 50%;
+        background: #fff;
+        color: #b85c00;
+        content: "→";
+        font-size: 18px;
+        font-weight: 800;
+        transform: translateY(-50%);
+      }
+      .ai .item:not(:last-child):after {
+        border-color: #b8daed;
+        color: var(--blue);
+      }
+      .item small {
+        color: #b85c00;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+      }
+      .ai .item small {
+        color: #39779d;
+      }
+      .item h2 {
+        margin: 9px 0 5px;
+        color: #000000;
+        font-size: 18px;
+        line-height: 1.1;
+        letter-spacing: -0.05em;
+      }
+      .item p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 11px;
+        font-weight: 700;
+        line-height: 1.25;
+      }
+      .footer {
+        position: absolute;
+        right: 78px;
+        bottom: 30px;
+        color: #5b738b;
+        font-size: 14px;
+        font-weight: 700;
+      }
+      @media (max-width: 800px) {
+        .slide {
+          min-height: 100vh;
+          padding: 72px 30px 84px;
+        }
+        .brand {
+          top: 28px;
+          right: 30px;
+          font-size: 13px;
+        }
+        .content,
+        .flow {
+          grid-template-columns: 1fr;
+        }
+        .request {
+          min-height: 120px;
+        }
+        .request:after,
+        .question-rail::after {
+          top: auto;
+          right: 50%;
+          bottom: -22px;
+          transform: translateX(50%) rotate(90deg);
+        }
+        .question-rail {
+          min-height: 100px;
+        }
+        .compare {
+          margin-top: 28px;
+        }
+        .item:not(:last-child):after {
+          top: auto;
+          right: 50%;
+          bottom: -21px;
+          transform: translateX(50%) rotate(90deg);
+        }
+        .footer {
+          right: 30px;
+        }
+      }
+    </style>
+  <link rel="stylesheet" href="assets/deck-flow.css"><link rel="stylesheet" href="assets/korean-editorial.css"><link rel="stylesheet" href="assets/sap-official-template.css"><link rel="stylesheet" href="assets/agent-comparison-template.css"><link rel="stylesheet" href="assets/single-line-copy.css"><link rel="stylesheet" href="assets/readable-type.css"></head>
+  <body><main class="slide comparison-template"><h1>LLM Wiki — 팀 지식 축적과 요청 맥락 재활용</h1>
+<section class="content" aria-label="LLM Wiki comparison"><article class="request"><small>COMMON START</small><h2>자료 요청</h2><p>업무 요청 · 확인 필요 자료</p></article><div class="question-rail"><div><small>QUESTION</small><strong>“신용 리스크가 높아진 거래처의 주문 보류·한도 조정 SOP는?”</strong></div></div><div class="compare">
+<article class="lane"><div class="lane-head"><b>LLM WIKI 없음</b></div><div class="flow"><div class="item"><small>01</small><h2>개인 노트 앱</h2><p>사람마다 별도 자료 관리</p></div><div class="item"><small>02</small><h2>데이터 파편화</h2><p>KPI · SOP · 미팅 이력 분산</p></div><div class="item"><small>03</small><h2>자료 탐색</h2><p>필요 자료를 다시 찾음</p></div><div class="item"><small>04</small><h2>요청 재정리</h2><p>요청 맥락을 다시 취합</p></div></div></article>
+<article class="lane ai"><div class="lane-head"><b>LLM WIKI 존재</b></div><div class="flow"><div class="item"><small>01</small><h2>Request Ticket</h2><p>업무 요청을 한 곳에 등록</p></div><div class="item"><small>02</small><h2>팀 지식 연결</h2><p>KPI · SOP · 미팅 · 이슈</p></div><div class="item"><small>03</small><h2>요청·답변 기록</h2><p>검토 결과와 근거를 함께 저장</p></div><div class="item"><small>04</small><h2>재활용·AI 접근</h2><p>다음 요청의 맥락으로 활용</p></div></div></article>
+</div></section><section class="agent-capability" aria-label="LLM Wiki capabilities"><div class="agent-capability-label">LLM WIKI CAPABILITY</div><div class="agent-capability-item"><b>팀 지식 축적</b><span>KPI · SOP · 미팅 · 이슈를 한 곳에 기록</span></div><div class="agent-capability-item"><b>요청 맥락 재활용</b><span>Ticket과 답변 이력을 AI가 다음 업무에 활용</span></div></section><span class="slide-page-number">15</span></main></body></html>
