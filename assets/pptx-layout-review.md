@@ -16,6 +16,8 @@ The percentage below counts pixels with a maximum RGB-channel difference above 3
 
 Font emphasis was reviewed across all 31 slides: regular body text, medium hierarchy and 41 bold HTML text fragments (previously 236). Team foundation thumbnails were regenerated with the same typography.
 
+Slide 24 follow-up: the complete enterprise KPI message is bold, single-line and exported as exactly one text box. Compared HTML and LibreOffice PPTX render; no clipping or collision with neighboring table sections observed.
+
 | Slide | HTML source | Review | Changed pixels |
 |---|---|---|---|
 | 1 | 1page.html | Layout retained; minor rendering differences | 1.427% |
@@ -41,7 +43,7 @@ Font emphasis was reviewed across all 31 slides: regular body text, medium hiera
 | 21 | 16page.html | Layout retained; minor rendering differences | 5.390% |
 | 22 | 17page.html | Layout retained; minor rendering differences | 5.047% |
 | 23 | 21page.html | Layout retained; minor rendering differences | 2.064% |
-| 24 | 2page.html | Layout retained; minor rendering differences | 7.539% |
+| 24 | 2page.html | Layout retained; minor rendering differences | 7.654% |
 | 25 | 4page.html | Layout retained; minor rendering differences | 2.423% |
 | 26 | 5page.html | Layout retained; minor rendering differences | 1.789% |
 | 27 | 22page.html | Layout retained; minor rendering differences | 4.863% |
