@@ -2,7 +2,7 @@
 
 31 slides were rendered from HTML in Chromium at 1600×900 (2× capture), exported to PPTX, and independently rendered using LibreOffice. Paired images were visually inspected across every slide. Exact PPTX source images also matched each HTML capture byte-for-byte.
 
-Added video placeholder slides 28–30 after the three-case overview at 27. Business Value is now 31. LLM Wiki is restored as slide 15 from dry-run PDF page 6. The 16:9 stage, play icon and text are editable; no video media is embedded.
+Added video placeholder slides 28–30 after the three-case overview at 27. Business Value is now 31. LLM Wiki is restored as slide 12, immediately before HANA Knowledge Graph (13) from dry-run PDF page 6. The 16:9 stage, play icon and text are editable; no video media is embedded.
 
 Corrections found during review:
 - Video play icons were obscured by exported native rectangles: rebuilt as native triangles without theme effects.
@@ -31,10 +31,10 @@ Slide 24 follow-up: the complete enterprise KPI message is bold, single-line and
 | 9 | 6page.html | Layout retained; minor rendering differences | 3.723% |
 | 10 | divider-02-agents.html | Layout retained; minor rendering differences | 1.860% |
 | 11 | 10page.html | Layout retained; minor rendering differences | 3.032% |
-| 12 | 9page.html | Layout retained; minor rendering differences | 4.507% |
-| 13 | 11page.html | Layout retained; minor rendering differences | 4.329% |
-| 14 | app-builder-explanation.html | Layout retained; minor rendering differences | 4.017% |
-| 15 | llm-wiki-explanation.html | Layout retained; minor rendering differences | 3.154% |
+| 12 | llm-wiki-explanation.html | Layout retained; minor rendering differences | 3.154% |
+| 13 | 9page.html | Layout retained; minor rendering differences | 4.507% |
+| 14 | 11page.html | Layout retained; minor rendering differences | 4.328% |
+| 15 | app-builder-explanation.html | Layout retained; minor rendering differences | 4.018% |
 | 16 | 12page.html | Layout retained; minor rendering differences | 3.657% |
 | 17 | 13page.html | Layout retained; minor rendering differences | 3.821% |
 | 18 | divider-04-platform.html | Layout retained; minor rendering differences | 1.886% |

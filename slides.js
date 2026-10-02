@@ -140,6 +140,17 @@ const slides = [
   },
   {
     "order": 12,
+    "file": "llm-wiki-explanation.html",
+    "title": "LLM Wiki — 팀 지식 축적과 요청 맥락 재활용",
+    "status": "restored",
+    "purpose": "Restore the dedicated LLM Wiki comparison from supplied dry-run PDF page 6.",
+    "keyMessage": "Team knowledge and request/answer history provide reusable context for AI.",
+    "changes": "Restored PDF page 6 as editable HTML; placed immediately before HANA Knowledge Graph.",
+    "section": "Agentic Execution",
+    "sectionNumber": "02"
+  },
+  {
+    "order": 13,
     "file": "9page.html",
     "title": "HANA Knowledge Graph — Business Context 연결",
     "status": "revised",
@@ -153,7 +164,7 @@ const slides = [
     "sectionNumber": "02"
   },
   {
-    "order": 13,
+    "order": 14,
     "file": "11page.html",
     "title": "Harness — 업무 판단과 실행 조율",
     "status": "revised",
@@ -177,18 +188,7 @@ const slides = [
     "section": "Agentic Execution",
     "sectionNumber": "02",
     "agents": "App Builder",
-    "order": 14
-  },
-  {
-    "order": 15,
-    "file": "llm-wiki-explanation.html",
-    "title": "LLM Wiki — 팀 지식 축적과 요청 맥락 재활용",
-    "status": "restored",
-    "purpose": "Restore the dedicated LLM Wiki comparison from supplied dry-run PDF page 6.",
-    "keyMessage": "Team knowledge and request/answer history provide reusable context for AI.",
-    "changes": "Restored both original comparison tracks and capability messages as editable HTML.",
-    "section": "Agentic Execution",
-    "sectionNumber": "02"
+    "order": 15
   },
   {
     "order": 16,
