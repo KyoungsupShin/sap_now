@@ -17,6 +17,25 @@ const { chromium } = require('playwright');
         await document.fonts.ready;
         await Promise.all([...document.images].map(i => i.decode()));
       });
+      // Capture the fonts Chromium actually used, including CSS fallback fonts.
+      const cdp = await page.context().newCDPSession(page);
+      await cdp.send('DOM.enable'); await cdp.send('CSS.enable');
+      await page.evaluate(() => {
+        let index=0;
+        for(const e of document.querySelectorAll('main.slide *')) {
+          if([...e.childNodes].some(n=>n.nodeType===Node.TEXT_NODE && n.textContent.trim())) e.dataset.exportFontId=index++;
+        }
+      });
+      const {root:domRoot}=await cdp.send('DOM.getDocument');
+      const {nodeIds}=await cdp.send('DOM.querySelectorAll',{nodeId:domRoot.nodeId,selector:'[data-export-font-id]'});
+      for(const nodeId of nodeIds) {
+        const {fonts}=await cdp.send('CSS.getPlatformFontsForNode',{nodeId});
+        if(!fonts.length) continue;
+        const font=fonts.find(f=>!f.familyName.includes('CJK')) || fonts[0];
+        const {object}=await cdp.send('DOM.resolveNode',{nodeId});
+        await cdp.send('Runtime.callFunctionOn',{objectId:object.objectId,functionDeclaration:'function(font){this.dataset.exportFont=font}',arguments:[{value:font.familyName}]});
+      }
+      await cdp.detach();
       const box = await page.locator('main.slide').boundingBox();
       if (!box || box.width !== 1600 || box.height !== 900) throw new Error(`Unexpected slide dimensions: ${slide.file} ${JSON.stringify(box)}`);
       const filename = `${String(slide.order).padStart(2, '0')}.png`;
@@ -42,18 +61,19 @@ const { chromium } = require('playwright');
             if (style.textTransform==='uppercase') char=char.toUpperCase();
             if (style.textTransform==='lowercase') char=char.toLowerCase();
             if (!line || Math.abs(line.y-r.y)>1) {
-              line={owner:owners.get(owner),text:'',x:r.x,y:r.y,width:0,height:r.height,fontSize:parseFloat(style.fontSize),font:style.fontFamily.split(',')[0].replaceAll('"',''),weight:style.fontWeight,color:style.color,italic:style.fontStyle==='italic'};
+              line={owner:owners.get(owner),text:'',x:r.x,y:r.y,width:0,height:r.height,fontSize:parseFloat(style.fontSize),font:parent.dataset.exportFont || style.fontFamily.split(',')[0].replaceAll('"',''),weight:style.fontWeight,letterSpacing:parseFloat(style.letterSpacing)||0,color:style.color,italic:style.fontStyle==='italic'};
               textLines.push(line);
             }
             line.text+=char; line.width=r.right-line.x; parents.add(parent);
           }
         }
-        const selector='.cap,.development-step,.execution-stage,.process-node,.item,.model-node,.oversight-card,.request,.shared-entry,.business-context-detail .operation-table td,.business-context-detail .operation-table th,.business-context-detail .response-table th';
+        const selector='.demo-video-placeholder,.enterprise-kpis,.cap,.development-step,.execution-stage,.process-node,.item,.model-node,.oversight-card,.request,.shared-entry,.business-context-detail .operation-table td,.business-context-detail .operation-table th,.business-context-detail .response-table th';
         const cards=document.querySelector('main.original-scenario') ? [] : [...root.querySelectorAll(selector)].filter(e=>!e.querySelector(selector)).map((e,i)=> {
           const b=e.getBoundingClientRect(),c=getComputedStyle(e);
           e.dataset.exportCard=i;
           return {id:i,x:b.x,y:b.y,width:b.width,height:b.height,fill:c.backgroundColor,border:c.borderLeftColor,borderWidth:parseFloat(c.borderLeftWidth),topColor:c.borderTopColor,topWidth:parseFloat(c.borderTopWidth),radius:parseFloat(c.borderTopLeftRadius)};
         });
+        const icons=[...root.querySelectorAll('.demo-video-play')].map(e=>{const b=e.getBoundingClientRect();e.style.visibility='hidden';return {x:b.x,y:b.y,width:b.width,height:b.height,color:'#0070f2'};});
         // Hide text ink only: retain layout, images, card geometry and icons.
         for (const parent of parents) {
           parent.style.setProperty('color','transparent','important');
@@ -65,7 +85,7 @@ const { chromium } = require('playwright');
           e.style.setProperty('background','transparent','important');
           e.style.setProperty('border-color','transparent','important');
         }
-        return {cards,textLines:textLines.filter(l=>l.text.trim())};
+        return {cards,icons,textLines:textLines.filter(l=>l.text.trim())};
       });
       // Preserve CSS-generated arrow glyphs in the raster background.
       await page.addStyleTag({content:'main.slide *::before,main.slide *::after{-webkit-text-fill-color:initial !important}'});
@@ -73,6 +93,7 @@ const { chromium } = require('playwright');
       const cards=content.cards;
       slide.nativeText=content.textLines;
       slide.nativeCards = cards;
+      slide.nativeIcons = content.icons;
       console.log(`${slide.order}/${slides.length}: ${slide.title} (${cards.length} cards, ${content.textLines.length} editable text boxes)`);
     }
     fs.writeFileSync(path.join(output, 'manifest.json'), JSON.stringify(slides, null, 2));

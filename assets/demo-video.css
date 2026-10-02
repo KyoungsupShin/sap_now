@@ -1,0 +1,11 @@
+/* Dedicated 16:9 video stage; exported as an editable PowerPoint rectangle. */
+* { box-sizing:border-box; }
+.demo-video-slide { height:900px; overflow:hidden; }
+.demo-video-slide h1 { margin:0; }
+.demo-video-agent { margin:20px 0 0; color:#0070f2; font-size:22px; font-weight:600; }
+.demo-video-description { margin:10px 0 0; color:#475e75; font-size:20px; }
+.demo-video-placeholder { position:absolute; left:300px; top:245px; width:1000px; height:562.5px; border:2px solid #91c8f6; border-radius:12px; background:#f1f7fd; display:flex; flex-direction:column; align-items:center; justify-content:center; }
+.demo-video-placeholder h2 { margin:20px 0 0; color:#0070f2; font-size:28px; font-weight:600; }
+.demo-video-placeholder p { margin:12px 0 0; color:#475e75; font-size:18px; }
+.demo-video-play { width:0; height:0; border-top:25px solid transparent; border-bottom:25px solid transparent; border-left:40px solid #0070f2; margin-left:8px; }
+.slide-page-number { position:absolute; }

@@ -85,9 +85,18 @@ for item in slides:
             top = slide.shapes.add_shape(MSO_SHAPE.RECTANGLE, unit(x), unit(y), unit(w), unit(card['topWidth']))
             for style in list(top._element.findall(qn('p:style'))): top._element.remove(style)
             top.fill.solid(); top.fill.fore_color.rgb = color(card['topColor']); top.line.fill.background()
+    for icon in item.get('nativeIcons', []):
+        triangle = slide.shapes.add_shape(MSO_SHAPE.ISOSCELES_TRIANGLE, unit(icon['x']-5), unit(icon['y']+5), unit(icon['height']), unit(icon['width']))
+        triangle.rotation = 90
+        triangle.fill.solid(); triangle.fill.fore_color.rgb = RGBColor.from_string(icon['color'].lstrip('#'))
+        triangle.line.fill.background()
+        for style in list(triangle._element.findall(qn('p:style'))): triangle._element.remove(style)
+    # Preserve each DOM text fragment's x position, including flex/inline gaps.
     groups = []
     for line in item.get('nativeText', []):
-        group = next((g for g in groups if g['owner'] == line.get('owner') and abs(g['y'] - line['y']) < 1.5), None)
+        group = next((g for g in groups if g['owner'] == line.get('owner')
+                      and abs(g['y']-line['y']) < 1.5
+                      and abs(max(r['x']+r['width'] for r in g['runs'])-line['x']) < 1.5), None)
         if group is None:
             group = {'owner':line.get('owner'), 'y':line['y'], 'runs':[]}
             groups.append(group)
@@ -106,7 +115,13 @@ for item in slides:
         paragraph.space_before = paragraph.space_after = Pt(0)
         for line in lines:
             run = paragraph.add_run(); run.text = line['text']
-            run.font.name = line['font']; run.font.size = Pt(line['fontSize'] * .6)
+            run.font.name = line['font']
+            run._r.get_or_add_rPr().set('spc', str(round(line.get('letterSpacing', 0) * 60)))
+            for tag in ('a:ea', 'a:cs'):
+                font_element = OxmlElement(tag)
+                font_element.set('typeface', 'Noto Sans CJK KR' if tag == 'a:ea' else line['font'])
+                run._r.get_or_add_rPr().append(font_element)
+            run.font.size = Pt(line['fontSize'] * .6)
             run.font.bold = int(line['weight']) >= 600
             run.font.italic = line['italic']; run.font.color.rgb = color(line['color'])
     slide.notes_slide.notes_text_frame.text = f"{item['order']:02} — {item['title']}\nAll HTML text is editable; card backgrounds and borders are native shapes. Text embedded in source images remains part of those images."

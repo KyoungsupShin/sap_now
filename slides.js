@@ -339,6 +339,39 @@ const slides = [
   },
   {
     "order": 27,
+    "file": "demo-video-01-inbound.html",
+    "title": "Demo 01 — Inbound Process Adaptation",
+    "status": "new",
+    "purpose": "Provide a dedicated video placeholder for this SCM demo case.",
+    "keyMessage": "납품서·ASN 양식 변경에 따른 입고 App 변경·배포",
+    "changes": "Added a 16:9 video insertion area after the scenario overview.",
+    "section": "Demo & Business Value",
+    "sectionNumber": "04"
+  },
+  {
+    "order": 28,
+    "file": "demo-video-02-exception.html",
+    "title": "Demo 02 — SCM Exception Handling",
+    "status": "new",
+    "purpose": "Provide a dedicated video placeholder for this SCM demo case.",
+    "keyMessage": "지식·이력 기반 입고 지연·재고·납기 Risk 대응",
+    "changes": "Added a 16:9 video insertion area after the scenario overview.",
+    "section": "Demo & Business Value",
+    "sectionNumber": "04"
+  },
+  {
+    "order": 29,
+    "file": "demo-video-03-orchestration.html",
+    "title": "Demo 03 — Demand-to-Supply Orchestration",
+    "status": "new",
+    "purpose": "Provide a dedicated video placeholder for this SCM demo case.",
+    "keyMessage": "수요·납기 변경의 생산·구매·물류 영향 분석과 실행",
+    "changes": "Added a 16:9 video insertion area after the scenario overview.",
+    "section": "Demo & Business Value",
+    "sectionNumber": "04"
+  },
+  {
+    "order": 30,
     "file": "23page.html",
     "title": "Demo — Business Value",
     "status": "new",
