@@ -25,6 +25,8 @@ Outputs:
 
 The export captures each HTML page at a 1600×900 viewport and device scale 2 after fonts and images finish loading. Intermediate renders are local build outputs. Regenerate all three files after changing slides.
 
+PPTX packaging automatically applies lossless PNG compression using `scripts/optimize_pptx.py`. Image dimensions and decoded pixels stay identical; slide XML, text, shapes and relationships stay byte-identical. JPEG conversion and resolution reduction are not applied. Existing PPTX files can also be compressed with `python scripts/optimize_pptx.py exports/SAP_NOW_editable.pptx exports/SAP_NOW_exact.pptx`.
+
 To update only the editable PPTX while leaving the exact PPTX and PDF unchanged:
 
 ```bash
@@ -42,7 +44,7 @@ soffice --headless --convert-to pdf --outdir /tmp/sap-now-review exports/SAP_NOW
 python scripts/verify-slide-layouts.py /tmp/sap-now-review/SAP_NOW_editable.pdf
 ```
 
-The review PDF under `exports/rendered/review/` pairs each HTML slide with its rendered editable PPTX. Pixel metrics are diagnostics; manually inspect every page. The check also verifies that every exact PPTX image matches its HTML screenshot byte-for-byte. LibreOffice rendering does not certify Microsoft PowerPoint font rendering. Use Liberation Sans and Noto Sans CJK KR on the viewing machine for the fonts used by this export environment.
+The review PDF under `exports/rendered/review/` pairs each HTML slide with its rendered editable PPTX. Pixel metrics are diagnostics; manually inspect every page. The check also verifies that every exact PPTX image matches its HTML screenshot pixel-for-pixel, allowing lossless PNG recompression. LibreOffice rendering does not certify Microsoft PowerPoint font rendering. Use Liberation Sans and Noto Sans CJK KR on the viewing machine for the fonts used by this export environment.
 
 ## Speaker script PDF
 

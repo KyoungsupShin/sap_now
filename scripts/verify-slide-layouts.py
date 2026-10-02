@@ -8,7 +8,6 @@ from pathlib import Path
 import io
 import json
 import sys
-import hashlib
 import fitz
 import numpy as np
 from PIL import Image, ImageDraw
@@ -28,7 +27,9 @@ rows = []
 for index, item in enumerate(manifest):
     number = item['order']
     source = rendered / f'{number:02}.png'
-    assert hashlib.sha256(exact.slides[index].shapes[0].image.blob).digest() == hashlib.sha256(source.read_bytes()).digest()
+    with Image.open(io.BytesIO(exact.slides[index].shapes[0].image.blob)) as embedded, Image.open(source) as original:
+        assert embedded.size == original.size
+        assert embedded.convert('RGBA').tobytes() == original.convert('RGBA').tobytes()
     html = Image.open(source).convert('RGB').resize((1600, 900), Image.Resampling.LANCZOS)
     pix = actual[index].get_pixmap(matrix=fitz.Matrix(1600 / actual[index].rect.width, 1600 / actual[index].rect.width), alpha=False)
     ppt = Image.frombytes('RGB', (pix.width, pix.height), pix.samples).resize((1600, 900))
@@ -54,4 +55,4 @@ for start in range(0, len(manifest), 5):
 review.save(out / 'SAP_NOW_layout_review.pdf')
 (out / 'metrics.json').write_text(json.dumps(rows, indent=2))
 print(json.dumps(rows, indent=2))
-print('All exact PPTX source images match HTML screenshots byte-for-byte.')
+print('All exact PPTX source images match HTML screenshots pixel-for-pixel.')

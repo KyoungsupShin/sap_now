@@ -12,6 +12,7 @@ from pptx.oxml.xmlchemy import OxmlElement
 from pptx.dml.color import RGBColor
 import re
 from PIL import Image
+from optimize_pptx import optimize_pptx
 
 root = Path(__file__).resolve().parents[1]
 editable_only = '--editable-only' in sys.argv
@@ -36,6 +37,7 @@ if not editable_only:
         page = doc.new_page(width=960, height=540)
         page.insert_image(page.rect, filename=str(png))
     prs.save(output / 'SAP_NOW_exact.pptx')
+    optimize_pptx(output / 'SAP_NOW_exact.pptx')
 # A second deck keeps original complex content but exposes flat card geometry.
 hybrid = Presentation()
 hybrid.slide_width, hybrid.slide_height = prs.slide_width, prs.slide_height
@@ -126,6 +128,7 @@ for item in slides:
             run.font.italic = line['italic']; run.font.color.rgb = color(line['color'])
     slide.notes_slide.notes_text_frame.text = f"{item['order']:02} — {item['title']}\nAll HTML text is editable; card backgrounds and borders are native shapes. Text embedded in source images remains part of those images."
 hybrid.save(output / 'SAP_NOW_editable.pptx')
+optimize_pptx(output / 'SAP_NOW_editable.pptx')
 if not editable_only:
     doc.set_metadata({'title': 'SAP NOW — Autonomous Enterprise', 'author': 'KyoungsupShin'})
     doc.save(output / 'SAP_NOW.pdf', garbage=4, deflate=True)
