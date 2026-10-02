@@ -43,3 +43,13 @@ python scripts/verify-slide-layouts.py /tmp/sap-now-review/SAP_NOW_editable.pdf
 ```
 
 The review PDF under `exports/rendered/review/` pairs each HTML slide with its rendered editable PPTX. Pixel metrics are diagnostics; manually inspect every page. The check also verifies that every exact PPTX image matches its HTML screenshot byte-for-byte. LibreOffice rendering does not certify Microsoft PowerPoint font rendering. Use Liberation Sans and Noto Sans CJK KR on the viewing machine for the fonts used by this export environment.
+
+## Speaker script PDF
+
+`exports/SAP_NOW_speaker_script_50min.md` contains the Korean narration for all 31 slides. With current slide renders available, run:
+
+```bash
+node scripts/build-speaker-script.cjs
+```
+
+This creates `exports/SAP_NOW_speaker_script_50min.pdf`: an A4 guide followed by one script page per slide, with slide previews, section bookmarks, target durations and cumulative timing. The 50-minute timeline assumes a 2-minute opening video and three 90-second demo videos; actual narration pace and video duration should be checked in rehearsal. Q&A is separate.
