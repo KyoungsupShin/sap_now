@@ -1,0 +1,18 @@
+/* Sparse emphasis across the deck: regular copy, medium hierarchy, bold key messages. */
+.slide, .slide * { font-weight:400 !important; }
+.slide h1, .slide h2, .slide h3, .slide h4,
+.slide th, .slide .cell-title, .slide .team > b,
+.slide .chapter-agenda b, .slide .agent-capability-item > b,
+.slide .process-node > strong, .slide .shared-entry > strong,
+.slide .parallel-query > b, .slide .skill-card > b,
+.slide .comparison b { font-weight:500 !important; }
+/* Explicit emphasis is restricted to conclusions and key comparison anchors. */
+.slide .conclusion, .slide .conclusion *,
+.slide .enterprise-kpis > span,
+.slide .comparison td.btp > b,
+.slide .scenario h2,
+.slide .chapter-agenda .current b,
+.slide .capability-governance > b,
+.slide .value-after p > b,
+.slide .message > b,
+.slide .key-emphasis { font-weight:600 !important; }

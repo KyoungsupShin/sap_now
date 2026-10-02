@@ -38,6 +38,10 @@ const { chromium } = require('playwright');
       await cdp.detach();
       const box = await page.locator('main.slide').boundingBox();
       if (!box || box.width !== 1600 || box.height !== 900) throw new Error(`Unexpected slide dimensions: ${slide.file} ${JSON.stringify(box)}`);
+      // Keep the six team thumbnails in sync with the live foundation typography.
+      if (slide.file === '4page.html') {
+        await page.locator('.assistant-map').screenshot({path:path.join(root,'assets','connected-foundation-thumbnail.png'),animations:'disabled'});
+      }
       const filename = `${String(slide.order).padStart(2, '0')}.png`;
       await page.screenshot({ path: path.join(output, filename), clip: box, animations: 'disabled' });
       const content = await page.evaluate(() => {

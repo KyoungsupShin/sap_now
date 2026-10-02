@@ -14,38 +14,40 @@ Result: major image, table, card and video-stage positions are retained. No majo
 
 The percentage below counts pixels with a maximum RGB-channel difference above 32, at 1600×900. It includes text, image resampling and antialiasing; it is a diagnostic, not a layout pass threshold.
 
+Font emphasis was reviewed across all 31 slides: regular body text, medium hierarchy and 41 bold HTML text fragments (previously 236). Team foundation thumbnails were regenerated with the same typography.
+
 | Slide | HTML source | Review | Changed pixels |
 |---|---|---|---|
 | 1 | 1page.html | Layout retained; minor rendering differences | 1.427% |
-| 2 | agenda.html | Layout retained; minor rendering differences | 2.679% |
+| 2 | agenda.html | Layout retained; minor rendering differences | 2.671% |
 | 3 | divider-01-vision.html | Layout retained; minor rendering differences | 2.072% |
-| 4 | ai-native.html | Layout retained; minor rendering differences | 2.214% |
-| 5 | 8page.html | Layout retained; minor rendering differences | 2.927% |
+| 4 | ai-native.html | Layout retained; minor rendering differences | 2.197% |
+| 5 | 8page.html | Layout retained; minor rendering differences | 2.884% |
 | 6 | 3page.html | Layout retained; minor rendering differences | 3.057% |
-| 7 | 7page.html | Layout retained; minor rendering differences | 1.703% |
+| 7 | 7page.html | Layout retained; minor rendering differences | 1.697% |
 | 8 | app-ai-development-draft.html | Layout retained; minor rendering differences | 3.389% |
 | 9 | 6page.html | Layout retained; minor rendering differences | 3.723% |
 | 10 | divider-02-agents.html | Layout retained; minor rendering differences | 1.860% |
-| 11 | 10page.html | Layout retained; minor rendering differences | 3.057% |
-| 12 | 9page.html | Layout retained; minor rendering differences | 4.532% |
-| 13 | 11page.html | Layout retained; minor rendering differences | 4.353% |
-| 14 | app-builder-explanation.html | Layout retained; minor rendering differences | 4.045% |
-| 15 | llm-wiki-explanation.html | Layout retained; minor rendering differences | 3.172% |
-| 16 | 12page.html | Layout retained; minor rendering differences | 3.616% |
-| 17 | 13page.html | Layout retained; minor rendering differences | 3.763% |
+| 11 | 10page.html | Layout retained; minor rendering differences | 3.032% |
+| 12 | 9page.html | Layout retained; minor rendering differences | 4.507% |
+| 13 | 11page.html | Layout retained; minor rendering differences | 4.329% |
+| 14 | app-builder-explanation.html | Layout retained; minor rendering differences | 4.017% |
+| 15 | llm-wiki-explanation.html | Layout retained; minor rendering differences | 3.154% |
+| 16 | 12page.html | Layout retained; minor rendering differences | 3.657% |
+| 17 | 13page.html | Layout retained; minor rendering differences | 3.821% |
 | 18 | divider-04-platform.html | Layout retained; minor rendering differences | 1.886% |
-| 19 | 19page.html | Layout retained; minor rendering differences | 3.105% |
+| 19 | 19page.html | Layout retained; minor rendering differences | 3.104% |
 | 20 | 20page.html | Layout retained; minor rendering differences | 4.041% |
-| 21 | 16page.html | Layout retained; minor rendering differences | 5.949% |
-| 22 | 17page.html | Layout retained; minor rendering differences | 5.541% |
+| 21 | 16page.html | Layout retained; minor rendering differences | 5.390% |
+| 22 | 17page.html | Layout retained; minor rendering differences | 5.047% |
 | 23 | 21page.html | Layout retained; minor rendering differences | 2.064% |
-| 24 | 2page.html | Layout retained; minor rendering differences | 7.645% |
-| 25 | 4page.html | Layout retained; minor rendering differences | 2.685% |
-| 26 | 5page.html | Layout retained; minor rendering differences | 2.089% |
-| 27 | 22page.html | Layout retained; minor rendering differences | 5.539% |
-| 28 | demo-video-01-inbound.html | Layout retained; minor rendering differences | 1.900% |
-| 29 | demo-video-02-exception.html | Layout retained; minor rendering differences | 1.775% |
-| 30 | demo-video-03-orchestration.html | Layout retained; minor rendering differences | 2.042% |
-| 31 | 23page.html | Layout retained; minor rendering differences | 2.727% |
+| 24 | 2page.html | Layout retained; minor rendering differences | 7.539% |
+| 25 | 4page.html | Layout retained; minor rendering differences | 2.423% |
+| 26 | 5page.html | Layout retained; minor rendering differences | 1.789% |
+| 27 | 22page.html | Layout retained; minor rendering differences | 4.863% |
+| 28 | demo-video-01-inbound.html | Layout retained; minor rendering differences | 1.845% |
+| 29 | demo-video-02-exception.html | Layout retained; minor rendering differences | 1.720% |
+| 30 | demo-video-03-orchestration.html | Layout retained; minor rendering differences | 1.979% |
+| 31 | 23page.html | Layout retained; minor rendering differences | 2.711% |
 
 Local paired review: `exports/rendered/review/SAP_NOW_layout_review.pdf` (ignored intermediate). Reproduce using `scripts/README.md`.
