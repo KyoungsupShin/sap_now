@@ -310,44 +310,18 @@ const slides = [
   },
   {
     "order": 25,
-    "file": "4page.html",
-    "title": "Shared AI Foundation",
+    "file": "cross-team-expanded.html",
+    "title": "Demo — Cross-Team Operating Model · SCM Team 확대",
     "status": "revised",
-    "beforeFile": "../lges_customer/3page.html",
-    "purpose": "Show how shared enterprise intelligence supports applications and agents.",
-    "keyMessage": "Connected applications build on one shared AI and knowledge foundation.",
-    "changes": "Moved immediately before Cross-Team Operating Model as the shared AI foundation for the demo.",
-    "visualAudit": "REDESIGN · TOO UI-LIKE",
-    "section": "Demo & Business Value",
-    "sectionNumber": "04"
-  },
-  {
-    "order": 26,
-    "file": "5page.html",
-    "title": "Demo — Cross-Team Operating Model",
-    "status": "revised",
-    "beforeFile": "../lges_customer/4page.html",
-    "purpose": "Define the cross-team target operating model and scope for the demo.",
-    "keyMessage": "Teams share context, orchestration, governance, and reusable capabilities.",
-    "changes": "Moved to Demo after its business challenges.",
+    "purpose": "Combine team placement and the shared AI operating model in one zoomed SCM Team view.",
+    "keyMessage": "Team-specific knowledge and execution connect through a common enterprise knowledge foundation.",
+    "changes": "Combined team placement and original Shared AI Foundation layout; replaces former slides 25 and 26.",
     "visualAudit": "UPDATED",
     "section": "Demo & Business Value",
     "sectionNumber": "04"
   },
   {
-    "order": 27,
-    "file": "cross-team-expanded.html",
-    "title": "Demo — Cross-Team Operating Model · SCM Team 확대",
-    "status": "draft",
-    "purpose": "Combine team placement and the shared AI operating model in one zoomed SCM Team view.",
-    "keyMessage": "Team-specific knowledge and execution connect through a common enterprise knowledge foundation.",
-    "changes": "Additional combined draft after the two retained original slides.",
-    "visualAudit": "DRAFT",
-    "section": "Demo & Business Value",
-    "sectionNumber": "04"
-  },
-  {
-    "order": 28,
+    "order": 26,
     "file": "22page.html",
     "title": "Demo — Autonomous SCM Scenarios",
     "status": "revised",
@@ -361,7 +335,7 @@ const slides = [
     "sectionNumber": "04"
   },
   {
-    "order": 29,
+    "order": 27,
     "file": "demo-video-01-inbound.html",
     "title": "Demo 01 — Inbound Process Adaptation",
     "status": "new",
@@ -372,7 +346,7 @@ const slides = [
     "sectionNumber": "04"
   },
   {
-    "order": 30,
+    "order": 28,
     "file": "demo-video-02-exception.html",
     "title": "Demo 02 — SCM Exception Handling",
     "status": "new",
@@ -383,7 +357,7 @@ const slides = [
     "sectionNumber": "04"
   },
   {
-    "order": 31,
+    "order": 29,
     "file": "demo-video-03-orchestration.html",
     "title": "Demo 03 — Demand-to-Supply Orchestration",
     "status": "new",
@@ -394,7 +368,7 @@ const slides = [
     "sectionNumber": "04"
   },
   {
-    "order": 32,
+    "order": 30,
     "file": "23page.html",
     "title": "Demo — Business Value",
     "status": "new",
