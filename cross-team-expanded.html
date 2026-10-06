@@ -25,22 +25,61 @@
 </div>
 <p class="collaboration-note">팀 간 요청 · 검토 결과 · 실행 이력 공유</p>
 </section>
-<svg class="zoom-connectors" viewBox="0 0 1468 520" preserveAspectRatio="none" aria-hidden="true"><path d="M 234 344 L 544 0 L 544 520 L 234 478 Z" fill="#0070f2" fill-opacity=".035"/><path d="M 234 344 L 544 0 M 234 478 L 544 520" fill="none" stroke="#0070f2" stroke-width="2" stroke-dasharray="7 7"/></svg>
+<svg class="zoom-connectors" viewBox="0 0 1468 520" preserveAspectRatio="none" aria-hidden="true"><path d="M 164 344 L 394 0 L 394 520 L 164 478 Z" fill="#0070f2" fill-opacity=".035"/><path d="M 164 344 L 394 0 M 164 478 L 394 520" fill="none" stroke="#0070f2" stroke-width="2" stroke-dasharray="7 7"/></svg>
 <section class="team-detail" aria-label="SCM Team 확대 구성">
 <header class="detail-header"><h2>SCM Team</h2><p>팀 내부 지식 · 분석 · 실행 구조</p></header>
-<article class="module knowledge-card"><small>Team Knowledge</small><h2>Wiki Assistant</h2><p>Team KPI · SOP · Issue · Meeting</p></article>
-<div class="flow-arrow" aria-hidden="true">↓</div>
-<article class="module live live-card"><small>User Experience</small><h2>Live Assistant</h2><p>질문·업무 지시 접점</p></article>
-<div class="flow-arrow" aria-hidden="true">↓</div>
-<article class="module harness harness-card"><small>Analysis &amp; Orchestration</small><h2>Harness Assistant</h2><p>분석·업무 지시 · Non-SAP 연결</p></article>
-<div class="execution-connectors" aria-hidden="true"><span>↓</span><span>↓</span><span>↓</span></div>
-<div class="execution-tools">
-<article class="module joule"><small>SAP Integration</small><h2>Joule Assistant</h2><p>SAP 업무 Interface</p></article>
-<article class="module n8n"><small>Workflow Automation</small><h2>n8n Assistant</h2><p>업무 자동화 실행</p></article>
-<article class="module app-builder"><small>App Development &amp; Operations</small><h2>App Builder Assistant</h2><p>업무 App 운영 · 개발</p></article>
-</div>
+<div class="foundation-viewport"><div class="foundation-original">      <section class="assistant-map" aria-label="Live Assistant connected operating model">
+        <div class="stack knowledge">
+          <article class="module">
+            <small>Team Knowledge</small>
+            <h2>Wiki Assistant</h2>
+            <p>Team KPI · SOP · Issue · Meeting</p>
+          </article>
+          <article class="module">
+            <small>Enterprise Knowledge</small>
+            <h2>HANA Knowledge Graph</h2>
+            <p>Compliance · IT · HR의 Ontology</p>
+          </article>
+        </div>
+        <div class="connector">
+          <span class="connector-label">업무 근거</span>
+        </div>
+        <article class="module live">
+          <small>User Experience</small>
+          <h2>Live Assistant</h2>
+          <p>질문·업무 지시 접점</p>
+        </article>
+        <div class="connector">
+          <span class="connector-label">분석 · 지시</span>
+        </div>
+        <div class="stack">
+          <article class="module harness">
+            <small>Analysis & Orchestration</small>
+            <h2>Harness Assistant</h2>
+            <p>분석·업무 지시 · Non-SAP 연결</p>
+          </article>
+          <article class="module n8n">
+            <small>Workflow Automation</small>
+            <h2>n8n Assistant</h2>
+            <p>업무 자동화 실행</p>
+          </article>
+          <article class="module app-builder">
+            <small>App Development & Operations</small>
+            <h2>App Builder Assistant</h2>
+            <p>업무 App 운영 · 개발</p>
+          </article>
+          <article class="module joule">
+            <small>SAP Integration</small>
+            <h2>Joule Assistant</h2>
+            <p>SAP 업무 Interface</p>
+          </article>
+        </div>
+      </section></div></div>
 </section>
 </section>
 <section class="enterprise-knowledge" aria-label="모든 팀이 공유하는 전사 지식"><article class="module enterprise-card"><small>Enterprise Knowledge</small><h2>HANA Knowledge Graph</h2><p>Compliance · IT · HR의 Ontology</p></article><p>전사 조직 · 정책 · 기준의 관계 지식<span>모든 팀의 판단과 업무 실행에 공통 근거 제공</span></p></section>
 <span class="slide-page-number">27</span>
-</main></body></html>
+</main><script>
+const fitFoundation = () => { const view=document.querySelector(".foundation-viewport"); view.style.setProperty("--foundation-scale", view.clientWidth / 1468); };
+fitFoundation(); window.addEventListener("resize", fitFoundation);
+</script></body></html>

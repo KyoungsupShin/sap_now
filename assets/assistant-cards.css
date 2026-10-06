@@ -66,3 +66,43 @@
         border-top-color: #7d6ec7;
         background: #faf9ff;
       }
+
+/* Original horizontal knowledge → experience → execution layout. */
+      .assistant-map {
+        display: grid;
+        grid-template-columns: 1fr 110px 1.1fr 110px 1fr;
+        align-items: center;
+        gap: 14px;
+        margin-top: 28px;
+      }
+      .stack {
+        display: grid;
+        gap: 18px;
+      }
+      .connector {
+        position: relative;
+        height: 2px;
+        background: #b8daed;
+      }
+      .connector::after {
+        position: absolute;
+        top: 50%;
+        right: -2px;
+        width: 11px;
+        height: 11px;
+        border-top: 2px solid #6d9eb9;
+        border-right: 2px solid #6d9eb9;
+        content: "";
+        transform: translateY(-50%) rotate(45deg);
+      }
+      .connector-label {
+        position: absolute;
+        top: -26px;
+        left: 50%;
+        color: #39779d;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.06em;
+        white-space: nowrap;
+        transform: translateX(-50%);
+      }
