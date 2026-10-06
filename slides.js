@@ -336,6 +336,18 @@ const slides = [
   },
   {
     "order": 27,
+    "file": "cross-team-expanded.html",
+    "title": "Demo — Cross-Team Operating Model · SCM Team 확대",
+    "status": "draft",
+    "purpose": "Combine team placement and the shared AI operating model in one zoomed SCM Team view.",
+    "keyMessage": "Team-specific knowledge and execution connect through a common enterprise knowledge foundation.",
+    "changes": "Additional combined draft after the two retained original slides.",
+    "visualAudit": "DRAFT",
+    "section": "Demo & Business Value",
+    "sectionNumber": "04"
+  },
+  {
+    "order": 28,
     "file": "22page.html",
     "title": "Demo — Autonomous SCM Scenarios",
     "status": "revised",
@@ -349,7 +361,7 @@ const slides = [
     "sectionNumber": "04"
   },
   {
-    "order": 28,
+    "order": 29,
     "file": "demo-video-01-inbound.html",
     "title": "Demo 01 — Inbound Process Adaptation",
     "status": "new",
@@ -360,7 +372,7 @@ const slides = [
     "sectionNumber": "04"
   },
   {
-    "order": 29,
+    "order": 30,
     "file": "demo-video-02-exception.html",
     "title": "Demo 02 — SCM Exception Handling",
     "status": "new",
@@ -371,7 +383,7 @@ const slides = [
     "sectionNumber": "04"
   },
   {
-    "order": 30,
+    "order": 31,
     "file": "demo-video-03-orchestration.html",
     "title": "Demo 03 — Demand-to-Supply Orchestration",
     "status": "new",
@@ -382,7 +394,7 @@ const slides = [
     "sectionNumber": "04"
   },
   {
-    "order": 31,
+    "order": 32,
     "file": "23page.html",
     "title": "Demo — Business Value",
     "status": "new",
