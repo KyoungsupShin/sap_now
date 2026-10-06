@@ -1,20 +1,44 @@
 <!doctype html>
 <html lang="ko">
 <head>
- <meta charset="utf-8">
- <meta name="viewport" content="width=device-width, initial-scale=1">
- <title>Demo — Business Value | SAP BTP AI</title>
- <link rel="stylesheet" href="sap-template.css">
- <link rel="stylesheet" href="assets/draft-visuals.css">
-<link rel="stylesheet" href="assets/korean-editorial.css"><link rel="stylesheet" href="assets/sap-official-template.css"><link rel="stylesheet" href="assets/single-line-copy.css"><link rel="stylesheet" href="assets/readable-type.css"><link rel="stylesheet" href="assets/selective-emphasis.css"><link rel="stylesheet" href="assets/larger-type.css">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Why SAP BTP + Harness | SAP BTP AI</title>
+<link rel="stylesheet" href="sap-template.css">
+<link rel="stylesheet" href="assets/sap-official-template.css">
+<link rel="stylesheet" href="assets/selective-emphasis.css">
+<style>
+.closing-slide { height:900px; overflow:hidden; }
+.closing-slide h1 { margin:0; font-size:52px !important; line-height:1.15 !important; }
+.closing-columns { display:grid; grid-template-columns:1fr 1fr; gap:64px; margin-top:70px; }
+.closing-pillar { padding:0 0 32px; border-top:5px solid #0070f2; }
+.closing-pillar h2 { margin:29px 0 12px; font-size:44px; line-height:1.15; letter-spacing:-.025em; color:#0070f2; }
+.closing-pillar .outcome { margin:0; font-size:34px; color:#000; line-height:1.3; }
+.closing-pillar ul { list-style:none; margin:40px 0 0; padding:0; }
+.closing-pillar li { position:relative; padding-left:26px; margin-top:23px; font-size:31px; line-height:1.3; letter-spacing:-.025em; }
+.closing-pillar li::before { content:""; position:absolute; left:0; top:16px; width:8px; height:8px; background:#0070f2; }
+.closing-message { display:flex; justify-content:center; align-items:center; gap:25px; margin-top:53px; padding:32px 20px; background:#edf5ff; border-top:1px solid #cde4fa; }
+.closing-message strong { color:#0070f2; font-size:36px; line-height:1.3; letter-spacing:-.035em; white-space:nowrap; }
+.closing-message span { font-size:32px; color:#6e9dc9; }
+.closing-slide .slide-page-number { position:absolute; }
+@media(max-width:800px) {
+ .closing-slide { height:auto; padding:40px 24px !important; }
+ .closing-slide h1 { font-size:36px !important; }
+ .closing-columns { grid-template-columns:1fr; gap:24px; margin-top:35px; }
+ .closing-pillar h2 { font-size:34px; }
+ .closing-pillar .outcome { font-size:28px; }
+ .closing-pillar ul { margin-top:25px; }
+ .closing-pillar li { font-size:25px; }
+ .closing-message { flex-direction:column; gap:12px; margin-top:24px; }
+ .closing-message strong { font-size:28px; }
+}
+</style>
 </head>
-<body data-type-slide="31">
- <main class="slide draft-slide">
-  <div class="top-line" aria-hidden="true"></div>
-  <h1>Demo — Business Value</h1>
-  <figure class="hero pdf-hero "><img src="assets/sap-pdf-p05-autonomous-enterprise.png" alt="SAP Autonomous Enterprise illustration connecting finance, spend, supply chain, human resources, customer experience and industry AI through the Business AI Platform."><aside class="visual-notes value-notes" aria-label="Before and autonomous comparison"><p class="visual-eyebrow">Business Value</p><div class="value-before"><h2>Manual Operations</h2><p>System 조회 · 근거 수집 · 업무 전달</p></div><div class="value-after"><h2>Autonomous Operations</h2><p>Agent의 Context 연결 · 허용된 작업 실행</p><p><b>사람은 예외·핵심 판단에 집중</b></p></div></aside></figure>
-  <section class="takeaway" aria-label="Key message"><span class="label">Business Outcomes</span><ul class="value-strip"><li>처리 시간 단축</li><li>수작업 조율 감소</li><li>일관된 업무 실행</li><li>AI 역량 재사용</li></ul></section>
-  <span class="slide-page-number">30</span>
- </main>
-</body>
-</html>
+<body><main class="slide closing-slide">
+<h1>Why SAP BTP + Harness</h1>
+<section class="closing-columns" aria-label="SAP BTP 비용 효율과 Harness 업무 가치">
+<section class="closing-pillar"><h2>SAP BTP</h2><p class="outcome">TCO · OPEX 절감</p><ul><li>SAP 표준 연결</li><li>공통 Platform 재사용</li><li>운영 · 변경 관리 표준화</li></ul></section>
+<section class="closing-pillar"><h2>Harness</h2><p class="outcome">Business Value 창출</p><ul><li>Context 기반 판단</li><li>Cross-Team 실행 조율</li><li>업무 지식 · Skill 재사용</li></ul></section>
+</section>
+<footer class="closing-message" aria-label="비용 효율화에서 업무 가치 창출로"><strong>비용 효율화</strong><span aria-hidden="true">→</span><strong>실행 가속</strong><span aria-hidden="true">→</span><strong>업무 가치 창출</strong></footer>
+<span class="slide-page-number">30</span>
+</main></body></html>

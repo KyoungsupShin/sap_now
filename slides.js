@@ -370,12 +370,12 @@ const slides = [
   {
     "order": 30,
     "file": "23page.html",
-    "title": "Demo — Business Value",
-    "status": "new",
-    "purpose": "Close with the operational value of controlled autonomy.",
-    "keyMessage": "Agents reduce coordination work so people can focus on decisions and exceptions.",
-    "changes": "New conclusion slide.",
-    "visualAudit": "SIMPLIFY",
+    "title": "Why SAP BTP + Harness",
+    "status": "revised",
+    "purpose": "Close with SAP BTP TCO and OPEX efficiency and Harness-driven business value.",
+    "keyMessage": "비용 효율화 → 실행 가속 → 업무 가치 창출",
+    "changes": "Keyword-led two-column conclusion: SAP BTP cost efficiency and Harness business value.",
+    "visualAudit": "UPDATED",
     "section": "Demo & Business Value",
     "sectionNumber": "04"
   }
