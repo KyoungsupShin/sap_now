@@ -31,13 +31,35 @@
  .closing-message { flex-direction:column; gap:12px; margin-top:24px; }
  .closing-message strong { font-size:28px; }
 }
+
+/* Retain the original Autonomous Enterprise image alongside the closing keywords. */
+.closing-body { display:grid; grid-template-columns:1fr 1fr; gap:54px; margin-top:35px; height:520px; align-items:center; }
+.closing-visual { margin:0; width:100%; }
+.closing-visual img { display:block; width:100%; height:500px; object-fit:contain; }
+.closing-columns { grid-template-columns:1fr; gap:28px; margin-top:0; }
+.closing-pillar { padding:0; border-top-width:3px; }
+.closing-pillar h2 { display:inline-block; margin:15px 20px 0 0; font-size:34px; }
+.closing-pillar .outcome { display:inline-block; font-size:28px; }
+.closing-pillar ul { margin-top:19px; }
+.closing-pillar li { margin-top:13px; font-size:27px; }
+.closing-pillar li::before { top:13px; }
+.closing-message { margin-top:30px; padding:26px 20px; }
+@media(max-width:800px) {
+ .closing-body { grid-template-columns:1fr; height:auto; gap:25px; }
+ .closing-visual img { height:auto; max-height:400px; }
+ .closing-columns { grid-template-columns:1fr; }
+ .closing-pillar .outcome { font-size:26px; }
+ .closing-pillar li { font-size:25px; }
+}
 </style>
 </head>
 <body><main class="slide closing-slide">
 <h1>Why SAP BTP + Harness</h1>
+<section class="closing-body"><figure class="closing-visual"><img src="assets/sap-pdf-p05-autonomous-enterprise.png" alt="SAP Autonomous Enterprise illustration connecting finance, spend, supply chain, human resources, customer experience and industry AI through the Business AI Platform."></figure>
 <section class="closing-columns" aria-label="SAP BTP 비용 효율과 Harness 업무 가치">
 <section class="closing-pillar"><h2>SAP BTP</h2><p class="outcome">TCO · OPEX 절감</p><ul><li>SAP 표준 연결</li><li>공통 Platform 재사용</li><li>운영 · 변경 관리 표준화</li></ul></section>
 <section class="closing-pillar"><h2>Harness</h2><p class="outcome">Business Value 창출</p><ul><li>Context 기반 판단</li><li>Cross-Team 실행 조율</li><li>업무 지식 · Skill 재사용</li></ul></section>
+</section>
 </section>
 <footer class="closing-message" aria-label="비용 효율화에서 업무 가치 창출로"><strong>비용 효율화</strong><span aria-hidden="true">→</span><strong>실행 가속</strong><span aria-hidden="true">→</span><strong>업무 가치 창출</strong></footer>
 <span class="slide-page-number">30</span>
