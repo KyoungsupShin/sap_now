@@ -1,0 +1,68 @@
+/* Original Shared AI Foundation card styles, reused by the combined slide. */
+      .module {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 112px;
+        padding: 18px 21px;
+        border: 1px solid var(--line);
+        border-top: 6px solid #89d1ff;
+        border-radius: 15px;
+        background: #fff;
+        box-shadow: 0 8px 20px rgba(28, 68, 102, 0.07);
+      }
+      .module small {
+        color: #39779d;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.1em;
+      }
+      .module h2 {
+        margin: 12px 0 6px;
+        color: #000000;
+        font-size: 23px;
+        line-height: 1.08;
+        letter-spacing: -0.04em;
+      }
+      .module p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 700;
+        line-height: 1.3;
+      }
+      .knowledge .module:last-child {
+        border-top-color: #4d99c6;
+        background: #f8fcff;
+      }
+      .live {
+        min-height: 302px;
+        border-top-color: var(--sap-blue);
+        background: #f2faff;
+        text-align: center;
+        align-items: center;
+      }
+      .live h2 {
+        margin-top: 14px;
+        font-size: 31px;
+        color: var(--sap-blue);
+      }
+      .live p {
+        max-width: 190px;
+      }
+      .harness {
+        border-top-color: #39779d;
+        background: #f6fbfe;
+      }
+      .n8n {
+        border-top-color: #d66d2d;
+        background: #fff9f5;
+      }
+      .app-builder {
+        border-top-color: #3e8e67;
+        background: #f6fcf8;
+      }
+      .joule {
+        border-top-color: #7d6ec7;
+        background: #faf9ff;
+      }
