@@ -11,6 +11,16 @@ const slides = [
     "visualAudit": "KEEP VISUAL"
   },
   {
+    "order": 2,
+    "file": "thumbnail-showcase.html",
+    "title": "App Builder · Harness",
+    "status": "new",
+    "purpose": "Show two original app GIF thumbnails on a dedicated slide.",
+    "keyMessage": "Live App Builder and Harness workflows.",
+    "changes": "Dedicated title-free thumbnail slide with bordered app GIFs.",
+    "visualAudit": "UPDATED"
+  },
+  {
     "file": "agenda.html",
     "title": "Presentation Agenda",
     "status": "new",
@@ -19,7 +29,7 @@ const slides = [
     "changes": "Updated to the four-section presentation agenda.",
     "visualAudit": "UPDATED",
     "kind": "agenda",
-    "order": 2
+    "order": 3
   },
   {
     "file": "divider-01-vision.html",
@@ -32,7 +42,7 @@ const slides = [
     "kind": "divider",
     "section": "Autonomous Enterprise & Governance",
     "sectionNumber": "01",
-    "order": 3,
+    "order": 4,
     "agents": ""
   },
   {
@@ -45,10 +55,10 @@ const slides = [
     "visualAudit": "UPDATED",
     "section": "Autonomous Enterprise & Governance",
     "sectionNumber": "01",
-    "order": 4
+    "order": 5
   },
   {
-    "order": 5,
+    "order": 6,
     "file": "8page.html",
     "title": "Four Core Capabilities",
     "status": "new",
@@ -61,7 +71,7 @@ const slides = [
     "sectionNumber": "01"
   },
   {
-    "order": 6,
+    "order": 7,
     "file": "3page.html",
     "title": "Agent Workflow & Governance",
     "status": "new",
@@ -73,7 +83,7 @@ const slides = [
     "sectionNumber": "01"
   },
   {
-    "order": 7,
+    "order": 8,
     "file": "7page.html",
     "title": "Business Context",
     "status": "new",
@@ -96,10 +106,10 @@ const slides = [
     "section": "Autonomous Enterprise & Governance",
     "sectionNumber": "01",
     "agents": "App Builder",
-    "order": 8
+    "order": 9
   },
   {
-    "order": 9,
+    "order": 10,
     "file": "6page.html",
     "title": "Agentic Execution — Integrated Operating Model",
     "status": "new",
@@ -122,10 +132,10 @@ const slides = [
     "kind": "divider",
     "section": "Agentic Execution",
     "sectionNumber": "02",
-    "order": 10
+    "order": 11
   },
   {
-    "order": 11,
+    "order": 12,
     "file": "10page.html",
     "title": "Joule — SAP Data 접근과 업무 실행",
     "status": "revised",
@@ -139,7 +149,7 @@ const slides = [
     "sectionNumber": "02"
   },
   {
-    "order": 12,
+    "order": 13,
     "file": "llm-wiki-explanation.html",
     "title": "LLM Wiki — 팀 지식 축적과 요청 맥락 재활용",
     "status": "restored",
@@ -150,7 +160,7 @@ const slides = [
     "sectionNumber": "02"
   },
   {
-    "order": 13,
+    "order": 14,
     "file": "9page.html",
     "title": "HANA Knowledge Graph — Business Context 연결",
     "status": "revised",
@@ -164,7 +174,7 @@ const slides = [
     "sectionNumber": "02"
   },
   {
-    "order": 14,
+    "order": 15,
     "file": "11page.html",
     "title": "Harness — 업무 판단과 실행 조율",
     "status": "revised",
@@ -188,10 +198,10 @@ const slides = [
     "section": "Agentic Execution",
     "sectionNumber": "02",
     "agents": "App Builder",
-    "order": 15
+    "order": 16
   },
   {
-    "order": 16,
+    "order": 17,
     "file": "12page.html",
     "title": "Harness Deep Agent — 복합 분석과 계획",
     "status": "revised",
@@ -205,7 +215,7 @@ const slides = [
     "sectionNumber": "02"
   },
   {
-    "order": 17,
+    "order": 18,
     "file": "13page.html",
     "title": "Harness A2A — Cross-Team 협업",
     "status": "revised",
@@ -229,10 +239,10 @@ const slides = [
     "kind": "divider",
     "section": "SAP BTP Architecture",
     "sectionNumber": "03",
-    "order": 18
+    "order": 19
   },
   {
-    "order": 19,
+    "order": 20,
     "file": "19page.html",
     "title": "SAP BTP — Standard Architecture",
     "status": "revised",
@@ -245,7 +255,7 @@ const slides = [
     "sectionNumber": "03"
   },
   {
-    "order": 20,
+    "order": 21,
     "file": "20page.html",
     "title": "SAP BTP — Kyma App-in-App Architecture",
     "status": "revised",
@@ -258,7 +268,7 @@ const slides = [
     "sectionNumber": "03"
   },
   {
-    "order": 21,
+    "order": 22,
     "file": "16page.html",
     "title": "SAP BTP — Platform Value & TCO",
     "status": "revised",
@@ -271,7 +281,7 @@ const slides = [
     "sectionNumber": "03"
   },
   {
-    "order": 22,
+    "order": 23,
     "file": "17page.html",
     "title": "SAP BTP — Operations & OPEX",
     "status": "revised",
@@ -294,10 +304,10 @@ const slides = [
     "kind": "divider",
     "section": "Demo & Business Value",
     "sectionNumber": "04",
-    "order": 23
+    "order": 24
   },
   {
-    "order": 24,
+    "order": 25,
     "file": "2page.html",
     "title": "Demo — Business Context & Challenges",
     "status": "existing",
@@ -309,7 +319,7 @@ const slides = [
     "sectionNumber": "04"
   },
   {
-    "order": 25,
+    "order": 26,
     "file": "cross-team-expanded.html",
     "title": "Demo — Cross-Team Operating Model · SCM Team 확대",
     "status": "revised",
@@ -321,7 +331,7 @@ const slides = [
     "sectionNumber": "04"
   },
   {
-    "order": 26,
+    "order": 27,
     "file": "22page.html",
     "title": "Demo — Autonomous SCM Scenarios",
     "status": "revised",
@@ -335,7 +345,7 @@ const slides = [
     "sectionNumber": "04"
   },
   {
-    "order": 27,
+    "order": 28,
     "file": "demo-video-01-inbound.html",
     "title": "Demo 01 — Inbound Process Adaptation",
     "status": "new",
@@ -346,7 +356,7 @@ const slides = [
     "sectionNumber": "04"
   },
   {
-    "order": 28,
+    "order": 29,
     "file": "demo-video-02-exception.html",
     "title": "Demo 02 — SCM Exception Handling",
     "status": "new",
@@ -357,7 +367,7 @@ const slides = [
     "sectionNumber": "04"
   },
   {
-    "order": 29,
+    "order": 30,
     "file": "demo-video-03-orchestration.html",
     "title": "Demo 03 — Demand-to-Supply Orchestration",
     "status": "new",
@@ -368,7 +378,7 @@ const slides = [
     "sectionNumber": "04"
   },
   {
-    "order": 30,
+    "order": 31,
     "file": "23page.html",
     "title": "Why SAP BTP + Harness",
     "status": "revised",
