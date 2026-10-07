@@ -2,6 +2,7 @@
 from pathlib import Path
 import json
 import sys
+import os
 import fitz
 from pptx import Presentation
 from pptx.util import Inches, Pt
@@ -19,7 +20,8 @@ root = Path(__file__).resolve().parents[1]
 editable_only = '--editable-only' in sys.argv
 paths = [arg for arg in sys.argv[1:] if not arg.startswith('--')]
 rendered = Path(paths[0]) if paths else root / 'exports' / 'rendered'
-output = root / 'exports'
+output = Path(os.environ.get('PPTX_OUTPUT_DIR', root / 'exports'))
+output.mkdir(parents=True, exist_ok=True)
 slides = json.loads((rendered / 'manifest.json').read_text())
 prs = Presentation()
 prs.slide_width, prs.slide_height = Inches(13.333333), Inches(7.5)

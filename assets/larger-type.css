@@ -767,3 +767,10 @@ body[data-type-slide="31"] main.slide span:nth-child(5) { font-size:13.2px !impo
  .slide .agent-capability { grid-template-columns:240px 1fr 1fr; }
  .app-builder-detail .agent-capability { grid-template-columns:250px 1fr 1fr; }
 }
+
+/* Keep process connectors entirely inside the gap between cards. */
+@media(min-width:801px) {
+ .app-builder-detail .process-flow { gap:24px; }
+ .app-builder-detail .process-node { padding-top:14px; }
+ .app-builder-detail .process-node:not(:last-child)::after { right:-24px; width:24px; display:flex; justify-content:center; align-items:center; z-index:3; font-size:20px; }
+}

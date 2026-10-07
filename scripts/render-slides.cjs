@@ -13,6 +13,7 @@ const { chromium } = require('playwright');
   try {
     const page = await browser.newPage({ viewport: { width: 1600, height: 900 }, deviceScaleFactor: 2 });
     for (const slide of slides) {
+      if(process.env.SLIDE_ORDERS&&!process.env.SLIDE_ORDERS.split(',').map(Number).includes(slide.order))continue;
       await page.goto((process.env.SLIDE_BASE_URL || 'http://127.0.0.1:8002/') + slide.file, { waitUntil: 'load' });
       await page.evaluate(async () => {
         await document.fonts.ready;
@@ -146,6 +147,7 @@ const { chromium } = require('playwright');
       slide.nativeIcons = content.icons;
       console.log(`${slide.order}/${slides.length}: ${slide.title} (${cards.length} cards, ${content.textLines.length} editable text boxes)`);
     }
-    fs.writeFileSync(path.join(output, 'manifest.json'), JSON.stringify(slides, null, 2));
+    const exportedSlides=process.env.SLIDE_ORDERS ? slides.filter(s=>process.env.SLIDE_ORDERS.split(',').map(Number).includes(s.order)) : slides;
+    fs.writeFileSync(path.join(output, 'manifest.json'), JSON.stringify(exportedSlides, null, 2));
   } finally { await browser.close(); }
 })().catch(e => { console.error(e); process.exit(1); });
