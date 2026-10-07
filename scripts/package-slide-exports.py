@@ -137,12 +137,13 @@ for item in slides:
         if media['kind']=='video':
             slide.shapes.add_picture(media['preview'],unit(x),unit(y),unit(w),unit(h))
             movie=slide.shapes.add_movie(str(source),unit(x),unit(y),unit(w),unit(h),poster_frame_image=media['preview'],mime_type='video/mp4')
+            for timing in slide._element.findall('.//' + qn('p:video')):
+                for cond in timing.findall('.//' + qn('p:cond')):
+                    cond.set('delay','0')
             if item['order']==2:
                 for timing in slide._element.findall('.//' + qn('p:video')):
                     for node in timing.findall('.//' + qn('p:cTn')):
                         node.set('repeatCount','indefinite')
-                    for cond in timing.findall('.//' + qn('p:cond')):
-                        cond.set('delay','0')
         elif source.suffix.lower()=='.gif':
             frame=slide.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE,unit(x),unit(y),unit(w),unit(h))
             frame.adjustments[0]=.015;frame.fill.solid();frame.fill.fore_color.rgb=RGBColor(238,243,247);frame.line.color.rgb=RGBColor(197,215,232);frame.line.width=Pt(.6)
