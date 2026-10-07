@@ -313,7 +313,7 @@ const slides = [
     "status": "draft",
     "purpose": "Show team views and priorities above a paired challenges and autonomous operations comparison.",
     "keyMessage": "팀별 정보와 우선순위의 차이를 Wiki, Harness, App Builder로 연결한다.",
-    "changes": "Added before the original business context slide for comparison; original content retained.",
+    "changes": "Reworked the comparison draft into a vertical workflow with paired challenges and responses, conditional App Builder and Wiki feedback loop; original content retained.",
     "section": "Demo & Business Value",
     "sectionNumber": "04"
   },
