@@ -308,6 +308,17 @@ const slides = [
   },
   {
     "order": 25,
+    "file": "business-context-comparison-draft.html",
+    "title": "같은 목표, 다른 View와 우선순위 — 비교 초안",
+    "status": "draft",
+    "purpose": "Show team views and priorities above a paired challenges and autonomous operations comparison.",
+    "keyMessage": "팀별 정보와 우선순위의 차이를 Wiki, Harness, App Builder로 연결한다.",
+    "changes": "Added before the original business context slide for comparison; original content retained.",
+    "section": "Demo & Business Value",
+    "sectionNumber": "04"
+  },
+  {
+    "order": 26,
     "file": "2page.html",
     "title": "Demo — Business Context & Challenges",
     "status": "existing",
@@ -319,7 +330,7 @@ const slides = [
     "sectionNumber": "04"
   },
   {
-    "order": 26,
+    "order": 27,
     "file": "cross-team-expanded.html",
     "title": "Demo — Cross-Team Operating Model · SCM Team 확대",
     "status": "revised",
@@ -331,7 +342,7 @@ const slides = [
     "sectionNumber": "04"
   },
   {
-    "order": 27,
+    "order": 28,
     "file": "22page.html",
     "title": "Demo — Autonomous SCM Scenarios",
     "status": "revised",
@@ -345,7 +356,7 @@ const slides = [
     "sectionNumber": "04"
   },
   {
-    "order": 28,
+    "order": 29,
     "file": "demo-video-01-inbound.html",
     "title": "Demo 01 — Inbound Process Adaptation",
     "status": "revised",
@@ -356,7 +367,7 @@ const slides = [
     "sectionNumber": "04"
   },
   {
-    "order": 29,
+    "order": 30,
     "file": "demo-video-02-exception.html",
     "title": "Demo 02 — SCM Exception Handling",
     "status": "new",
@@ -367,7 +378,7 @@ const slides = [
     "sectionNumber": "04"
   },
   {
-    "order": 30,
+    "order": 31,
     "file": "demo-video-03-orchestration.html",
     "title": "Demo 03 — Demand-to-Supply Orchestration",
     "status": "new",
@@ -378,7 +389,7 @@ const slides = [
     "sectionNumber": "04"
   },
   {
-    "order": 31,
+    "order": 32,
     "file": "23page.html",
     "title": "Why SAP BAIP + Harness",
     "status": "revised",
