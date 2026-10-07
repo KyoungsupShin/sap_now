@@ -151,12 +151,12 @@ for item in slides:
             slide.shapes.add_picture(str(source),unit(x+(w-fw)/2),unit(y+(h-fh)/2),unit(fw),unit(fh))
         else:
             slide.shapes.add_picture(media['preview'],unit(x),unit(y),unit(w),unit(h))
-    # Preserve each DOM text fragment's x position, including flex/inline gaps.
+    # One text box per logical line; tab stops retain inline/flex gaps.
     groups = []
     for line in item.get('nativeText', []):
         group = next((g for g in groups if g['owner'] == line.get('owner')
-                      and abs(g['y']-line['y']) < 1.5
-                      and abs(max(r['x']+r['width'] for r in g['runs'])-line['x']) < 1.5), None)
+                      and abs(g['y']-line['y']) <= 8
+                      and -1.5 <= line['x']-max(r['x']+r['width'] for r in g['runs']) <= 40), None)
         if group is None:
             group = {'owner':line.get('owner'), 'y':line['y'], 'runs':[]}
             groups.append(group)
@@ -165,15 +165,21 @@ for item in slides:
         lines = sorted(group['runs'], key=lambda l:l['x'])
         left = min(l['x'] for l in lines)
         right = max(l['x']+l['width'] for l in lines)
-        height = max(l['height'] for l in lines)
-        text = slide.shapes.add_textbox(unit(left), unit(group['y']), unit(right-left+16), unit(height+8))
+        top = min(l['y'] for l in lines)
+        height = max(l['y']+l['height'] for l in lines)-top
+        text = slide.shapes.add_textbox(unit(left), unit(top), unit(right-left+16), unit(height+8))
         frame = text.text_frame
         frame.margin_left = frame.margin_right = frame.margin_top = frame.margin_bottom = 0
         frame.word_wrap = False
         frame.auto_size = MSO_AUTO_SIZE.NONE
         paragraph = frame.paragraphs[0]
         paragraph.space_before = paragraph.space_after = Pt(0)
-        for line in lines:
+        tabs=OxmlElement('a:tabLst')
+        paragraph._p.get_or_add_pPr().append(tabs)
+        for index,line in enumerate(lines):
+            if index and line['x']-(lines[index-1]['x']+lines[index-1]['width']) > 1.5:
+                tab=OxmlElement('a:tab');tab.set('pos',str(unit(line['x']-left)));tab.set('algn','l');tabs.append(tab)
+                paragraph.add_run().text='\t'
             run = paragraph.add_run(); run.text = line['text']
             run.font.name = line['font']
             run._r.get_or_add_rPr().set('spc', str(round(line.get('letterSpacing', 0) * 60)))

@@ -69,3 +69,5 @@ python scripts/optimize_pptx_images.py exports/SAP_NOW_editable.pptx
 ```
 
 This uses JPEG quality 95 with full color resolution (4:4:4), only when the compressed file is smaller. Images with transparency remain PNG. It updates image relationships and MIME types; HTML source images remain unchanged.
+
+Inline emphasis, numbered labels and adjacent fragments of the same logical line are exported as styled runs in one editable text box. Explicit tab stops preserve their horizontal spacing; separate cards and table columns retain independent text boxes.
