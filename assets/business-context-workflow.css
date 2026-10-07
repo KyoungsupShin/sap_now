@@ -1,34 +1,27 @@
-
-.slide.context-comparison{height:900px;overflow:hidden;padding:52px 66px!important;font-family:"72 Brand","Malgun Gothic","Noto Sans CJK KR",Arial,sans-serif}.context-comparison h1{font-size:44px!important;margin:0;line-height:1.18;position:relative;z-index:2}.shared-goal{position:absolute;left:330px;top:125px;width:940px;height:52px;display:flex;align-items:center;justify-content:center;gap:24px;background:#edf6ff;border:1px solid #bedcff;border-radius:8px;color:#174a75;font-size:25px}.shared-goal b{color:#0070f2;font-size:24px}.team-views{position:absolute;left:100px;right:100px;top:208px;display:grid;grid-template-columns:repeat(4,1fr);gap:24px}.team-card{box-sizing:border-box;height:118px;border:1px solid #c9d9e9;border-top:3px solid #0070f2;border-radius:8px;background:#fff;text-align:center;padding:8px 10px;position:relative;z-index:2}.team-card h2{font-size:27px!important;line-height:32px;margin:0 0 4px!important;color:#0070f2}.team-view{font-size:21px;line-height:26px;margin:0 0 4px;color:#60758a}.team-card strong{font-size:24px;line-height:29px;color:#183d5b}.bridge{position:absolute;left:450px;top:357px;width:700px;margin:0;background:#fff;text-align:center;font-size:25px;line-height:36px;color:#39526b}.bridge b{color:#0070f2}.column-label{position:absolute;top:410px;margin:0!important;font-size:27px!important;line-height:34px}.challenge-label{left:100px;color:#984f28}.operations-label{left:760px;color:#0064cf}.workflow-row{position:absolute;left:100px;right:260px;display:grid;grid-template-columns:510px 150px 580px;align-items:center;height:58px}.row-one{top:460px}.row-two{top:550px}.row-three{top:640px}.challenge,.operation{height:58px;display:flex;align-items:center;padding:0 24px;border:1px solid #ead5c7;border-radius:8px;background:#fff7f0;font-size:25px;color:#68442e;position:relative;z-index:2}.operation{gap:18px;background:#edf6ff;border-color:#bed8f4;color:#25445f}.operation b{font-size:25px;min-width:148px;color:#0064cf}.row-arrow{text-align:center;color:#0070f2;font-size:32px}.conditional{position:absolute;left:970px;top:610px;font-size:17px;background:#fff;padding:0 10px;color:#61788e;z-index:2}.execution,.history{position:absolute;left:760px;width:580px;height:58px;display:flex;justify-content:center;align-items:center;border-radius:8px;font-size:26px;z-index:2}.execution{top:730px;background:#0070f2;color:#fff;font-weight:700}.history{top:820px;height:42px;background:#edf6ff;border:1px solid #bed8f4;color:#0064cf;font-size:24px;font-weight:700}.loop-label{position:absolute;left:1405px;top:588px;writing-mode:vertical-rl;font-size:19px;color:#61788e;background:#fff;padding:10px 0;z-index:2}.connectors{position:absolute;inset:0;width:1600px;height:900px;pointer-events:none}.slide-page-number{position:absolute;bottom:22px;right:28px;color:#566879;font-size:14px}
-@media(max-width:800px){.slide.context-comparison{height:auto;overflow:visible;padding:36px 24px!important}.context-comparison h1{font-size:32px!important}.connectors,.conditional,.loop-label{display:none}.shared-goal,.team-views,.bridge,.column-label,.workflow-row,.execution,.history{position:static;width:auto;margin:20px 0!important}.shared-goal{height:auto;padding:15px;flex-wrap:wrap;font-size:20px}.team-views{grid-template-columns:repeat(2,1fr);gap:12px}.team-card strong{font-size:20px}.bridge{font-size:21px}.workflow-row{height:auto;grid-template-columns:1fr;gap:8px}.row-arrow{transform:rotate(90deg);font-size:26px}.challenge,.operation{height:auto;min-height:58px;padding:12px 16px;font-size:20px}.operation b{font-size:20px;min-width:110px}.execution,.history{min-height:52px;font-size:22px}.slide-page-number{position:static;display:block;text-align:right}}
-
-.comparison-grid{position:absolute;left:100px;top:410px;width:1240px;display:grid;grid-template-columns:590px 650px;border:1px solid #cfdeeb;border-radius:10px;overflow:hidden;background:#fff;z-index:1}
-.comparison-head{height:50px;display:flex;align-items:center;padding:0 24px;font-size:27px;font-weight:700}.challenge-head{background:#fff0e5;color:#984f28}.operation-head{background:#e8f3ff;color:#0064cf;padding-left:70px;border-left:1px solid #cfdeeb}
-.compare-pair{grid-column:1 / -1;display:grid;grid-template-columns:510px 150px 580px;height:90px;border-top:1px solid #d6e1eb;align-items:start;background:linear-gradient(to right,#fffaf6 0 590px,#f5faff 590px 100%)}
-.compare-pair .challenge,.compare-pair .operation{border:0;background:transparent;border-radius:0;height:58px;font-size:25px}.compare-pair .row-arrow{height:58px;display:flex;align-items:center;justify-content:center}.compare-pair:last-child{height:78px}
-.connectors{z-index:2}.conditional{background:#f5faff}.team-views,.shared-goal,.bridge{z-index:3}
-@media(max-width:800px){.comparison-grid{position:static;width:auto;display:grid;grid-template-columns:1fr;overflow:visible;margin-top:20px}.comparison-head{height:auto;padding:16px!important;font-size:22px}.compare-pair{grid-template-columns:1fr;height:auto!important;padding:12px 0;background:#f8fbff}.compare-pair .challenge,.compare-pair .operation{height:auto;min-height:58px;font-size:20px}.compare-pair .row-arrow{height:30px}}
-
-/* Match the shared SAP deck and adjacent Cross-Team slide. */
-.slide.context-comparison { padding:66px 66px 65px !important; }
-.context-comparison h1 { font-family:"72 Brand Medium","Malgun Gothic","Noto Sans CJK KR",Arial,sans-serif; font-size:44px !important; font-weight:500; letter-spacing:-.025em; }
-.shared-goal { border:0; border-bottom:3px solid #0070f2; border-radius:0; background:#eef6ff; color:#000; }
-.shared-goal b { font-weight:500; }
-.team-card { border:1px solid #d5dde5; border-top:3px solid #0070f2; border-radius:0; box-shadow:none; }
-.team-card h2 { color:#000; font-weight:500; letter-spacing:-.03em; }
-.team-view { color:#475e75; }
-.team-card strong { color:#000; font-weight:500; }
-.bridge { color:#475e75; }
-.bridge b { font-weight:500; }
-.comparison-grid { border:1px solid #d5dde5; border-radius:0; }
-.comparison-head { background:#0070f2; color:#fff; font-weight:500; font-size:26px; }
-.operation-head { border-left:1px solid #8fc4fa; }
-.compare-pair { background:linear-gradient(to right,#fff 0 590px,#eef6ff 590px 100%); border-top:1px solid #d1efff; }
-.compare-pair .challenge { color:#000; }
-.compare-pair .operation { color:#475e75; }
-.operation b { font-weight:500; }
-.conditional { background:#eef6ff; color:#475e75; }
-.execution { box-sizing:border-box; background:#eef6ff; border-top:3px solid #0070f2; border-radius:0; color:#000; font-weight:500; }
-.history { box-sizing:border-box; background:#fff; border:1px solid #d5dde5; border-radius:0; font-weight:500; }
-.loop-label { color:#475e75; }
-@media(max-width:800px) { .slide.context-comparison { padding:40px 24px !important; } .context-comparison h1 { font-size:32px !important; } .compare-pair { background:#f8fbff; } }
+/* Shared SAP deck typography and a single reading direction per section. */
+.context-comparison{height:900px;overflow:hidden}
+.context-comparison *{box-sizing:border-box}
+.context-comparison h1{margin:0;font-size:44px!important;line-height:1.18}
+.shared-goal{display:flex;align-items:center;gap:24px;margin:28px 0 20px;padding:12px 0;border-bottom:2px solid #0070f2;font-size:25px;color:#000}
+.shared-goal b{color:#0070f2;font-weight:500}
+.team-views{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.team-card{border:1px solid #d5dde5;background:#fff;padding:16px 20px;height:130px}
+.team-card h2{margin:0!important;color:#000;font-size:26px!important;font-weight:500;line-height:32px}
+.team-card p{margin:7px 0;color:#475e75;font-size:22px;line-height:28px}
+.team-card strong{color:#0070f2;font-size:23px;font-weight:500;line-height:29px}
+.bridge{margin:18px 0 24px;font-size:24px;line-height:30px;color:#475e75;text-align:center}
+.bridge b{color:#0070f2;font-weight:500}
+.comparison-grid{display:grid;grid-template-columns:1fr 1fr;border:1px solid #d5dde5}
+.comparison-head{height:54px;display:flex;align-items:center;padding:0 24px;background:#0070f2;color:#fff;font-size:26px;font-weight:500}
+.comparison-head:nth-child(2){border-left:1px solid #8dc7ff;padding-left:36px}
+.compare-pair{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) 48px minmax(0,1fr);height:78px;border-top:1px solid #d1efff;background:linear-gradient(to right,#fff 0 50%,#eef6ff 50% 100%)}
+.challenge,.operation{display:flex;align-items:center;padding:0 24px;font-size:25px;line-height:1.3}
+.challenge{color:#000}
+.operation{gap:20px;color:#475e75;padding-left:12px}
+.operation b{min-width:150px;color:#0070f2;font-size:25px;font-weight:500}
+.row-arrow{display:flex;justify-content:center;align-items:center;color:#0070f2;font-size:27px}
+.execution-flow{display:grid;grid-template-columns:1fr 28px 1fr 28px 1.15fr 28px 1fr 28px 1.25fr;align-items:center;margin-top:30px;padding-top:24px;border-top:1px solid #d5dde5}
+.flow-step b{display:block;color:#000;font-size:24px;line-height:31px;font-weight:500}
+.flow-step span{display:block;margin-top:6px;color:#475e75;font-size:19px;line-height:26px;white-space:nowrap}
+.flow-arrow{color:#0070f2;font-size:25px;text-align:center}
+@media(max-width:800px){.context-comparison{height:auto;overflow:visible;padding:40px 24px!important}.context-comparison h1{font-size:32px!important}.shared-goal{flex-wrap:wrap;gap:10px;font-size:21px}.team-views{grid-template-columns:repeat(2,1fr);gap:12px}.team-card{height:auto;padding:14px}.team-card p,.team-card strong{font-size:20px}.comparison-head{font-size:19px;padding:12px!important}.compare-pair{height:auto;min-height:95px;grid-template-columns:minmax(0,1fr) 24px minmax(0,1fr)}.challenge,.operation{font-size:19px;padding:12px}.operation{display:block}.operation b{font-size:19px;display:block;min-width:0;margin-bottom:5px}.execution-flow{grid-template-columns:1fr;gap:12px}.flow-arrow{transform:rotate(90deg)}.flow-step{text-align:center}.flow-step span{white-space:normal}}
