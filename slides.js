@@ -351,7 +351,7 @@ const slides = [
     "status": "revised",
     "purpose": "Show inbound Excel format adaptation, App Builder code changes and Sandbox validation.",
     "keyMessage": "입고 Excel 양식 변경 → App Builder 코드 수정 → Sandbox 검증",
-    "changes": "Embedded a 63-second edited demo with Korean captions, focus boxes, trimmed waits and variable playback speeds.",
+    "changes": "Embedded an edited demo with scene-aligned focus boxes and adjacent Korean labels, trimmed waits and variable playback speeds.",
     "section": "Demo & Business Value",
     "sectionNumber": "04"
   },
