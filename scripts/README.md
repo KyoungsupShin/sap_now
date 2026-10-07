@@ -21,7 +21,7 @@ Outputs:
 
 - `exports/SAP_NOW_exact.pptx`: one full-bleed image per slide for original appearance.
 - `exports/SAP_NOW.pdf`: identical 3200×1800 render images, 31 landscape pages.
-- `exports/SAP_NOW_editable.pptx`: all visible HTML text (cover, titles, body copy, tables, agenda labels and page numbers) is editable PowerPoint text. Simple card backgrounds and borders are native shapes. Page 23 also exposes the KPI band and organizational/team table cell backgrounds as editable rectangles; KPI labels remain separate editable text boxes. Complex diagrams, images and CSS decorations retain the raster rendering as a PowerPoint picture background fill, rather than a selectable full-slide picture shape. Text already embedded within image assets stays in those images; this is not an all-vector reconstruction. Native text uses the actual Chromium-rendered font family, with explicit Korean font selection; substitution in PowerPoint may change typography when that font is unavailable. Use the exact version when appearance takes priority.
+- `exports/SAP_NOW_editable.pptx`: all visible HTML text (cover, titles, body copy, tables, agenda labels and page numbers) is editable PowerPoint text. Main card backgrounds and borders are native shapes. Page 25 exposes the KPI, team cards, problem/solution/result cards, process steps and curved connectors as editable shapes. Page 26 also exposes team and assistant module cards. Complex diagrams, images and CSS decorations retain the raster rendering as a PowerPoint picture background fill, rather than a selectable full-slide picture shape. Text already embedded within image assets stays in those images; this is not an all-vector reconstruction. Native text uses the actual Chromium-rendered font family, with explicit Korean font selection; substitution in PowerPoint may change typography when that font is unavailable. Use the exact version when appearance takes priority.
 
 The export captures each HTML page at a 1600×900 viewport and device scale 2 after fonts and images finish loading. Intermediate renders are local build outputs. Regenerate all three files after changing slides.
 
@@ -34,7 +34,7 @@ SLIDE_BASE_URL=http://127.0.0.1:8000/ node scripts/render-slides.cjs
 python scripts/package-slide-exports.py --editable-only
 ```
 
-Demo video slides (28–30) provide editable 16:9 placeholder rectangles. No video file is embedded; insert each case video in PowerPoint.
+The editable deck embeds four MP4 files: the page 2 Live Assistant thumbnail and the three demo videos on pages 28–30. Page 2 also contains three original animated GIFs as separate picture objects. Video playback depends on the viewing application; use Microsoft PowerPoint slideshow mode for playback. Original illustration and architecture images remain picture objects; labels baked into those assets cannot be edited as text.
 
 Layout review (requires LibreOffice and NumPy):
 

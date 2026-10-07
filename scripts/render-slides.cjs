@@ -2,6 +2,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const vm = require('node:vm');
+const {execFileSync}=require('node:child_process');
 const { chromium } = require('playwright');
 (async () => {
   const root = path.resolve(__dirname, '..');
@@ -42,8 +43,20 @@ const { chromium } = require('playwright');
       if (slide.file === '4page.html') {
         await page.locator('.assistant-map').screenshot({path:path.join(root,'assets','connected-foundation-thumbnail.png'),animations:'disabled'});
       }
+      await page.evaluate(async()=>{for(const v of document.querySelectorAll('video')){v.pause();if(v.readyState>=1)v.currentTime=2;}});
+      for(const v of await page.locator('video').all()) await v.evaluate(async v=>{if(v.readyState>=1){await new Promise(resolve=>{if(!v.seeking){resolve();return;}v.addEventListener('seeked',resolve,{once:true});});}});
       const filename = `${String(slide.order).padStart(2, '0')}.png`;
       await page.screenshot({ path: path.join(output, filename), clip: box, animations: 'disabled' });
+      const nativeMedia=[];
+      for(const [index,e] of (await page.locator('main.slide img,main.slide video').all()).entries()){
+        const m=await e.evaluate(e=>{const r=e.getBoundingClientRect(),c=getComputedStyle(e);return {kind:e.tagName.toLowerCase(),src:e.currentSrc||e.src,poster:e.poster||null,x:r.x,y:r.y,width:r.width,height:r.height,naturalWidth:e.naturalWidth||e.videoWidth,naturalHeight:e.naturalHeight||e.videoHeight,fit:c.objectFit};});
+        if(m.width<=0||m.height<=0)continue;
+        m.preview=path.join(output,`${String(slide.order).padStart(2,'0')}-media-${index}.png`);
+        await e.screenshot({path:m.preview});
+        if(m.kind==='video')execFileSync('ffmpeg',['-y','-v','error','-ss','2','-i',path.join(root,decodeURIComponent(new URL(m.src).pathname)),'-frames:v','1','-vf',`scale=${Math.round(m.width*2)}:${Math.round(m.height*2)}`,m.preview]);
+        nativeMedia.push(m);
+      }
+      const nativeCurves=await page.evaluate(()=>[...document.querySelectorAll('.flow-ribbon')].map(svg=>{const r=svg.getBoundingClientRect();const curves=[...svg.querySelectorAll('path')].map(p=>({d:p.getAttribute('d'),stroke:p.getAttribute('stroke'),width:Number(p.getAttribute('stroke-width'))}));svg.style.visibility='hidden';return {x:r.x,y:r.y,width:r.width,height:r.height,viewWidth:svg.viewBox.baseVal.width,viewHeight:svg.viewBox.baseVal.height,curves};}));
       const content = await page.evaluate(() => {
         const root = document.querySelector('main.slide');
         const textLines = [];
@@ -57,6 +70,8 @@ const { chromium } = require('playwright');
           if (style.visibility === 'hidden' || style.display === 'none' || style.opacity === '0') continue;
           const owner=parent.matches('.enterprise-kpis > span') ? parent : (parent.closest('h1,h2,h3,h4,p,li,dt,dd,th,td,.conclusion') || parent);
           if(!owners.has(owner))owners.set(owner,owners.size);
+          let scale=1;
+          for(let e=parent;e&&e!==root.parentElement;e=e.parentElement){const t=getComputedStyle(e).transform;if(t!=='none'){const m=new DOMMatrix(t);scale*=Math.hypot(m.c,m.d);}}
           let line;
           for (let j=0; j<node.textContent.length; j++) {
             const range=document.createRange(); range.setStart(node,j); range.setEnd(node,j+1);
@@ -65,17 +80,17 @@ const { chromium } = require('playwright');
             if (style.textTransform==='uppercase') char=char.toUpperCase();
             if (style.textTransform==='lowercase') char=char.toLowerCase();
             if (!line || Math.abs(line.y-r.y)>1) {
-              line={owner:owners.get(owner),text:'',x:r.x,y:r.y,width:0,height:r.height,fontSize:parseFloat(style.fontSize),font:parent.dataset.exportFont || style.fontFamily.split(',')[0].replaceAll('"',''),weight:style.fontWeight,letterSpacing:parseFloat(style.letterSpacing)||0,color:style.color,italic:style.fontStyle==='italic'};
+              line={owner:owners.get(owner),text:'',x:r.x,y:r.y,width:0,height:r.height,fontSize:parseFloat(style.fontSize)*scale,font:parent.dataset.exportFont || style.fontFamily.split(',')[0].replaceAll('"',''),weight:style.fontWeight,letterSpacing:(parseFloat(style.letterSpacing)||0)*scale,color:style.color,italic:style.fontStyle==='italic'};
               textLines.push(line);
             }
             line.text+=char; line.width=r.right-line.x; parents.add(parent);
           }
         }
-        const selector='.demo-video-placeholder,.enterprise-kpis,.cap,.development-step,.execution-stage,.process-node,.item,.model-node,.oversight-card,.request,.shared-entry,.business-context-detail .operation-table td,.business-context-detail .operation-table th,.business-context-detail .response-table th';
-        const cards=document.querySelector('main.original-scenario') ? [] : [...root.querySelectorAll(selector)].filter(e=>!e.querySelector(selector)).map((e,i)=> {
+        const selector='.demo-video-placeholder,.enterprise-kpis,.cap,.development-step,.execution-stage,.process-node,.item,.model-node,.oversight-card,.request,.shared-entry,.business-context-detail .operation-table td,.business-context-detail .operation-table th,.business-context-detail .response-table th,.team-card,.bridge,.challenge,.solution,.operation,.flow-step,.shared-goal,.capability-card,.assistant-card,.team-tile,.module,.stack,.detail-header,.flow-step small';
+        const cards=document.querySelector('main.original-scenario') ? [] : [...root.querySelectorAll(selector)].map((e,i)=> {
           const b=e.getBoundingClientRect(),c=getComputedStyle(e);
           e.dataset.exportCard=i;
-          return {id:i,x:b.x,y:b.y,width:b.width,height:b.height,fill:c.backgroundColor,border:c.borderLeftColor,borderWidth:parseFloat(c.borderLeftWidth),topColor:c.borderTopColor,topWidth:parseFloat(c.borderTopWidth),radius:parseFloat(c.borderTopLeftRadius)};
+          return {id:i,x:b.x,y:b.y,width:b.width,height:b.height,fill:c.backgroundColor,border:c.borderLeftColor,borderWidth:parseFloat(c.borderLeftWidth),topColor:c.borderTopColor,topWidth:parseFloat(c.borderTopWidth),radius:parseFloat(c.borderTopLeftRadius),edges:['Top','Right','Bottom','Left'].map(side=>({side,width:parseFloat(c['border'+side+'Width']),color:c['border'+side+'Color']}))};
         });
         const icons=[...root.querySelectorAll('.demo-video-play')].map(e=>{const b=e.getBoundingClientRect();e.style.visibility='hidden';return {x:b.x,y:b.y,width:b.width,height:b.height,color:'#0070f2'};});
         // Hide text ink only: retain layout, images, card geometry and icons.
@@ -88,13 +103,17 @@ const { chromium } = require('playwright');
         for (const e of root.querySelectorAll('[data-export-card]')) {
           e.style.setProperty('background','transparent','important');
           e.style.setProperty('border-color','transparent','important');
+          e.style.setProperty('box-shadow','none','important');
         }
+        for(const e of root.querySelectorAll('img,video')) e.style.visibility='hidden';
         return {cards,icons,textLines:textLines.filter(l=>l.text.trim())};
       });
       // Preserve CSS-generated arrow glyphs in the raster background.
       await page.addStyleTag({content:'main.slide *::before,main.slide *::after{-webkit-text-fill-color:initial !important}'});
       await page.screenshot({path:path.join(output,`${String(slide.order).padStart(2,'0')}-base.png`),clip:box,animations:'disabled'});
       const cards=content.cards;
+      slide.nativeMedia=nativeMedia;
+      slide.nativeCurves=nativeCurves;
       slide.nativeText=content.textLines;
       slide.nativeCards = cards;
       slide.nativeIcons = content.icons;
