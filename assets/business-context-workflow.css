@@ -9,8 +9,8 @@
 .team-card h2{margin:0!important;color:#000;font-size:26px!important;font-weight:500;line-height:32px}
 .team-card p{margin:7px 0;color:#475e75;font-size:22px;line-height:28px}
 .team-card strong{color:#0070f2;font-size:23px;font-weight:500;line-height:29px}
-.bridge{margin:18px 0 24px;font-size:24px;line-height:30px;color:#475e75;text-align:center}
-.bridge b{color:#0070f2;font-weight:500}
+.bridge{display:flex;align-items:center;justify-content:center;gap:22px;margin:16px 0 18px;padding:12px 24px;min-height:60px;border:1px solid #b8d9ff;border-left:6px solid #0070f2;background:#eef6ff;font-size:24px;line-height:32px;color:#475e75;text-align:center}
+.bridge b{color:#003b80;font-size:30px;font-weight:500}
 .comparison-grid{display:grid;grid-template-columns:1.05fr 64px .7fr 64px 1.25fr;row-gap:12px}
 .comparison-head{height:42px;display:flex;align-items:center;padding:0 22px;color:#475e75;font-size:26px;font-weight:500}
 .comparison-head:first-child{grid-column:1}
@@ -22,8 +22,11 @@
 .solution{justify-content:center;color:#fff;background:#0070f2;font-size:28px;font-weight:500;box-shadow:0 4px 10px rgba(0,112,242,.13)}
 .operation{color:#003b80;background:#eef6ff;border:1px solid #b8d9ff;border-left:6px solid #0070f2;font-size:28px;font-weight:500}
 .change-arrow{display:flex;align-items:center;justify-content:center;color:#0070f2;font-size:38px;line-height:1}
-.execution-flow{display:grid;grid-template-columns:1fr 28px 1fr 28px 1.15fr 28px 1fr 28px 1.25fr;align-items:center;margin-top:22px;padding-top:20px;border-top:1px solid #d5dde5}
+.execution-flow{position:relative;padding-bottom:18px;display:grid;grid-template-columns:1fr 28px 1fr 28px 1.15fr 28px 1fr 28px 1.25fr;align-items:center;margin-top:16px;padding-top:14px;border-top:1px solid #d5dde5}
 .flow-step b{display:block;color:#000;font-size:24px;line-height:31px;font-weight:500}
 .flow-step span{display:block;margin-top:6px;color:#475e75;font-size:19px;line-height:26px;white-space:nowrap}
 .flow-arrow{color:#0070f2;font-size:25px;text-align:center}
-@media(max-width:800px){.context-comparison{height:auto;overflow:visible;padding:40px 24px!important}.context-comparison h1{font-size:32px!important}.shared-goal{flex-wrap:wrap;gap:10px;font-size:21px}.team-views{grid-template-columns:repeat(2,1fr);gap:12px}.team-card{height:auto;padding:14px}.team-card p,.team-card strong{font-size:20px}.comparison-grid,.compare-pair{grid-template-columns:1.05fr 22px .7fr 22px 1.25fr}.comparison-head{font-size:17px;padding:0 6px}.compare-pair{min-height:110px}.challenge,.solution,.operation{font-size:18px;padding:12px 8px}.change-arrow{font-size:24px}.execution-flow{grid-template-columns:1fr;gap:12px}.flow-arrow{transform:rotate(90deg)}.flow-step{text-align:center}.flow-step span{white-space:normal}}
+@media(max-width:800px){.context-comparison{height:auto;overflow:visible;padding:40px 24px!important}.context-comparison h1{font-size:32px!important}.shared-goal{flex-wrap:wrap;gap:10px;font-size:21px}.team-views{grid-template-columns:repeat(2,1fr);gap:12px}.team-card{height:auto;padding:14px}.team-card p,.team-card strong{font-size:20px}.comparison-grid,.compare-pair{grid-template-columns:1.05fr 22px .7fr 22px 1.25fr}.bridge{flex-wrap:wrap;gap:4px;padding:12px}.bridge b{font-size:25px}.comparison-head{font-size:17px;padding:0 6px}.compare-pair{min-height:110px}.challenge,.solution,.operation{font-size:18px;padding:12px 8px}.change-arrow{font-size:24px}.execution-flow{grid-template-columns:1fr;gap:12px}.flow-arrow{transform:rotate(90deg)}.flow-step{text-align:center}.flow-step span{white-space:normal}}
+
+.execution-flow::after{content:"";position:absolute;left:0;right:0;bottom:0;height:18px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1468 18' preserveAspectRatio='none'%3E%3Cpath d='M0 10 C80 0 170 0 260 10 S450 20 550 10 S730 0 830 10 S1020 20 1120 10 S1340 0 1468 10' fill='none' stroke='%230070f2' stroke-width='3'/%3E%3C/svg%3E") center/100% 100% no-repeat;opacity:.6}
+@media(max-width:800px){.execution-flow::after{display:none}}
