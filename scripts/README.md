@@ -57,3 +57,5 @@ node scripts/build-speaker-script.cjs
 ```
 
 This creates `exports/SAP_NOW_speaker_script_50min.pdf`: an A4 guide followed by one script page per slide, with slide previews, section bookmarks, target durations and cumulative timing. The 50-minute timeline assumes a 2-minute opening video and three 90-second demo videos; actual narration pace and video duration should be checked in rehearsal. Q&A is separate.
+
+The current delivered editable PPTX uses a conservative media compression pass: thumbnail GIFs at 960 px wide and 10 fps with 256-color palettes, MP4s at their original 1600×1000 resolution with H.264 CRF 20, and PNG dimensions capped at 2400 px. Text, shape and relationship XML is unchanged. The original HTML assets retain their original quality; regenerating the deck requires reapplying media compression to achieve the delivered file size.
