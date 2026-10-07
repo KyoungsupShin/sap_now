@@ -59,3 +59,13 @@ node scripts/build-speaker-script.cjs
 This creates `exports/SAP_NOW_speaker_script_50min.pdf`: an A4 guide followed by one script page per slide, with slide previews, section bookmarks, target durations and cumulative timing. The 50-minute timeline assumes a 2-minute opening video and three 90-second demo videos; actual narration pace and video duration should be checked in rehearsal. Q&A is separate.
 
 The current editable PPTX uses MP4 thumbnails at 960 px wide, 12 fps, H.264 CRF 24; demo videos at 1280×800, H.264 CRF 23; and PNG dimensions capped at 2400 px. The HTML uses the same optimized video files. Page 2 thumbnails automatically loop in slideshow mode; the three demo videos retain their controls and original edited timing. Editable text and shapes are preserved. Original GIF assets remain available but are no longer embedded or used on page 2.
+
+## Smaller embedded images
+
+To reduce embedded RGB PNG size while preserving dimensions, editable text/shapes and video bytes:
+
+```bash
+python scripts/optimize_pptx_images.py exports/SAP_NOW_editable.pptx
+```
+
+This uses JPEG quality 95 with full color resolution (4:4:4), only when the compressed file is smaller. Images with transparency remain PNG. It updates image relationships and MIME types; HTML source images remain unchanged.
