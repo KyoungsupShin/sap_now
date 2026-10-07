@@ -22,12 +22,12 @@
 .solution{justify-content:center;color:#fff;background:#0070f2;font-size:28px;font-weight:500;box-shadow:0 4px 10px rgba(0,112,242,.13)}
 .operation{color:#003b80;background:#eef6ff;border:1px solid #b8d9ff;border-left:6px solid #0070f2;font-size:28px;font-weight:500}
 .change-arrow{display:flex;align-items:center;justify-content:center;color:#0070f2;font-size:38px;line-height:1}
-.execution-flow{position:relative;height:190px;margin-top:18px;border-top:1px solid #d5dde5}
-.flow-ribbon{position:absolute;inset:0;width:100%;height:190px;overflow:visible}
-.flow-step{position:absolute;top:0;width:19.62%;height:190px;text-align:center;transform:translateX(-50%)}
-.flow-step:nth-of-type(1){left:10.76%}.flow-step:nth-of-type(2){left:30.38%}.flow-step:nth-of-type(3){left:50%}.flow-step:nth-of-type(4){left:69.62%}.flow-step:nth-of-type(5){left:89.24%}
-.flow-step small{position:absolute;top:57px;left:0;right:0;color:#0070f2;font-size:17px;line-height:22px}
-.flow-step b{position:absolute;top:82px;left:0;right:0;display:block;color:#003b80;font-size:23px;line-height:30px;font-weight:500}
-.flow-step span{position:absolute;top:164px;left:0;right:0;display:block;color:#475e75;font-size:18px;line-height:25px;white-space:nowrap}
-.flow-step:nth-of-type(even) span{top:0}
-@media(max-width:800px){.context-comparison{height:auto;overflow:visible;padding:40px 24px!important}.context-comparison h1{font-size:32px!important}.shared-goal{flex-wrap:wrap;gap:10px;font-size:21px}.team-views{grid-template-columns:repeat(2,1fr);gap:12px}.team-card{height:auto;padding:14px}.team-card p,.team-card strong{font-size:20px}.comparison-grid,.compare-pair{grid-template-columns:1.05fr 22px .7fr 22px 1.25fr}.bridge{flex-wrap:wrap;gap:4px;padding:12px}.bridge b{font-size:25px}.comparison-head{font-size:17px;padding:0 6px}.compare-pair{min-height:110px}.challenge,.solution,.operation{font-size:18px;padding:12px 8px}.change-arrow{font-size:24px}.execution-flow{height:auto;display:grid;gap:12px;padding-top:16px}.flow-ribbon{display:none}.flow-step{position:static;transform:none;width:auto;height:auto;padding:16px;background:#eef6ff}.flow-step small,.flow-step b,.flow-step span,.flow-step:nth-of-type(even) span{position:static;white-space:normal}}
+.execution-flow{position:relative;height:176px;margin-top:18px;border-top:1px solid #d5dde5}
+.flow-ribbon{position:absolute;inset:0;width:100%;height:176px}
+.flow-step{position:absolute;top:22px;width:250px;height:74px;display:flex;align-items:center;justify-content:center;gap:12px;background:#fff;border:1px solid #b8d9ff;border-radius:10px;box-shadow:0 3px 10px rgba(0,70,140,.07);text-align:center;transform:translateX(-50%)}
+.flow-step:nth-of-type(1){left:10%}.flow-step:nth-of-type(2){left:30%;top:80px}.flow-step:nth-of-type(3){left:50%}.flow-step:nth-of-type(4){left:70%;top:80px}.flow-step:nth-of-type(5){left:90%}
+.flow-step small{display:flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:#0070f2;color:white;font-size:16px;line-height:22px}
+.flow-step b{display:block;color:#003b80;font-size:24px;line-height:30px;font-weight:500}
+.flow-step span{position:absolute;top:80px;left:-18px;right:-18px;color:#475e75;font-size:18px;line-height:25px;white-space:nowrap}
+.flow-step:nth-of-type(even) span{top:-30px}
+@media(max-width:800px){.context-comparison{height:auto;overflow:visible;padding:40px 24px!important}.context-comparison h1{font-size:32px!important}.shared-goal{flex-wrap:wrap;gap:10px;font-size:21px}.team-views{grid-template-columns:repeat(2,1fr);gap:12px}.team-card{height:auto;padding:14px}.team-card p,.team-card strong{font-size:20px}.comparison-grid,.compare-pair{grid-template-columns:1.05fr 22px .7fr 22px 1.25fr}.bridge{flex-wrap:wrap;gap:4px;padding:12px}.bridge b{font-size:25px}.comparison-head{font-size:17px;padding:0 6px}.compare-pair{min-height:110px}.challenge,.solution,.operation{font-size:18px;padding:12px 8px}.change-arrow{font-size:24px}.execution-flow{height:auto;display:grid;gap:12px;padding-top:16px}.flow-ribbon{display:none}.flow-step{position:static;transform:none;width:auto;height:auto;padding:16px;background:#eef6ff}.flow-step{display:block}.flow-step small{margin:0 auto 8px}.flow-step small,.flow-step b,.flow-step span,.flow-step:nth-of-type(even) span{position:static;white-space:normal}}
