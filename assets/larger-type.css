@@ -774,3 +774,8 @@ body[data-type-slide="31"] main.slide span:nth-child(5) { font-size:13.2px !impo
  .app-builder-detail .process-node { padding-top:14px; }
  .app-builder-detail .process-node:not(:last-child)::after { right:-24px; width:24px; display:flex; justify-content:center; align-items:center; z-index:3; font-size:20px; }
 }
+
+@media(min-width:801px) {
+ .comparison-template .flow { gap:24px; }
+ .comparison-template .item:not(:last-child)::after, .comparison-template .ai .item:not(:last-child)::after { right:-24px; width:24px; height:24px; display:flex; justify-content:center; align-items:center; z-index:3; font-size:20px; }
+}
