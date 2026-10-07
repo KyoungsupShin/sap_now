@@ -36,7 +36,7 @@ SLIDE_BASE_URL=http://127.0.0.1:8000/ node scripts/render-slides.cjs
 python scripts/package-slide-exports.py --editable-only
 ```
 
-The editable deck embeds four MP4 files: the page 2 Live Assistant thumbnail and the three demo videos on pages 28–30. Page 2 also contains three original animated GIFs as separate picture objects. Video playback depends on the viewing application; use Microsoft PowerPoint slideshow mode for playback. Original illustration and architecture images remain picture objects; labels baked into those assets cannot be edited as text.
+The editable deck embeds three MP4 files for the demo videos on pages 28–30. Page 2 contains four original animated GIFs as separate picture objects. Video playback depends on the viewing application; use Microsoft PowerPoint slideshow mode for playback. Original illustration and architecture images remain picture objects; labels baked into those assets cannot be edited as text.
 
 Layout review (requires LibreOffice and NumPy):
 
