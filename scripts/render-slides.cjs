@@ -18,6 +18,24 @@ const { chromium } = require('playwright');
         await document.fonts.ready;
         await Promise.all([...document.images].map(i => i.decode()));
       });
+      // Fit accidental wrapping for the PPTX export only; preserve explicit breaks.
+      const fitAdjustments=await page.evaluate(()=>{
+        const root=document.querySelector('main.slide');
+        for(const e of root.querySelectorAll('*'))if(getComputedStyle(e).fontWeight==='500')e.style.setProperty('font-weight','700','important');
+        const changes=[];const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT);
+        const lineCount=n=>{const r=document.createRange();r.selectNodeContents(n);return new Set([...r.getClientRects()].filter(x=>x.width>1&&x.height>1).map(x=>Math.round(x.y))).size;};
+        while(walker.nextNode()){
+          const n=walker.currentNode,e=n.parentElement;
+          if(!n.textContent.trim()||e.closest('svg,script,style')||e.childElementCount)continue;
+          const st=getComputedStyle(e);if(st.whiteSpace.startsWith('pre')||st.display==='none'||st.visibility==='hidden')continue;
+          const before=lineCount(n);if(before<2)continue;
+          const original=parseFloat(st.fontSize);const minimum=Math.max(14,original*.5);let best=original;
+          for(let size=original-.5;size>=minimum;size-=.5){e.style.setProperty('font-size',size+'px','important');best=size;if(lineCount(n)<=1)break;}
+          changes.push({text:n.textContent.trim(),original,fontSize:best,before,after:lineCount(n)});
+        }
+        const cover=root.querySelector('.cover-subtitle');if(cover){const h=root.querySelector('h1');cover.style.top=(h.getBoundingClientRect().bottom+24)+'px';}
+        return changes;
+      });
       // Capture the fonts Chromium actually used, including CSS fallback fonts.
       const cdp = await page.context().newCDPSession(page);
       await cdp.send('DOM.enable'); await cdp.send('CSS.enable');
@@ -112,6 +130,7 @@ const { chromium } = require('playwright');
       await page.addStyleTag({content:'main.slide *::before,main.slide *::after{-webkit-text-fill-color:initial !important}'});
       await page.screenshot({path:path.join(output,`${String(slide.order).padStart(2,'0')}-base.png`),clip:box,animations:'disabled'});
       const cards=content.cards;
+      slide.fitAdjustments=fitAdjustments;
       slide.nativeMedia=nativeMedia;
       slide.nativeCurves=nativeCurves;
       slide.nativeText=content.textLines;

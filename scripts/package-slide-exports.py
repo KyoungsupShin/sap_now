@@ -181,7 +181,8 @@ for item in slides:
                 font_element.set('typeface', 'Noto Sans CJK KR' if tag == 'a:ea' else line['font'])
                 run._r.get_or_add_rPr().append(font_element)
             run.font.size = Pt(line['fontSize'] * .6)
-            run.font.bold = int(line['weight']) >= 600
+            # PowerPoint exposes regular/bold rather than CSS's intermediate 500 weight.
+            run.font.bold = int(line['weight']) >= 500
             run.font.italic = line['italic']; run.font.color.rgb = color(line['color'])
     slide.notes_slide.notes_text_frame.text = f"{item['order']:02} — {item['title']}\nAll HTML text is editable; card backgrounds and borders are native shapes. Text embedded in source images remains part of those images."
 hybrid.save(output / 'SAP_NOW_editable.pptx')
