@@ -36,7 +36,7 @@ SLIDE_BASE_URL=http://127.0.0.1:8000/ node scripts/render-slides.cjs
 python scripts/package-slide-exports.py --editable-only
 ```
 
-The editable deck embeds three MP4 files for the demo videos on pages 28–30. Page 2 contains four original animated GIFs as separate picture objects. Video playback depends on the viewing application; use Microsoft PowerPoint slideshow mode for playback. Original illustration and architecture images remain picture objects; labels baked into those assets cannot be edited as text.
+The editable deck embeds three MP4 files for the demo videos on pages 28–30. Page 2 contains four MP4 thumbnails with automatic, muted, looping playback in slideshow mode. Video playback depends on the viewing application; use Microsoft PowerPoint slideshow mode for playback. Original illustration and architecture images remain picture objects; labels baked into those assets cannot be edited as text.
 
 Layout review (requires LibreOffice and NumPy):
 
@@ -58,4 +58,4 @@ node scripts/build-speaker-script.cjs
 
 This creates `exports/SAP_NOW_speaker_script_50min.pdf`: an A4 guide followed by one script page per slide, with slide previews, section bookmarks, target durations and cumulative timing. The 50-minute timeline assumes a 2-minute opening video and three 90-second demo videos; actual narration pace and video duration should be checked in rehearsal. Q&A is separate.
 
-The current delivered editable PPTX uses a conservative media compression pass: thumbnail GIFs at 960 px wide and 10 fps with 256-color palettes, MP4s at their original 1600×1000 resolution with H.264 CRF 20, and PNG dimensions capped at 2400 px. Text, shape and relationship XML is unchanged. The original HTML assets retain their original quality; regenerating the deck requires reapplying media compression to achieve the delivered file size.
+The current editable PPTX uses MP4 thumbnails at 960 px wide, 12 fps, H.264 CRF 24; demo videos at 1280×800, H.264 CRF 23; and PNG dimensions capped at 2400 px. The HTML uses the same optimized video files. Page 2 thumbnails automatically loop in slideshow mode; the three demo videos retain their controls and original edited timing. Editable text and shapes are preserved. Original GIF assets remain available but are no longer embedded or used on page 2.
