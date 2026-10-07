@@ -13,11 +13,11 @@ const slides = [
   {
     "order": 2,
     "file": "thumbnail-showcase.html",
-    "title": "App Builder · Harness",
+    "title": "App Builder · Harness · Live Assistant",
     "status": "new",
-    "purpose": "Show two original app GIF thumbnails on a dedicated slide.",
+    "purpose": "Show original App Builder, Harness and Live Assistant thumbnails on a dedicated slide.",
     "keyMessage": "Live App Builder and Harness workflows.",
-    "changes": "Dedicated title-free thumbnail slide with bordered app GIFs.",
+    "changes": "Dedicated title-free thumbnail slide with bordered app GIFs and looping Live Assistant video.",
     "visualAudit": "UPDATED"
   },
   {
